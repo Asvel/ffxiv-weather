@@ -5,6 +5,12 @@
   <title>FFXIV Weather Bell</title>
   <meta name="viewport" content="width=device-width, initial-scale=1,
     maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <script>
+    if (location.protocol === 'http:' && location.host === 'xivwb.oschina.io') {
+      window.stop();
+      location.replace('https:' + location.href.slice(5));
+    }
+  </script>
 <link rel="shortcut icon" href="favicon.png"></head>
 <body>
 <script type="text/javascript" src="bundle-281c2e91.js"></script></body>
