@@ -1,14 +1,17 @@
 {
   "name": "ffxiv-weather-bell",
-  "version": "0.0.1",
+  "version": "0.3.2",
   "description": "Final Fantasy XIV Weather Bell",
-  "main": "index.js",
-  "scripts": {
-    "build": "rm -rf ./dist && webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js"
-  },
-  "author": "",
+  "keywords": ["final-fantasy-xiv", "ffxiv"],
+  "homepage": "https://asvel.github.io/ffxiv-weather-bell/",
   "license": "MIT",
+  "main": "index.js",
+  "repository": "https://github.com/Asvel/ffxiv-weather-bell",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "rm -rf ./dist && webpack --config webpack.prod.js",
+    "publish": "bash bin/publish.sh"
+  },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
