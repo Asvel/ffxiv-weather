@@ -8,9 +8,9 @@
   "main": "index.js",
   "repository": "https://github.com/Asvel/ffxiv-weather-bell",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "rm -rf ./dist && webpack --config webpack.prod.js",
-    "publish": "bash bin/publish.sh"
+    "start": "webpack-dev-server --config build/webpack.dev.js",
+    "build": "rm -rf ./dist && webpack --config build/webpack.prod.js",
+    "publish": "bash build/publish.sh"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

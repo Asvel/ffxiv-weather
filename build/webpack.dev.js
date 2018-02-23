@@ -1,13 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BabelMinifyHtmlWebpackPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle-[hash:8].js'
+    path: path.resolve('./dist'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -26,28 +24,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            minimize: true,
-          }
-        }]
+        use: ['style-loader', 'css-loader']
       },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      favicon: './favicon.png',
-    }),
-    // new require('script-ext-html-webpack-plugin')({
-    //   inline: /\.js$/,
-    // }),
-    new BabelMinifyHtmlWebpackPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+      favicon: './src/favicon.png',
     }),
   ],
+  devtool: '#cheap-source-map',
+  devServer: {
+    hot: false,
+    noInfo: true,
+    inline: false,
+  },
 };
