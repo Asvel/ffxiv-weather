@@ -194,6 +194,13 @@ class App extends React.Component {
             </table>
           </div>
         )}
+        <div className="footer">
+          © 2018 Asvel
+          <span className="footer_separator">·</span>
+          <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">License</a>
+          <span className="footer_separator">·</span>
+          <a href="https://github.com/Asvel/ffxiv-weather-bell">Fork</a>
+        </div>
       </div>
     );
   }
