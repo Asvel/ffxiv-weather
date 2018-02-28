@@ -154,8 +154,8 @@ let Weather = {
       this.zoneRates[zone].map((x, i) => hasWeather(condition.previousWeathers, i));
     let weathers = this._weathers[zone];
 
-    let hourMask = condition.hourMask ||
-      hours.map((x, i) => this.isHourIn(condition.beginHour || 0, condition.endHour || 23, i));
+    let hourMask = condition.hourMask || hours.map((x, i) => this.isHourIn(
+      condition.beginHour || 0, condition.endHour == null ? 23 : condition.endHour, i));
     let baseHour = Math.round(this._start / 175 / 100);
 
     let matched = this._buffer.fill(false);
