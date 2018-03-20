@@ -14,18 +14,9 @@ const format = (template, args) => template.replace(/{(\w+)}/g, (match, key) => 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.initialState = {
-      zone: null,
-      desiredWeathers: [],
-      previousWeathers: [],
-      beginHour: 0,
-      endHour: 23,
-      hoverHour: null,
-    };
     this.state = {
-      ...this.initialState,
-
-      ...JSON.parse(window.localStorage.getItem('state') || '{}'),
+      ...parseHash(location.hash),
+      hoverHour: null,
     };
   }
   render() {
@@ -45,7 +36,14 @@ class App extends React.Component {
                   <span
                     key={z}
                     className={classNames('condition_zone-item', zone === z && '-active')}
-                    onClick={() => this.setState({ ...this.initialState, zone: z })}
+                    onClick={() => this.setState({
+                      zone: z,
+                      desiredWeathers: [],
+                      previousWeathers: [],
+                      beginHour: 0,
+                      endHour: 23,
+                      hoverHour: null
+                    })}
                     children={_t(z)}
                   />
                 ))}
@@ -204,8 +202,15 @@ class App extends React.Component {
       </div>
     );
   }
+  componentDidMount() {
+    window.addEventListener("hashchange", () => {
+      if (formatHash(this.state) !== location.hash) {
+        this.setState(parseHash(location.hash));
+      }
+    }, false);
+  }
   componentDidUpdate() {
-    window.localStorage.setItem('state', JSON.stringify(this.state));
+    location.hash = formatHash(this.state);
   }
 }
 
@@ -246,6 +251,53 @@ const zones = [
   ["The Ruby Sea", "Yanxia", "The Azim Steppe"],
   ["Mor Dhona"],
 ];
+
+let zoneShorthands = {};
+let shorthandZones = {};
+(() => {
+  let zones = Object.keys(W.zones);
+  let dicts = [{}, {}, {}];
+  let shorthands = zones
+    .map(zone => {
+      zone = zone.replace(/[^\w ]/g, '').split(' ');
+      zone = zone[0] === 'The' ? zone.slice(1) : zone;
+      for (let i = 0; i < zone.length; i++) {
+        dicts[i][zone[i]] = (dicts[i][zone[i]] || 0) + 1;
+      }
+      return zone;
+    })
+    .map(zone => {
+      if (dicts[0][zone[0]] > 1 || dicts[1][zone[1]] > 1) {
+        zone = zone[0].slice(0, 2) + zone[1].slice(0, 2);
+      } else {
+        zone = zone.join('').slice(0, 4);
+      }
+      return zone.toLowerCase();
+    });
+  for (let i = 0; i < zones.length; i++) {
+    zoneShorthands[zones[i]] = shorthands[i];
+    shorthandZones[shorthands[i]] = zones[i];
+  }
+})();
+
+function parseHash(hash) {
+  let [ zone, desiredWeathers, previousWeathers, beginHour, endHour ] = hash.slice(1).split('-');
+  zone = shorthandZones[zone] || null;
+  desiredWeathers = desiredWeathers ? desiredWeathers.split('').map(Number) : [];
+  previousWeathers = previousWeathers ? previousWeathers.split('').map(Number) : [];
+  beginHour = Number(beginHour || '0');
+  endHour = Number(endHour || '23');
+  return { zone, desiredWeathers, previousWeathers, beginHour, endHour };
+}
+function formatHash({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) {
+  zone = zoneShorthands[zone];
+  desiredWeathers = desiredWeathers.sort().join('');
+  previousWeathers = previousWeathers.sort().join('');
+  let parts = [zone, desiredWeathers, previousWeathers, beginHour, endHour];
+  let defaults = [null, '', '', 0, 23];
+  while (parts[parts.length - 1] === defaults[parts.length - 1]) parts.length--;
+  return '#' + parts.join('-');
+}
 
 function toggleWeather(weathers, weather) {
   let index = weathers.indexOf(weather);
