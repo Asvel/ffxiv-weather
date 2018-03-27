@@ -174,8 +174,8 @@ button:active {
 }
 .match th,
 .match td {
-  padding: 2px 4px;
-  line-height: 26px;
+  padding: 6px 4px;
+  line-height: 18px;
   text-align: center;
 }
 .match tr {
