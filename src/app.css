@@ -7,12 +7,17 @@ html {
 
 .app {
   max-width: 960px;
-  padding: 20px;
+  padding: 18px;
   margin: 0 auto;
   font-size: 14px;
   font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \5FAE\8F6F\96C5\9ED1, sans-serif;
   line-height: 1.4286;
   color: #393333;
+}
+@media (max-width: 360px) {
+  .app {
+    padding: 15px;
+  }
 }
 
 input,
@@ -69,6 +74,12 @@ button:active {
 }
 .condition_weather {
   margin-right: 6px;
+}
+@media (max-width: 768px) {
+  .condition_weather {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .condition-title {
