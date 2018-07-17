@@ -43,7 +43,8 @@ let Weather = {
     "Shirogane": ["Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"],
     "The Ruby Sea": ["Thunder", "Wind", "Clouds", "Fair Skies", "Clear Skies"],
     "Yanxia": ["Showers", "Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"],
-    "The Azim Steppe": ["Gales", "Wind", "Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"]
+    "The Azim Steppe": ["Gales", "Wind", "Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"],
+    "Eureka": ["Fair Skies", "Gales", "Showers", "Snow"],
   },
 
   zoneRates: {
@@ -87,7 +88,8 @@ let Weather = {
     "Shirogane": [10, 20, 40, 80, 100],
     "The Ruby Sea": [10, 20, 35, 75, 100],
     "Yanxia": [5, 15, 25, 40, 80, 100],
-    "The Azim Steppe": [5, 10, 17, 25, 35, 75, 100]
+    "The Azim Steppe": [5, 10, 17, 25, 35, 75, 100],
+    "Eureka": [30, 60, 90, 100],
   },
 
   future: 60,

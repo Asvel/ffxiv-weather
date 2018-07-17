@@ -250,6 +250,7 @@ const zones = [
   ["Kugane", "Shirogane"],
   ["The Ruby Sea", "Yanxia", "The Azim Steppe"],
   ["Mor Dhona"],
+  ["Eureka"],
 ];
 
 let zoneShorthands = {};
