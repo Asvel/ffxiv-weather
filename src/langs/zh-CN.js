@@ -1,5 +1,7 @@
 export default {
   "": "",
+  "FFXIV Weather Bell": "最终幻想14天气时钟",
+
   "Zone": "地区",
   "Weather": "天气",
   "Previous Weather": "前置天气",
@@ -31,7 +33,7 @@ export default {
   "Southern Thanalan": "南萨",
   "Northern Thanalan": "北萨",
   "The Goblet": "高脚孤丘",
-  "Ishgard": "雪都",
+  "Ishgard": "伊修加德",
   "Coerthas Central Highlands": "中高",
   "Coerthas Western Highlands": "西高",
   "The Sea of Clouds": "云海",
@@ -51,7 +53,7 @@ export default {
   "The Ruby Sea": "红玉海",
   "Yanxia": "延夏",
   "The Azim Steppe": "草原",
-  "Eureka": "优雷卡",
+  "Eureka Anemos": "优雷卡",
 
   "Clouds": "阴云",
   "Clear Skies": "碧空",

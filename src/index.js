@@ -250,7 +250,7 @@ const zones = [
   ["Kugane", "Shirogane"],
   ["The Ruby Sea", "Yanxia", "The Azim Steppe"],
   ["Mor Dhona"],
-  ["Eureka"],
+  ["Eureka Anemos"],
 ];
 
 let zoneShorthands = {};
@@ -310,6 +310,8 @@ function toggleWeather(weathers, weather) {
 }
 
 const hours = Array.from({ length: 24 }, (x, i) => i);
+
+document.title = _t('FFXIV Weather Bell');
 
 let container = document.createElement('div');
 document.body.appendChild(container);
