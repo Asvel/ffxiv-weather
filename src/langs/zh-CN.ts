@@ -52,7 +52,8 @@ export default {
   "The Ruby Sea": "红玉海",
   "Yanxia": "延夏",
   "The Azim Steppe": "草原",
-  "Eureka Anemos": "优雷卡",
+  "Eureka Anemos": "常风",
+  "Eureka Pagos": "恒冰",
 
   "Clouds": "阴云",
   "Clear Skies": "碧空",
