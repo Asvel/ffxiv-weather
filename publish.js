@@ -16,9 +16,10 @@ shell.cp('-r', '../.git', '.');
 shell.exec('git checkout -f gh-pages');
 shell.exec('git pull');
 shell.rm('-rf', '!(.git)');
-shell.cp('-v', '../dist/*', '.');
+shell.cp('../dist/*', '.');
 
 shell.exec('git add -A');
 shell.exec('git commit -m "Publish"');
 shell.exec('git push origin gh-pages');
-shell.rm('-rf', '../.publish');
+shell.cd('..');
+shell.rm('-rf', '.publish');

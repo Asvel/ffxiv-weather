@@ -13,7 +13,7 @@
   "scripts": {
     "start": "webpack-serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js --mode=production",
-    "publish": "bash build/publish.sh"
+    "publish": "node publish.js"
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",
