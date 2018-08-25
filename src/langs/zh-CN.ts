@@ -1,5 +1,4 @@
 export default {
-  "": "",
   "FFXIV Weather Bell": "最终幻想14天气时钟",
 
   "Zone": "地区",
@@ -72,4 +71,4 @@ export default {
   "Blizzards": "暴雪",
   "Umbral Wind": "灵风",
   "Umbral Static": "灵电",
-}
+} as { [index: string]: string }
