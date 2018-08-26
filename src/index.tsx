@@ -64,45 +64,62 @@ class App extends React.Component<any, AppState> {
           </div>
           {zone && <React.Fragment>
             <div className="condition_weather">
-              <span className="condition-title">{_t('Weather')}</span>
-              <span className="condition_weather-selector">
+              <span className="condition-title">
+                {_t('Weather')}
+                <span className="condition-tip">{_t('右击多选')}</span>
+              </span>
+              <span
+                className="condition_weather-selector"
+                onContextMenu={e => e.preventDefault()}
+              >
                 <span
                   className={classNames('condition_weather-item', desiredWeathers.length === 0 && '-active')}
                   onClick={() => this.setState({ desiredWeathers: [] })}
+                  onContextMenu={() => this.setState({ desiredWeathers: [] })}
                   children={_t('Any')}
                 />
                 {zone && W.zoneWeathers[zone].map((x, i) => (
                   <span
                     key={i}
                     className={classNames('condition_weather-item', desiredWeathers.indexOf(i) !== -1 && '-active')}
-                    onClick={() => this.setState({ desiredWeathers: toggleWeather(desiredWeathers, i) })}
-                    onContextMenu={e => { this.setState({ desiredWeathers: [i] }); e.preventDefault(); }}
+                    onClick={() => this.setState({ desiredWeathers: [i] })}
+                    onContextMenu={() => this.setState({ desiredWeathers: toggleWeather(desiredWeathers, i) })}
                     children={_t(x)}
                   />
                 ))}
               </span>
             </div>
             <div className="condition_weather">
-              <span className="condition-title">{_t('Previous Weather')}</span>
-              <span className="condition_weather-selector">
+              <span className="condition-title">
+                {_t('Previous Weather')}
+                <span className="condition-tip">{_t('右击多选')}</span>
+              </span>
+              <span
+                className="condition_weather-selector"
+                onContextMenu={e => e.preventDefault()}
+              >
                 <span
                   className={classNames('condition_weather-item', previousWeathers.length === 0 && '-active')}
                   onClick={() => this.setState({ previousWeathers: [] })}
+                  onContextMenu={() => this.setState({ desiredWeathers: [] })}
                   children={_t('Any')}
                 />
                 {zone && W.zoneWeathers[zone].map((x, i) => (
                   <span
                     key={i}
                     className={classNames('condition_weather-item', previousWeathers.indexOf(i) !== -1 && '-active')}
-                    onClick={() => this.setState({ previousWeathers: toggleWeather(previousWeathers, i) })}
-                    onContextMenu={e => { this.setState({ previousWeathers: [i] }); e.preventDefault(); }}
+                    onClick={() => this.setState({ previousWeathers: [i] })}
+                    onContextMenu={() => this.setState({ previousWeathers: toggleWeather(previousWeathers, i) })}
                     children={_t(x)}
                   />
                 ))}
               </span>
             </div>
             <div className="condition_time">
-              <span className="condition-title">{_t('Time')}</span>
+              <span className="condition-title">
+                {_t('Time')}
+                <span className="condition-tip">{_t('点击开始时间然后选择一个时间段')}</span>
+              </span>
               <div className="condition_time-selector">
                 {Array.from({ length: 24 }, (x, i) => (
                   <span

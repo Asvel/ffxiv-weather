@@ -22,7 +22,7 @@ html {
 
 input,
 textarea {
-  border: 1px solid #cfcccc;
+  border: 1px solid #cecccc;
   border-radius: 3px;
   outline: none;
   transition: border-color 0.25s;
@@ -87,6 +87,18 @@ button:active {
   margin-bottom: -1px;
   font-weight: bold;
 }
+.condition-tip {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic;
+  color: #6c6666;
+  opacity: 0;
+  transition: opacity .1s ease-out;
+}
+.condition > div:hover .condition-tip {
+  opacity: 1;
+}
 
 .condition_zone-group {
   margin-right: 6px;
@@ -98,6 +110,7 @@ button:active {
   margin: 3px -1px 3px 0;
   border: 1px solid #393333;
   cursor: pointer;
+  transition: color .1s ease-in-out, background-color .1s ease-in-out;
 }
 .condition_zone-item:first-child,
 .condition_weather-item:first-child {
@@ -111,7 +124,7 @@ button:active {
 }
 .condition_zone-item:hover,
 .condition_weather-item:hover {
-  background: #f3f3f3;
+  background: #f9f3f3;
 }
 .condition_zone-item.-active,
 .condition_weather-item.-active {
@@ -136,6 +149,7 @@ button:active {
   line-height: 20px;
   border: 1px solid #393333;
   cursor: pointer;
+  transition: color .1s ease-in-out, background-color .1s ease-in-out;
 }
 .condition_time-item:first-child {
   border-top-left-radius: 3px;
@@ -150,7 +164,7 @@ button:active {
   border-left-width: 3px;
 }
 .condition_time-item.-hover {
-  background: #ddd;
+  background: #cecccc;
 }
 .condition_time-item.-active {
   color: #fff;
