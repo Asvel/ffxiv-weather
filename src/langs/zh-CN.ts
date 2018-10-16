@@ -42,7 +42,7 @@ export default {
   "The Dravanian Forelands": "龙高",
   "The Dravanian Hinterlands": "龙低",
   "The Churning Mists": "雾海",
-  "Mor Dhona": "魔杜纳",
+  "Mor Dhona": "摩杜纳",
   "Rhalgr's Reach": "神拳痕",
   "The Fringes": "边区",
   "The Peaks": "山区",
