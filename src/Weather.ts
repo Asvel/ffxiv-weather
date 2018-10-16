@@ -101,12 +101,12 @@ export function calculateForecastTarget(timestamp: number): number {
   // Get Eorzea hour for weather start
   let bell = Math.trunc(unix / 175);
   // Do the magic 'cause for calculations 16:00 is 0, 00:00 is 8 and 08:00 is 16
-  let increment = ((bell + 8 - (bell % 8)) >>> 0) % 24;
+  let increment = (bell + 8 - (bell % 8)) % 24;
   // Take Eorzea days since unix epoch
   let totalDays = Math.trunc(unix / 4200) >>> 0;
   let calcBase = totalDays * 0x64 + increment;
-  let step1 = (calcBase << 0xB) ^ calcBase;
-  let step2 = (step1 >>> 8) ^ step1;
+  let step1 = ((calcBase << 0xB) ^ calcBase) >>> 0;
+  let step2 = ((step1 >>> 8) ^ step1) >>> 0;
   return step2 % 0x64;
 }
 
