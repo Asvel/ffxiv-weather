@@ -124,7 +124,7 @@ button:active {
 }
 .condition_zone-item:hover,
 .condition_weather-item:hover {
-  background: #f9f3f3;
+  background: #f6f3f3;
 }
 .condition_zone-item.-active,
 .condition_weather-item.-active {
@@ -184,38 +184,79 @@ button:active {
 }
 .match table {
   width: 100%;
+  font-family: SFMono-Regular, Menlo, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 18px;
   border-collapse: collapse;
 }
 .match th,
 .match td {
   padding: 6px 4px;
-  line-height: 18px;
-  text-align: center;
+  text-align: left;
 }
-.match tr {
-  border-bottom: 1px solid #9c9999;
+@media (min-width: 481px) {
+  .match th:first-child,
+  .match td:first-child {
+    padding-left: 20px;
+  }
 }
-.match tr:first-child {
+.match th {
   border-top: 1px solid #393333;
-}
-.match tr:last-child {
   border-bottom: 1px solid #393333;
 }
-
-.match_begin,
-.match_end {
+.match td {
+  border-bottom: 1px solid #bfbbbb;
+}
+.match tr:last-child td {
+  border-color: #393333;
+}
+.match tbody tr {
+  transition: background-color .1s ease-in-out;
+}
+.match tbody tr:hover {
+  background: #fbf9f9;
 }
 
+.match .match_local-time {
+  width: 36%;
+}
+.match .match_eorzea-time {
+  width: 28%;
+}
+
+.match_local-time-date {
+  margin-right: 2px;
+}
+.match_local-time-separator {
+  margin: 0 1px;
+}
+
+.match_eorzea-time-date {
+  margin-right: 6px;
+  color: #bfbbbb;
+}
 .match_duration {
-  text-align: right;
+  margin-right: 1px;
 }
 
-.match .match_weathers {
+.match.list th,
+.match.list td {
+  text-align: center;
+}
+.match.list .match_list-date {
+  width: 14%;
   text-align: left;
+}
+.match_list-time {
+  margin-right: 5px;
+}
+
+.friendly-time_seconds {
+  font-size: 12px;
+  color: #bfbbbb;
 }
 
 .weathers > span:first-child {
-  color: #9e9999;
+  color: #bfbbbb;
 }
 .weathers > span:first-child:before {
   content: "(";
@@ -224,7 +265,8 @@ button:active {
   content: ")";
 }
 .weathers > span:not(:first-child):before {
-  content: " - ";
+  content: "-";
+  margin: 0 3px;
 }
 
 .footer {

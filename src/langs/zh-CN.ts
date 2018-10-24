@@ -6,9 +6,8 @@ export default {
   "Previous Weather": "前置天气",
   "Time": "时间",
   "Any": "任意",
-  "Begin Time": "开始时间",
-  "End Time": "结束时间",
-  "Duration": "持续时长",
+  "Local Time": "本地时间",
+  "Eorzea Time": "艾欧泽亚时间",
   "Weathers": "天气",
 
   "Limsa Lominsa": "海都",

@@ -141,7 +141,7 @@ function init(): void {
 
   let getter = (zone: Zone, i: number, j: number) => ({
     begin: new Date(start + i * 175 * 1000),
-    end: new Date(start + j * 175 * 1000),
+    end: new Date(start + j * 175 * 1000 - 1),
     duration: j - i,
     weathers: weathers[zone]
       .slice(Math.floor(i / 8) - 1, Math.floor((j - 1) / 8) + 1)

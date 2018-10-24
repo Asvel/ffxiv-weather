@@ -168,18 +168,24 @@ class App extends React.Component<any, AppState> {
             <table>
               <thead>
               <tr>
-                <th className="match_begin">{_t('Begin Time')}</th>
-                <th className="match_end">{_t('End Time')}</th>
-                <th className="match_duration">{_t('Duration')}</th>
+                <th className="match_local-time">{_t('Local Time')}</th>
+                <th className="match_eorzea-time">{_t('Eorzea Time')}</th>
                 <th className="match_weathers">{_t('Weathers')}</th>
               </tr>
               </thead>
               <tbody>
               {matches.slice(0, 11).map(x => x()).map((x, i) => (
                 <tr key={i}>
-                  <td className="match_begin">{strftime('%m-%d %H:%M:%S', x.begin)}</td>
-                  <td className="match_end">{strftime('%m-%d %H:%M:%S', x.end)}</td>
-                  <td className="match_duration">{x.duration} ET</td>
+                  <td className="match_local-time">
+                    <span className="match_local-time-date">{strftime('%m/%d ', x.begin)}</span>
+                    <FriendlyTime date={x.begin} />
+                    <span className="match_local-time-separator">-</span>
+                    <FriendlyTime date={x.end} />
+                  </td>
+                  <td className="match_eorzea-time">
+                    <span className="match_eorzea-time-date">{formatEorzeaDate(x.begin)}</span>
+                    {formatEorzeaTime(x.begin)}, {x.duration}h
+                  </td>
                   <td className="match_weathers">
                     <Weathers weathers={x.weathers} max={4} />
                   </td>
@@ -197,7 +203,7 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         {matches.length === 1 && (
-          <div className="match">
+          <div className="match list">
             <table>
               <thead>
               <tr>
@@ -210,9 +216,12 @@ class App extends React.Component<any, AppState> {
               <tbody>
               {Array.from({ length: 11 }, (x, i) => i * 3 - list[0]().begin.valueOf() / 2 % 3).map(i => (
                 <tr key={i}>
-                  <td>{strftime('%m-%d', list[i < 0 ? 0 : i]().begin)}</td>
+                  <td className="match_list-date">{strftime('%m/%d', list[i < 0 ? 0 : i]().begin)}</td>
                   {[i, i + 1, i + 2].map(j => j >= 0 && list[j]()).map((x, j) => x ? (
-                    <td key={j}>{strftime('%H:%M:%S', x.begin)} {_t(x.weathers[1])}</td>
+                    <td key={j}>
+                      <span className="match_list-time"><FriendlyTime date={x.begin} /></span>
+                      <span className="match_list-weather">{_t(x.weathers[1])}</span>
+                    </td>
                   ) : <td key={j} />)}
                 </tr>
               ))}
@@ -239,6 +248,18 @@ class App extends React.Component<any, AppState> {
   }
   componentDidUpdate() {
     location.hash = formatHash(this.state);
+  }
+}
+
+class FriendlyTime extends React.Component<{ date: Date }> {
+  render() {
+    let { date } = this.props;
+    return (
+      <React.Fragment>
+        <span>{strftime('%H:%M', date)}</span>
+        <span className="friendly-time_seconds">{strftime(':%S', date)}</span>
+      </React.Fragment>
+    )
   }
 }
 
@@ -343,6 +364,22 @@ function toggleWeather(weathers: number[], weather: number): number[] {
   } else {
     return weathers.slice(0, index).concat(weathers.slice(index + 1));
   }
+}
+
+let padZero = (n: number) => n < 10 ? '0' + n : n;
+function formatEorzeaDate(date: Date): string {
+  let dayCount = Math.floor(+date / (1000 * 175 * 24));
+  let day = dayCount % 32;
+  let monthCount = Math.floor(dayCount / 32);
+  let month = monthCount % 12;
+  return `${padZero(month + 1)}/${padZero(day + 1)}`;
+}
+function formatEorzeaTime(date: Date): string {
+  let minuteCount = Math.floor(+date / (1000 * 175) * 60);
+  let minute = minuteCount % 60;
+  let hourCount = Math.floor(minuteCount / 60);
+  let hour = hourCount % 24;
+  return `${padZero(hour)}:${padZero(minute)}`;
 }
 
 document.title = _t('FFXIV Weather Bell');
