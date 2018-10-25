@@ -269,6 +269,26 @@ button:active {
   margin: 0 3px;
 }
 
+.more {
+  margin-top: 6px;
+  margin-bottom: -6px;
+  text-align: center;
+}
+.more_button {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: color .1s ease-in-out, background-color .1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.more_button:hover {
+  background: #f6f3f3;
+}
+.more_button:hover:active {
+  background: #eae7e7;
+}
+
 .footer {
   margin-top: 15px;
   color: #afaaaa;

@@ -9,6 +9,7 @@ export default {
   "Local Time": "本地时间",
   "Eorzea Time": "艾欧泽亚时间",
   "Weathers": "天气",
+  "Show more": "显示更多",
 
   "Limsa Lominsa": "海都",
   "Middle La Noscea": "中拉",

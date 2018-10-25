@@ -21,6 +21,7 @@ interface Condition {
 
 interface AppState extends Condition {
   hoverHour: number | null,
+  showCount: number,
 }
 
 class App extends React.Component<any, AppState> {
@@ -29,10 +30,11 @@ class App extends React.Component<any, AppState> {
     this.state = {
       ...parseHash(location.hash),
       hoverHour: null,
+      showCount: 11,
     };
   }
   render() {
-    let { zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour } = this.state;
+    let { zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour, showCount } = this.state;
     let matches = zone ? W.find({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) : [];
     let list = zone && matches.length === 1 ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
     return (
@@ -55,6 +57,7 @@ class App extends React.Component<any, AppState> {
                       beginHour: 0,
                       endHour: 23,
                       hoverHour: null,
+                      showCount: 11,
                     })}
                     children={_t(z)}
                   />
@@ -174,7 +177,7 @@ class App extends React.Component<any, AppState> {
               </tr>
               </thead>
               <tbody>
-              {matches.slice(0, 11).map(x => x()).map((x, i) => (
+              {matches.slice(0, showCount).map(x => x()).map((x, i) => (
                 <tr key={i}>
                   <td className="match_local-time">
                     <span className="match_local-time-date">{strftime('%m/%d ', x.begin)}</span>
@@ -214,7 +217,8 @@ class App extends React.Component<any, AppState> {
               </tr>
               </thead>
               <tbody>
-              {Array.from({ length: 11 }, (x, i) => i * 3 - list[0]().begin.valueOf() / 2 % 3).map(i => (
+              {Array.from({ length: Math.min(showCount, Math.floor(list.length / 3)) },
+                (x, i) => i * 3 - list[0]().begin.valueOf() / 2 % 3).map(i => (
                 <tr key={i}>
                   <td className="match_list-date">{strftime('%m/%d', list[i < 0 ? 0 : i]().begin)}</td>
                   {[i, i + 1, i + 2].map(j => j >= 0 && list[j]()).map((x, j) => x ? (
@@ -227,6 +231,13 @@ class App extends React.Component<any, AppState> {
               ))}
               </tbody>
             </table>
+          </div>
+        )}
+        {showCount < (matches.length === 1 ? Math.floor(list.length / 3) : matches.length) && (
+          <div className="more">
+            <div className="more_button" onClick={() => this.setState({ showCount: showCount * 2 })}>
+              {_t('Show more')}
+            </div>
           </div>
         )}
         <div className="footer">
