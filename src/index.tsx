@@ -251,6 +251,7 @@ class App extends React.Component<any, AppState> {
     );
   }
   componentDidMount() {
+    W.init();  // improve first searching response speed
     window.addEventListener("hashchange", () => {
       if (formatHash(this.state) !== location.hash) {
         this.setState(parseHash(location.hash));

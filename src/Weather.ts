@@ -121,7 +121,7 @@ export let state: {
 
 export let future = 60;
 
-function init(): void {
+export function init(): void {
   let weatherDuration = 8 * 175 * 1000;
   let now = Date.now();
   let start = now - (now % weatherDuration) - weatherDuration;
