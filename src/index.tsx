@@ -104,7 +104,7 @@ class App extends React.Component<any, AppState> {
                 <span
                   className={classNames('condition_weather-item', previousWeathers.length === 0 && '-active')}
                   onClick={() => this.setState({ previousWeathers: [] })}
-                  onContextMenu={() => this.setState({ desiredWeathers: [] })}
+                  onContextMenu={() => this.setState({ previousWeathers: [] })}
                   children={_t('Any')}
                 />
                 {zone && W.zoneWeathers[zone].map((x, i) => (
