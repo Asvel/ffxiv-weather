@@ -54,6 +54,7 @@ export default {
   "The Azim Steppe": "草原",
   "Eureka Anemos": "常风",
   "Eureka Pagos": "恒冰",
+  "Eureka Pyros": "永火",
 
   "Clouds": "阴云",
   "Clear Skies": "碧空",

@@ -43,6 +43,7 @@ export const zoneWeathers = {
   "The Azim Steppe": ["Gales", "Wind", "Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"],
   "Eureka Anemos": ["Fair Skies", "Gales", "Showers", "Snow"],
   "Eureka Pagos": ["Clear Skies", "Fog", "Heat Waves", "Snow", "Thunder", "Blizzards"],
+  "Eureka Pyros": ["Fair Skies", "Heat Waves", "Thunder", "Blizzards", "Umbral Wind", "Snow"],
 };
 
 export const zoneRates = {
@@ -89,6 +90,7 @@ export const zoneRates = {
   "The Azim Steppe": [5, 10, 17, 25, 35, 75, 100],
   "Eureka Anemos": [30, 60, 90, 100],
   "Eureka Pagos": [10, 28, 46, 64, 82, 100],
+  "Eureka Pyros": [10, 28, 46, 64, 82, 100],
 };
 
 export type Zone = keyof typeof zoneWeathers;

@@ -3,7 +3,8 @@
     "alwaysStrict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "node",
     "target": "es6",
     "lib": ["es2017", "dom", "dom.iterable"],
     "jsx": "react"
