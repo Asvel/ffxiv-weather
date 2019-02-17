@@ -44,6 +44,7 @@ export const zoneWeathers = {
   "Eureka Anemos": ["Fair Skies", "Gales", "Showers", "Snow"],
   "Eureka Pagos": ["Clear Skies", "Fog", "Heat Waves", "Snow", "Thunder", "Blizzards"],
   "Eureka Pyros": ["Fair Skies", "Heat Waves", "Thunder", "Blizzards", "Umbral Wind", "Snow"],
+  "Eureka Hydatos": ["Fair Skies", "Showers", "Gloom", "Thunderstorms", "Snow"],
 };
 
 export const zoneRates = {
@@ -91,6 +92,7 @@ export const zoneRates = {
   "Eureka Anemos": [30, 60, 90, 100],
   "Eureka Pagos": [10, 28, 46, 64, 82, 100],
   "Eureka Pyros": [10, 28, 46, 64, 82, 100],
+  "Eureka Hydatos": [12, 34, 56, 78, 100],
 };
 
 export type Zone = keyof typeof zoneWeathers;

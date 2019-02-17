@@ -317,7 +317,7 @@ const groupedZones: W.Zone[][] = [
   ["Kugane", "Shirogane"],
   ["The Ruby Sea", "Yanxia", "The Azim Steppe"],
   ["Mor Dhona"],
-  ["Eureka Anemos", "Eureka Pagos", "Eureka Pyros"],
+  ["Eureka Anemos", "Eureka Pagos", "Eureka Pyros", "Eureka Hydatos"],
 ];
 
 let zoneShorthands = {} as { [index in W.Zone]: string };
