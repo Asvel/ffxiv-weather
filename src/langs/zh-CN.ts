@@ -55,7 +55,7 @@ export default {
   "Eureka Anemos": "常风",
   "Eureka Pagos": "恒冰",
   "Eureka Pyros": "涌火",
-  "Eureka Hydatos": "亘水",
+  "Eureka Hydatos": "丰水",
 
   "Clouds": "阴云",
   "Clear Skies": "碧空",
