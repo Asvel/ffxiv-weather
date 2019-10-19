@@ -241,7 +241,7 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         <div className="footer">
-          © 2018 Asvel
+          © 2019 Asvel
           <span className="footer_separator">·</span>
           <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">License</a>
           <span className="footer_separator">·</span>
@@ -316,6 +316,8 @@ const groupedZones: W.Zone[][] = [
   ["Rhalgr's Reach", "The Fringes", "The Peaks", "The Lochs"],
   ["Kugane", "Shirogane"],
   ["The Ruby Sea", "Yanxia", "The Azim Steppe"],
+  ["The Crystarium", "Eulmore", "Lakeland", "Kholusia", "Amh Araeng", "Il Mheg",
+    "The Rak'tika Greatwood", "The Tempest"],
   ["Mor Dhona"],
   ["Eureka Anemos", "Eureka Pagos", "Eureka Pyros", "Eureka Hydatos"],
 ];

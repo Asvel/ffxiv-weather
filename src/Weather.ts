@@ -45,6 +45,14 @@ export const zoneWeathers = {
   "Eureka Pagos": ["Clear Skies", "Fog", "Heat Waves", "Snow", "Thunder", "Blizzards"],
   "Eureka Pyros": ["Fair Skies", "Heat Waves", "Thunder", "Blizzards", "Umbral Wind", "Snow"],
   "Eureka Hydatos": ["Fair Skies", "Showers", "Gloom", "Thunderstorms", "Snow"],
+  "The Crystarium": ["Clear Skies", "Fair Skies", "Clouds", "Fog", "Rain", "Thunderstorms"],
+  "Eulmore": ["Gales", "Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"],
+  "Lakeland": ["Clear Skies", "Fair Skies", "Clouds", "Fog", "Rain", "Thunderstorms"],
+  "Kholusia": ["Gales", "Rain", "Fog", "Clouds", "Fair Skies", "Clear Skies"],
+  "Amh Araeng": ["Fair Skies", "Clouds", "Dust Storms", "Heat Waves", "Clear Skies"],
+  "Il Mheg": ["Rain", "Fog", "Clouds", "Thunderstorms", "Clear Skies", "Fair Skies"],
+  "The Rak'tika Greatwood": ["Fog", "Rain", "Umbral Wind", "Clear Skies", "Fair Skies", "Clouds"],
+  "The Tempest": ["Clouds", "Fair Skies", "Clear Skies"],
 };
 
 export const zoneRates = {
@@ -93,6 +101,14 @@ export const zoneRates = {
   "Eureka Pagos": [10, 28, 46, 64, 82, 100],
   "Eureka Pyros": [10, 28, 46, 64, 82, 100],
   "Eureka Hydatos": [12, 34, 56, 78, 100],
+  "The Crystarium": [20, 60, 75, 85, 95, 100],
+  "Eulmore": [10, 20, 30, 45, 85, 100],
+  "Lakeland": [20, 60, 75, 85, 95, 100],
+  "Kholusia": [10, 20, 30, 45, 85, 100],
+  "Amh Araeng": [45, 60, 70, 80, 100],
+  "Il Mheg": [10, 20, 35, 45, 60, 100],
+  "The Rak'tika Greatwood": [10, 20, 30, 45, 85, 100],
+  "The Tempest": [20, 80, 100],
 };
 
 export type Zone = keyof typeof zoneWeathers;
