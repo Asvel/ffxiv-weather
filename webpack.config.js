@@ -25,8 +25,8 @@ module.exports = function (env, argv) {
                 require('postcss-preset-env')(),
                 prod && require('cssnano')(),
               ].filter(Boolean),
-            }
-          }]
+            },
+          }],
         },
       ]
     },
@@ -37,15 +37,11 @@ module.exports = function (env, argv) {
       }),
     ],
     devtool: !prod && 'cheap-source-map',
-    stats: {
-      children: false,
-      maxModules: 0,
-    },
-    serve: {
-      devMiddleware: {
-        logLevel: 'warn',
-      },
-      hotClient: false,
+    stats: 'errors-warnings',
+    devServer: {
+      contentBase: false,
+      injectClient: false,
+      injectHot: false,
     },
   };
 };
