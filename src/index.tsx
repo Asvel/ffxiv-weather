@@ -241,11 +241,11 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         <div className="footer">
-          © 2019 Asvel
+          {_t('FFXIV Weather Bell')} 2009a
           <span className="footer_separator">·</span>
           <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">License</a>
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather-bell">Fork</a>
+          <a href="https://github.com/Asvel/ffxiv-weather-bell">Code</a>
         </div>
       </div>
     );

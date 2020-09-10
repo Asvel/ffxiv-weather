@@ -59,7 +59,7 @@ export default {
   "The Crystarium": "水晶都",
   "Eulmore": "游末邦",
   "Lakeland": "雷克兰德",
-  "Kholusia": "珂露西亚岛",
+  "Kholusia": "珂露西亚",
   "Amh Araeng": "安穆艾兰",
   "Il Mheg": "伊尔美格",
   "The Rak'tika Greatwood": "LaHee",
