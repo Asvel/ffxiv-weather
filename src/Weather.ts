@@ -135,7 +135,7 @@ export type Match = { begin: Date, end: Date, duration: number, weathers: string
 export let state: {
   start: number,
   weathers: { [index in Zone] : number[] },
-  getter: (zone: Zone, i: number, j: number) => Match,
+  getter: (zone: Zone, i: number, j: number, skipWeatherList?: boolean) => Match,
   buffer: (boolean | undefined)[],
 };
 
@@ -159,11 +159,11 @@ export function init(): void {
     }
   }
 
-  let getter = (zone: Zone, i: number, j: number) => ({
+  let getter = (zone: Zone, i: number, j: number, skipWeatherList?: boolean) => ({
     begin: new Date(start + i * 175 * 1000),
     end: new Date(start + j * 175 * 1000 - 1),
     duration: j - i,
-    weathers: weathers[zone]
+    weathers: skipWeatherList ? [] : weathers[zone]
       .slice(Math.floor(i / 8) - 1, Math.floor((j - 1) / 8) + 1)
       .map(w => zoneWeathers[zone][w]),
   });
@@ -192,7 +192,7 @@ export function find(condition: {
   hourMask?: Mask,
   beginHour?: number,
   endHour?: number,
-}): (() => Match)[] {
+}): ((skipWeatherList?: boolean) => Match)[] {
   init();
 
   let zone = condition.zone;

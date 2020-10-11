@@ -8,6 +8,8 @@ export default {
   "Any": "任意",
   "Local Time": "本地时间",
   "Eorzea Time": "艾欧泽亚时间",
+  "Start Time": "开始时间",
+  "End Time": "结束时间",
   "Weathers": "天气",
   "Show more": "显示更多",
 

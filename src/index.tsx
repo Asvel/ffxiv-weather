@@ -12,6 +12,7 @@ const format = (template: string, args: { [index: string]: string | number }): s
   template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
 
 interface Condition {
+  event: keyof typeof events | null;
   zone: W.Zone | null,
   desiredWeathers: number[],
   previousWeathers: number[],
@@ -34,7 +35,43 @@ class App extends React.Component<any, AppState> {
     };
   }
   render() {
-    let { zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour, showCount } = this.state;
+    let { event, zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour, showCount } = this.state;
+    if (event !== null) {
+      const matches = events[event].matcher();
+      return (
+        <div className="app">
+          <div className="console clearfix">
+          <span className="console_summary">
+            {events[event].description}
+          </span>
+          </div>
+          <div className="match">
+            <table>
+              <thead>
+              <tr>
+                <th className="match_event-start-time">{_t('Start Time')}</th>
+                <th className="match_event-end-time">{_t('End Time')}</th>
+              </tr>
+              </thead>
+              <tbody>
+              {matches.slice(0, 20).map((x, i) => (
+                <tr key={i}>
+                  <td className="match_event-start-time">
+                    <span className="match_local-time-date">{strftime('%m/%d ', x.begin)}</span>
+                    <FriendlyTime date={x.begin} />
+                  </td>
+                  <td className="match_event-end-time">
+                    <span className="match_local-time-date">{strftime('%m/%d ', x.end)}</span>
+                    <FriendlyTime date={x.end} />
+                  </td>
+                </tr>
+              ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    }
     let matches = zone ? W.find({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) : [];
     let list = zone && matches.length === 1 ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
     return (
@@ -241,7 +278,7 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         <div className="footer">
-          {_t('FFXIV Weather Bell')} 2009a
+          {_t('FFXIV Weather Bell')} 2010a
           <span className="footer_separator">·</span>
           <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">License</a>
           <span className="footer_separator">·</span>
@@ -323,7 +360,7 @@ const groupedZones: W.Zone[][] = [
 ];
 
 let zoneShorthands = {} as { [index in W.Zone]: string };
-let shorthandZones = {} as { [index: string ]: W.Zone };
+let shorthandZones = {} as { [index: string]: W.Zone };
 (() => {
   let wordCounts: { [index: string]: number }[] = [{}, {}, {}];
   let shorthands = W.zones
@@ -350,9 +387,41 @@ let shorthandZones = {} as { [index: string ]: W.Zone };
   }
 })();
 
+const events = {
+  garlok: {
+    description: _t('伽洛克 - 天气保持薄雾、碧空、晴朗、阴云200分钟时开始，不再是这些天气时结束。'),
+    matcher: () => W
+      .find({
+        zone: "Eastern La Noscea",
+        desiredWeathers: [0, 1, 2, 3],
+      })
+      .map(m => {
+        const match = m(true);
+        match.begin.setMinutes(match.begin.getMinutes() + 200);
+        return match;
+      })
+      .filter(m => m.begin < m.end),
+  },
+  laideronnette: {
+    description: _t('雷德罗巨蛇 - 天气保持小雨30分钟时开始，天气不再是小雨时结束。'),
+    matcher: () => W
+      .find({
+        zone: "Central Shroud",
+        desiredWeathers: [1],
+      })
+      .map(m => {
+        const match = m(true);
+        match.begin.setMinutes(match.begin.getMinutes() + 30);
+        return match;
+      })
+      .filter(m => m.begin < m.end),
+  },
+};
+
 function parseHash(hash: string): Condition {
   let [ zone, desiredWeathers, previousWeathers, beginHour, endHour ] = hash.slice(1).split('-');
   return {
+    event: zone in events ? zone as any : null,
     zone: shorthandZones[zone] || null,
     desiredWeathers: desiredWeathers ? desiredWeathers.split('').map(Number) : [],
     previousWeathers: previousWeathers ? previousWeathers.split('').map(Number) : [],
@@ -361,6 +430,7 @@ function parseHash(hash: string): Condition {
   };
 }
 function formatHash(condition: Condition): string {
+  if (condition.event !== null) return '#' + condition.event;
   if (!condition.zone) return '';
   let zone = zoneShorthands[condition.zone];
   let desiredWeathers = condition.desiredWeathers.sort().join('');

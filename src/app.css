@@ -222,6 +222,9 @@ button:active {
 .match .match_eorzea-time {
   width: 28%;
 }
+.match .match_event-start-time {
+  width: 156px;
+}
 
 .match_local-time-date {
   margin-right: 2px;
