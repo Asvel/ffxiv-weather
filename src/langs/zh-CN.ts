@@ -58,6 +58,7 @@ export default {
   "Eureka Pagos": "恒冰",
   "Eureka Pyros": "涌火",
   "Eureka Hydatos": "丰水",
+  "Bozjan Southern Front": "博兹雅战线",
   "The Crystarium": "水晶都",
   "Eulmore": "游末邦",
   "Lakeland": "雷克兰德",
