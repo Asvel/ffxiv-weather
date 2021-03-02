@@ -1,32 +1,52 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = function (env, argv) {
   const prod = argv && argv.mode === 'production';
   return {
-    mode: prod ? 'production' : 'none',
+    mode: prod ? 'production' : 'development',
     entry: './src/index.tsx',
     output: {
-      filename: prod ? 'bundle-[hash:8].js' : 'bundle.js',
-      path: __dirname + '/dist'
+      filename: prod ? 'bundle.[contenthash].js' : 'bundle.js',
+      hashDigestLength: 10,
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js']
     },
     module: {
       rules: [
-        { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+        {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'ts-loader',
+              options: {
+                transpileOnly: true,
+                compilerOptions: {
+                  jsx: prod ? 'react-jsx' : 'react-jsxdev',
+                },
+              },
+            },
+          ],
+        },
         {
           test: /\.css$/,
-          use: ['style-loader', {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: [
-                require('postcss-preset-env')(),
-                prod && require('cssnano')(),
-              ].filter(Boolean),
+          use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    ['postcss-preset-env', { features: { 'case-insensitive-attributes': false } }],
+                    prod && 'cssnano',
+                  ].filter(Boolean),
+                },
+              },
             },
-          }],
+          ],
         },
       ]
     },
@@ -35,13 +55,25 @@ module.exports = function (env, argv) {
         template: './src/index.html',
         favicon: './src/favicon.png',
       }),
+      new ForkTsCheckerWebpackPlugin({
+        async: !prod,
+        logger: {
+          issues: 'webpack-infrastructure',
+        },
+      }),
     ],
+    stats: {
+      preset: 'errors-warnings',
+      builtAt: true,
+      timings: true,
+    },
     devtool: !prod && 'cheap-source-map',
-    stats: 'errors-warnings',
     devServer: {
-      contentBase: false,
+      hot: false,
+      liveReload: false,
       injectClient: false,
       injectHot: false,
+      static: false,
     },
   };
 };
