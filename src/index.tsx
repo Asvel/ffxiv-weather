@@ -26,16 +26,16 @@ interface AppState extends Condition {
 }
 
 class App extends React.Component<any, AppState> {
-  constructor(props: any) {
+  public constructor(props: any) {
     super(props);
     this.state = {
-      ...parseHash(location.hash),
+      ...parseHash(window.location.hash),
       hoverHour: null,
       showCount: 11,
     };
   }
-  render() {
-    let { event, zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour, showCount } = this.state;
+  public render() {
+    const { event, zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour, showCount } = this.state;
     if (event !== null) {
       const matches = events[event].matcher();
       return (
@@ -72,8 +72,8 @@ class App extends React.Component<any, AppState> {
         </div>
       );
     }
-    let matches = zone ? W.find({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) : [];
-    let list = zone && matches.length === 1 ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
+    const matches = zone ? W.find({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) : [];
+    const list = zone && matches.length === 1 ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
     return (
       <div className="app">
         <div className="condition">
@@ -102,7 +102,7 @@ class App extends React.Component<any, AppState> {
               </span>
             ))}
           </div>
-          {zone && <React.Fragment>
+          {zone && <>
             <div className="condition_weather">
               <span className="condition-title">
                 {_t('Weather')}
@@ -167,7 +167,7 @@ class App extends React.Component<any, AppState> {
                     className={classNames(
                       'condition_time-item',
                       W.isHourIn(beginHour, endHour, i) && '-active',
-                      hoverHour !== null && W.isHourIn(beginHour, hoverHour, i) && '-hover'
+                      hoverHour !== null && W.isHourIn(beginHour, hoverHour, i) && '-hover',
                     )}
                     onClick={() => {
                       if (hoverHour === null) {
@@ -193,7 +193,7 @@ class App extends React.Component<any, AppState> {
                 ))}
               </div>
             </div>
-          </React.Fragment>}
+          </>}
         </div>
         {matches.length > 1 && (
           <div className="console clearfix">
@@ -287,28 +287,28 @@ class App extends React.Component<any, AppState> {
       </div>
     );
   }
-  componentDidMount() {
+  public componentDidMount() {
     W.init();  // improve first searching response speed
-    window.addEventListener("hashchange", () => {
-      if (formatHash(this.state) !== location.hash) {
-        this.setState(parseHash(location.hash));
+    window.addEventListener('hashchange', () => {
+      if (formatHash(this.state) !== window.location.hash) {
+        this.setState(parseHash(window.location.hash));
       }
     }, false);
   }
-  componentDidUpdate() {
-    location.hash = formatHash(this.state);
+  public componentDidUpdate() {
+    window.location.hash = formatHash(this.state);
   }
 }
 
 class FriendlyTime extends React.Component<{ date: Date }> {
-  render() {
-    let { date } = this.props;
+  public render() {
+    const { date } = this.props;
     return (
-      <React.Fragment>
+      <>
         <span>{strftime('%H:%M', date)}</span>
         <span className="friendly-time_seconds">{strftime(':%S', date)}</span>
-      </React.Fragment>
-    )
+      </>
+    );
   }
 }
 
@@ -319,9 +319,9 @@ interface WeathersProps {
 }
 
 class Weathers extends React.Component<WeathersProps> {
-  render() {
+  public render() {
     let { weathers, max, className } = this.props;
-    className = classNames(className, "weathers");
+    className = classNames(className, 'weathers');
     return weathers.length <= max ? (
       <span className={className}>
         {weathers.map((x, i) => (
@@ -341,30 +341,30 @@ class Weathers extends React.Component<WeathersProps> {
 }
 
 const groupedZones: W.Zone[][] = [
-  ["Limsa Lominsa", "Middle La Noscea", "Lower La Noscea", "Eastern La Noscea",
-    "Western La Noscea", "Upper La Noscea", "Outer La Noscea", "The Mist"],
-  ["Gridania", "Central Shroud", "East Shroud", "South Shroud", "North Shroud",
-    "The Lavender Beds"],
-  ["Ul'dah", "Western Thanalan", "Central Thanalan", "Eastern Thanalan",
-    "Southern Thanalan", "Northern Thanalan", "The Goblet"],
-  ["Ishgard", "Coerthas Central Highlands", "Coerthas Western Highlands"],
-  ["The Sea of Clouds", "Azys Lla", "The Diadem"],
-  ["Idyllshire", "The Dravanian Forelands", "The Dravanian Hinterlands", "The Churning Mists"],
-  ["Rhalgr's Reach", "The Fringes", "The Peaks", "The Lochs"],
-  ["Kugane", "Shirogane"],
-  ["The Ruby Sea", "Yanxia", "The Azim Steppe"],
-  ["The Crystarium", "Eulmore", "Lakeland", "Kholusia", "Amh Araeng", "Il Mheg",
-    "The Rak'tika Greatwood", "The Tempest"],
-  ["Mor Dhona"],
-  ["Eureka Anemos", "Eureka Pagos", "Eureka Pyros", "Eureka Hydatos"],
-  ["Bozjan Southern Front"],
+  ['Limsa Lominsa', 'Middle La Noscea', 'Lower La Noscea', 'Eastern La Noscea',
+    'Western La Noscea', 'Upper La Noscea', 'Outer La Noscea', 'The Mist'],
+  ['Gridania', 'Central Shroud', 'East Shroud', 'South Shroud', 'North Shroud',
+    'The Lavender Beds'],
+  ['Ul\'dah', 'Western Thanalan', 'Central Thanalan', 'Eastern Thanalan',
+    'Southern Thanalan', 'Northern Thanalan', 'The Goblet'],
+  ['Ishgard', 'Coerthas Central Highlands', 'Coerthas Western Highlands'],
+  ['The Sea of Clouds', 'Azys Lla', 'The Diadem'],
+  ['Idyllshire', 'The Dravanian Forelands', 'The Dravanian Hinterlands', 'The Churning Mists'],
+  ['Rhalgr\'s Reach', 'The Fringes', 'The Peaks', 'The Lochs'],
+  ['Kugane', 'Shirogane'],
+  ['The Ruby Sea', 'Yanxia', 'The Azim Steppe'],
+  ['The Crystarium', 'Eulmore', 'Lakeland', 'Kholusia', 'Amh Araeng', 'Il Mheg',
+    'The Rak\'tika Greatwood', 'The Tempest'],
+  ['Mor Dhona'],
+  ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
+  ['Bozjan Southern Front'],
 ];
 
-let zoneShorthands = {} as { [index in W.Zone]: string };
-let shorthandZones = {} as { [index: string]: W.Zone };
+const zoneShorthands = {} as { [index in W.Zone]: string };
+const shorthandZones = {} as { [index: string]: W.Zone };
 (() => {
-  let wordCounts: { [index: string]: number }[] = [{}, {}, {}];
-  let shorthands = W.zones
+  const wordCounts: { [index: string]: number }[] = [{}, {}, {}];
+  const shorthands = W.zones
     .map(zone => {
       let parts = zone.replace(/[^\w ]/g, '').split(' ');
       parts = parts[0] === 'The' ? parts.slice(1) : parts;
@@ -393,7 +393,7 @@ const events = {
     description: _t('伽洛克 - 天气保持薄雾、碧空、晴朗、阴云200分钟时开始，不再是这些天气时结束。'),
     matcher: () => W
       .find({
-        zone: "Eastern La Noscea",
+        zone: 'Eastern La Noscea',
         desiredWeathers: [0, 1, 2, 3],
       })
       .map(m => {
@@ -407,7 +407,7 @@ const events = {
     description: _t('雷德罗巨蛇 - 天气保持小雨30分钟时开始，天气不再是小雨时结束。'),
     matcher: () => W
       .find({
-        zone: "Central Shroud",
+        zone: 'Central Shroud',
         desiredWeathers: [1],
       })
       .map(m => {
@@ -420,7 +420,7 @@ const events = {
 };
 
 function parseHash(hash: string): Condition {
-  let [ zone, desiredWeathers, previousWeathers, beginHour, endHour ] = hash.slice(1).split('-');
+  const [ zone, desiredWeathers, previousWeathers, beginHour, endHour ] = hash.slice(1).split('-');
   return {
     event: zone in events ? zone as any : null,
     zone: shorthandZones[zone] || null,
@@ -433,17 +433,17 @@ function parseHash(hash: string): Condition {
 function formatHash(condition: Condition): string {
   if (condition.event !== null) return '#' + condition.event;
   if (!condition.zone) return '';
-  let zone = zoneShorthands[condition.zone];
-  let desiredWeathers = condition.desiredWeathers.sort().join('');
-  let previousWeathers = condition.previousWeathers.sort().join('');
-  let parts = [zone, desiredWeathers, previousWeathers, condition.beginHour, condition.endHour];
-  let defaults = [null, '', '', 0, 23];
+  const zone = zoneShorthands[condition.zone];
+  const desiredWeathers = condition.desiredWeathers.sort((a, b) => a - b).join('');
+  const previousWeathers = condition.previousWeathers.sort((a, b) => a - b).join('');
+  const parts = [zone, desiredWeathers, previousWeathers, condition.beginHour, condition.endHour];
+  const defaults = [null, '', '', 0, 23];
   while (parts[parts.length - 1] === defaults[parts.length - 1]) parts.length--;
   return '#' + parts.join('-');
 }
 
 function toggleWeather(weathers: number[], weather: number): number[] {
-  let index = weathers.indexOf(weather);
+  const index = weathers.indexOf(weather);
   if (index === -1) {
     return weathers.concat([weather]);
   } else {
@@ -451,24 +451,24 @@ function toggleWeather(weathers: number[], weather: number): number[] {
   }
 }
 
-let padZero = (n: number) => n < 10 ? '0' + n : n;
+const padZero = (n: number) => n < 10 ? '0' + n : n;
 function formatEorzeaDate(date: Date): string {
-  let dayCount = Math.floor(+date / (1000 * 175 * 24));
-  let day = dayCount % 32;
-  let monthCount = Math.floor(dayCount / 32);
-  let month = monthCount % 12;
+  const dayCount = Math.floor(date.valueOf() / (1000 * 175 * 24));
+  const day = dayCount % 32;
+  const monthCount = Math.floor(dayCount / 32);
+  const month = monthCount % 12;
   return `${padZero(month + 1)}/${padZero(day + 1)}`;
 }
 function formatEorzeaTime(date: Date): string {
-  let minuteCount = Math.floor(+date / (1000 * 175) * 60);
-  let minute = minuteCount % 60;
-  let hourCount = Math.floor(minuteCount / 60);
-  let hour = hourCount % 24;
+  const minuteCount = Math.floor(date.valueOf() / (1000 * 175) * 60);
+  const minute = minuteCount % 60;
+  const hourCount = Math.floor(minuteCount / 60);
+  const hour = hourCount % 24;
   return `${padZero(hour)}:${padZero(minute)}`;
 }
 
 document.title = _t('FFXIV Weather Bell');
 
-let container = document.createElement('div');
+const container = document.createElement('div');
 document.body.appendChild(container);
 ReactDOM.render(<App />, container);

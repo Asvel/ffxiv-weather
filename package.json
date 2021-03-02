@@ -13,7 +13,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode=production",
-    "publish": "node publish.js"
+    "publish": "node publish.js",
+    "lint": "eslint --ext .js,.ts,.tsx ."
   },
   "dependencies": {
     "@types/classnames": "^2.2.11",
@@ -27,8 +28,15 @@
     "strftime": "^0.10.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "confusing-browser-globals": "^1.0.10",
     "css-loader": "^5.0.1",
     "cssnano": "^4.1.10",
+    "eslint": "^7.18.0",
+    "eslint-config-alloy": "^3.10.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "fork-ts-checker-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^5.0.0-beta.6",
     "postcss-loader": "^4.2.0",

@@ -11,7 +11,7 @@ module.exports = function (env, argv) {
       hashDigestLength: 10,
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js']
+      extensions: ['.ts', '.tsx', '.js'],
     },
     module: {
       rules: [
@@ -48,7 +48,7 @@ module.exports = function (env, argv) {
             },
           ],
         },
-      ]
+      ],
     },
     plugins: [
       new HtmlWebpackPlugin({
