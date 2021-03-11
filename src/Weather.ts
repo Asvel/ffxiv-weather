@@ -1,121 +1,69 @@
 
-export const zoneWeathers = {
-  'Limsa Lominsa': ['Clouds', 'Clear Skies', 'Fair Skies', 'Fog', 'Rain'],
-  'Middle La Noscea': ['Clouds', 'Clear Skies', 'Fair Skies', 'Wind', 'Fog', 'Rain'],
-  'Lower La Noscea': ['Clouds', 'Clear Skies', 'Fair Skies', 'Wind', 'Fog', 'Rain'],
-  'Eastern La Noscea': ['Fog', 'Clear Skies', 'Fair Skies', 'Clouds', 'Rain', 'Showers'],
-  'Western La Noscea': ['Fog', 'Clear Skies', 'Fair Skies', 'Clouds', 'Wind', 'Gales'],
-  'Upper La Noscea': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Thunder', 'Thunderstorms'],
-  'Outer La Noscea': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain'],
-  'The Mist': ['Clouds', 'Clear Skies', 'Fair Skies', 'Fair Skies', 'Fog', 'Rain'],
-  'Gridania': ['Rain', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies', 'Fair Skies'],
-  'Central Shroud': ['Thunder', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies', 'Fair Skies'],
-  'East Shroud': ['Thunder', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies', 'Fair Skies'],
-  'South Shroud': ['Fog', 'Thunderstorms', 'Thunder', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'North Shroud': ['Fog', 'Showers', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'The Lavender Beds': ['Clouds', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies', 'Fair Skies'],
-  'Ul\'dah': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain'],
-  'Western Thanalan': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain'],
-  'Central Thanalan': ['Dust Storms', 'Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain'],
-  'Eastern Thanalan': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain', 'Showers'],
-  'Southern Thanalan': ['Heat Waves', 'Clear Skies', 'Fair Skies', 'Clouds', 'Fog'],
-  'Northern Thanalan': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog'],
-  'The Goblet': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain'],
-  'Ishgard': ['Snow', 'Fair Skies', 'Clear Skies', 'Clouds', 'Fog'],
-  'Coerthas Central Highlands': ['Blizzards', 'Snow', 'Fair Skies', 'Clear Skies', 'Clouds', 'Fog'],
-  'Coerthas Western Highlands': ['Blizzards', 'Snow', 'Fair Skies', 'Clear Skies', 'Clouds', 'Fog'],
-  'The Sea of Clouds': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Wind', 'Umbral Wind'],
-  'Azys Lla': ['Fair Skies', 'Clouds', 'Thunder'],
-  'The Diadem': ['Fair Skies', 'Fog', 'Wind', 'Umbral Wind'],
-  'Idyllshire': ['Clouds', 'Fog', 'Rain', 'Showers', 'Clear Skies', 'Fair Skies'],
-  'The Dravanian Forelands': ['Clouds', 'Fog', 'Thunder', 'Dust Storms', 'Clear Skies', 'Fair Skies'],
-  'The Dravanian Hinterlands': ['Clouds', 'Fog', 'Rain', 'Showers', 'Clear Skies', 'Fair Skies'],
-  'The Churning Mists': ['Clouds', 'Gales', 'Umbral Static', 'Clear Skies', 'Fair Skies'],
-  'Mor Dhona': ['Clouds', 'Fog', 'Gloom', 'Clear Skies', 'Fair Skies'],
-  'Rhalgr\'s Reach': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Thunder'],
-  'The Fringes': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Thunder'],
-  'The Peaks': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Wind', 'Dust Storms'],
-  'The Lochs': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Thunderstorms'],
-  'Kugane': ['Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'Shirogane': ['Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'The Ruby Sea': ['Thunder', 'Wind', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'Yanxia': ['Showers', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'The Azim Steppe': ['Gales', 'Wind', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'Eureka Anemos': ['Fair Skies', 'Gales', 'Showers', 'Snow'],
-  'Eureka Pagos': ['Clear Skies', 'Fog', 'Heat Waves', 'Snow', 'Thunder', 'Blizzards'],
-  'Eureka Pyros': ['Fair Skies', 'Heat Waves', 'Thunder', 'Blizzards', 'Umbral Wind', 'Snow'],
-  'Eureka Hydatos': ['Fair Skies', 'Showers', 'Gloom', 'Thunderstorms', 'Snow'],
-  'Bozjan Southern Front': ['Fair Skies', 'Rain', 'Wind', 'Thunder', 'Dust Storms'],
-  'The Crystarium': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain', 'Thunderstorms'],
-  'Eulmore': ['Gales', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'Lakeland': ['Clear Skies', 'Fair Skies', 'Clouds', 'Fog', 'Rain', 'Thunderstorms'],
-  'Kholusia': ['Gales', 'Rain', 'Fog', 'Clouds', 'Fair Skies', 'Clear Skies'],
-  'Amh Araeng': ['Fair Skies', 'Clouds', 'Dust Storms', 'Heat Waves', 'Clear Skies'],
-  'Il Mheg': ['Rain', 'Fog', 'Clouds', 'Thunderstorms', 'Clear Skies', 'Fair Skies'],
-  'The Rak\'tika Greatwood': ['Fog', 'Rain', 'Umbral Wind', 'Clear Skies', 'Fair Skies', 'Clouds'],
-  'The Tempest': ['Clouds', 'Fair Skies', 'Clear Skies'],
+export const data = {
+  'Limsa Lominsa': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 80, 'Fog', 90, 'Rain'],
+  'Middle La Noscea': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Wind', 80, 'Fog', 90, 'Rain'],
+  'Lower La Noscea': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Wind', 80, 'Fog', 90, 'Rain'],
+  'Eastern La Noscea': ['Fog', 5, 'Clear Skies', 50, 'Fair Skies', 80, 'Clouds', 90, 'Rain', 95, 'Showers'],
+  'Western La Noscea': ['Fog', 10, 'Clear Skies', 40, 'Fair Skies', 60, 'Clouds', 80, 'Wind', 90, 'Gales'],
+  'Upper La Noscea': ['Clear Skies', 30, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 80, 'Thunder', 90, 'Thunderstorms'],
+  'Outer La Noscea': ['Clear Skies', 30, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 85, 'Rain'],
+  'The Mist': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Fair Skies', 80, 'Fog', 90, 'Rain'],
+  'Gridania': ['Rain', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
+  'Central Shroud': ['Thunder', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
+  'East Shroud': ['Thunder', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
+  'South Shroud': ['Fog', 5, 'Thunderstorms', 10, 'Thunder', 25, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 70, 'Clear Skies'],
+  'North Shroud': ['Fog', 5, 'Showers', 10, 'Rain', 25, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 70, 'Clear Skies'],
+  'The Lavender Beds': ['Clouds', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
+  'Ul\'dah': ['Clear Skies', 40, 'Fair Skies', 60, 'Clouds', 85, 'Fog', 95, 'Rain'],
+  'Western Thanalan': ['Clear Skies', 40, 'Fair Skies', 60, 'Clouds', 85, 'Fog', 95, 'Rain'],
+  'Central Thanalan': ['Dust Storms', 15, 'Clear Skies', 55, 'Fair Skies', 75, 'Clouds', 85, 'Fog', 95, 'Rain'],
+  'Eastern Thanalan': ['Clear Skies', 40, 'Fair Skies', 60, 'Clouds', 70, 'Fog', 80, 'Rain', 85, 'Showers'],
+  'Southern Thanalan': ['Heat Waves', 20, 'Clear Skies', 60, 'Fair Skies', 80, 'Clouds', 90, 'Fog'],
+  'Northern Thanalan': ['Clear Skies', 5, 'Fair Skies', 20, 'Clouds', 50, 'Fog'],
+  'The Goblet': ['Clear Skies', 40, 'Fair Skies', 60, 'Clouds', 85, 'Fog', 95, 'Rain'],
+  'Ishgard': ['Snow', 60, 'Fair Skies', 70, 'Clear Skies', 75, 'Clouds', 90, 'Fog'],
+  'Coerthas Central Highlands': ['Blizzards', 20, 'Snow', 60, 'Fair Skies', 70, 'Clear Skies', 75, 'Clouds', 90, 'Fog'],
+  'Coerthas Western Highlands': ['Blizzards', 20, 'Snow', 60, 'Fair Skies', 70, 'Clear Skies', 75, 'Clouds', 90, 'Fog'],
+  'The Sea of Clouds': ['Clear Skies', 30, 'Fair Skies', 60, 'Clouds', 70, 'Fog', 80, 'Wind', 90, 'Umbral Wind'],
+  'Azys Lla': ['Fair Skies', 35, 'Clouds', 70, 'Thunder'],
+  'The Diadem': ['Fair Skies', 30, 'Fog', 60, 'Wind', 90, 'Umbral Wind'],
+  'Idyllshire': ['Clouds', 10, 'Fog', 20, 'Rain', 30, 'Showers', 40, 'Clear Skies', 70, 'Fair Skies'],
+  'The Dravanian Forelands': ['Clouds', 10, 'Fog', 20, 'Thunder', 30, 'Dust Storms', 40, 'Clear Skies', 70, 'Fair Skies'],
+  'The Dravanian Hinterlands': ['Clouds', 10, 'Fog', 20, 'Rain', 30, 'Showers', 40, 'Clear Skies', 70, 'Fair Skies'],
+  'The Churning Mists': ['Clouds', 10, 'Gales', 20, 'Umbral Static', 40, 'Clear Skies', 70, 'Fair Skies'],
+  'Mor Dhona': ['Clouds', 15, 'Fog', 30, 'Gloom', 60, 'Clear Skies', 75, 'Fair Skies'],
+  'Rhalgr\'s Reach': ['Clear Skies', 15, 'Fair Skies', 60, 'Clouds', 80, 'Fog', 90, 'Thunder'],
+  'The Fringes': ['Clear Skies', 15, 'Fair Skies', 60, 'Clouds', 80, 'Fog', 90, 'Thunder'],
+  'The Peaks': ['Clear Skies', 10, 'Fair Skies', 60, 'Clouds', 75, 'Fog', 85, 'Wind', 95, 'Dust Storms'],
+  'The Lochs': ['Clear Skies', 20, 'Fair Skies', 60, 'Clouds', 80, 'Fog', 90, 'Thunderstorms'],
+  'Kugane': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies', 80, 'Clear Skies'],
+  'Shirogane': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies', 80, 'Clear Skies'],
+  'The Ruby Sea': ['Thunder', 10, 'Wind', 20, 'Clouds', 35, 'Fair Skies', 75, 'Clear Skies'],
+  'Yanxia': ['Showers', 5, 'Rain', 15, 'Fog', 25, 'Clouds', 40, 'Fair Skies', 80, 'Clear Skies'],
+  'The Azim Steppe': ['Gales', 5, 'Wind', 10, 'Rain', 17, 'Fog', 25, 'Clouds', 35, 'Fair Skies', 75, 'Clear Skies'],
+  'Eureka Anemos': ['Fair Skies', 30, 'Gales', 60, 'Showers', 90, 'Snow'],
+  'Eureka Pagos': ['Clear Skies', 10, 'Fog', 28, 'Heat Waves', 46, 'Snow', 64, 'Thunder', 82, 'Blizzards'],
+  'Eureka Pyros': ['Fair Skies', 10, 'Heat Waves', 28, 'Thunder', 46, 'Blizzards', 64, 'Umbral Wind', 82, 'Snow'],
+  'Eureka Hydatos': ['Fair Skies', 12, 'Showers', 34, 'Gloom', 56, 'Thunderstorms', 78, 'Snow'],
+  'Bozjan Southern Front': ['Fair Skies', 52, 'Rain', 64, 'Wind', 76, 'Thunder', 88, 'Dust Storms'],
+  'The Crystarium': ['Clear Skies', 20, 'Fair Skies', 60, 'Clouds', 75, 'Fog', 85, 'Rain', 95, 'Thunderstorms'],
+  'Eulmore': ['Gales', 10, 'Rain', 20, 'Fog', 30, 'Clouds', 45, 'Fair Skies', 85, 'Clear Skies'],
+  'Lakeland': ['Clear Skies', 20, 'Fair Skies', 60, 'Clouds', 75, 'Fog', 85, 'Rain', 95, 'Thunderstorms'],
+  'Kholusia': ['Gales', 10, 'Rain', 20, 'Fog', 30, 'Clouds', 45, 'Fair Skies', 85, 'Clear Skies'],
+  'Amh Araeng': ['Fair Skies', 45, 'Clouds', 60, 'Dust Storms', 70, 'Heat Waves', 80, 'Clear Skies'],
+  'Il Mheg': ['Rain', 10, 'Fog', 20, 'Clouds', 35, 'Thunderstorms', 45, 'Clear Skies', 60, 'Fair Skies'],
+  'The Rak\'tika Greatwood': ['Fog', 10, 'Rain', 20, 'Umbral Wind', 30, 'Clear Skies', 45, 'Fair Skies', 85, 'Clouds'],
+  'The Tempest': ['Clouds', 20, 'Fair Skies', 80, 'Clear Skies'],
 };
 
-export const zoneRates = {
-  'Limsa Lominsa': [20, 50, 80, 90, 100],
-  'Middle La Noscea': [20, 50, 70, 80, 90, 100],
-  'Lower La Noscea': [20, 50, 70, 80, 90, 100],
-  'Eastern La Noscea': [5, 50, 80, 90, 95, 100],
-  'Western La Noscea': [10, 40, 60, 80, 90, 100],
-  'Upper La Noscea': [30, 50, 70, 80, 90, 100],
-  'Outer La Noscea': [30, 50, 70, 85, 100],
-  'The Mist': [20, 50, 70, 80, 90, 100],
-  'Gridania': [5, 20, 30, 40, 55, 85, 100],
-  'Central Shroud': [5, 20, 30, 40, 55, 85, 100],
-  'East Shroud': [5, 20, 30, 40, 55, 85, 100],
-  'South Shroud': [5, 10, 25, 30, 40, 70, 100],
-  'North Shroud': [5, 10, 25, 30, 40, 70, 100],
-  'The Lavender Beds': [5, 20, 30, 40, 55, 85, 100],
-  'Ul\'dah': [40, 60, 85, 95, 100],
-  'Western Thanalan': [40, 60, 85, 95, 100],
-  'Central Thanalan': [15, 55, 75, 85, 95, 100],
-  'Eastern Thanalan': [40, 60, 70, 80, 85, 100],
-  'Southern Thanalan': [20, 60, 80, 90, 100],
-  'Northern Thanalan': [5, 20, 50, 100],
-  'The Goblet': [40, 60, 85, 95, 100],
-  'Ishgard': [60, 70, 75, 90, 100],
-  'Coerthas Central Highlands': [20, 60, 70, 75, 90, 100],
-  'Coerthas Western Highlands': [20, 60, 70, 75, 90, 100],
-  'The Sea of Clouds': [30, 60, 70, 80, 90, 100],
-  'Azys Lla': [35, 70, 100],
-  'The Diadem': [30, 60, 90, 100],
-  'Idyllshire': [10, 20, 30, 40, 70, 100],
-  'The Dravanian Forelands': [10, 20, 30, 40, 70, 100],
-  'The Dravanian Hinterlands': [10, 20, 30, 40, 70, 100],
-  'The Churning Mists': [10, 20, 40, 70, 100],
-  'Mor Dhona': [15, 30, 60, 75, 100],
-  'Rhalgr\'s Reach': [15, 60, 80, 90, 100],
-  'The Fringes': [15, 60, 80, 90, 100],
-  'The Peaks': [10, 60, 75, 85, 95, 100],
-  'The Lochs': [20, 60, 80, 90, 100],
-  'Kugane': [10, 20, 40, 80, 100],
-  'Shirogane': [10, 20, 40, 80, 100],
-  'The Ruby Sea': [10, 20, 35, 75, 100],
-  'Yanxia': [5, 15, 25, 40, 80, 100],
-  'The Azim Steppe': [5, 10, 17, 25, 35, 75, 100],
-  'Eureka Anemos': [30, 60, 90, 100],
-  'Eureka Pagos': [10, 28, 46, 64, 82, 100],
-  'Eureka Pyros': [10, 28, 46, 64, 82, 100],
-  'Eureka Hydatos': [12, 34, 56, 78, 100],
-  'Bozjan Southern Front': [52, 64, 76, 88, 100],
-  'The Crystarium': [20, 60, 75, 85, 95, 100],
-  'Eulmore': [10, 20, 30, 45, 85, 100],
-  'Lakeland': [20, 60, 75, 85, 95, 100],
-  'Kholusia': [10, 20, 30, 45, 85, 100],
-  'Amh Araeng': [45, 60, 70, 80, 100],
-  'Il Mheg': [10, 20, 35, 45, 60, 100],
-  'The Rak\'tika Greatwood': [10, 20, 30, 45, 85, 100],
-  'The Tempest': [20, 80, 100],
-};
+export type Zone = keyof typeof data;
 
-export type Zone = keyof typeof zoneWeathers;
+export const zones = Object.keys(data) as Zone[];
 
-export const zones = Object.keys(zoneWeathers) as Zone[];
+export const zoneWeathers = {} as { [index in Zone] : string[] };
+for (const zone of zones) {
+  zoneWeathers[zone] = data[zone].filter((x, i) => i % 2 === 0) as string[];
+}
 
 export function calculateForecastTarget(timestamp: number): number {
   // Thanks to Rogueadyn's SaintCoinach library for this calculation.
@@ -150,14 +98,22 @@ export function init(): void {
   if (state !== undefined && start === state.start) return;
 
   const futureET = Math.ceil(future * 24 * 60 * 60 / 175 / 8) + 1;
-  const weathers = {} as typeof state.weathers;
+  const forecasts = new Array(futureET);
   for (let i = 0; i < futureET; i++) {
-    const target = calculateForecastTarget(start + weatherDuration * i);
-    for (const zone of zones) {
-      let j = 0;
-      while (target >= zoneRates[zone][j]) j++;
-      if (!weathers[zone]) weathers[zone] = new Array(futureET);
-      weathers[zone][i] = j;
+    forecasts[i] = calculateForecastTarget(start + weatherDuration * i);
+  }
+
+  const weathers = {} as typeof state.weathers;
+  for (const zone of zones) {
+    const forecastWeathers: number[] = new Array(100);
+    let forecast = 0;
+    for (let i = 0; i < 100; i++) {
+      if (i === data[zone][forecast * 2 + 1]) forecast++;
+      forecastWeathers[i] = forecast;
+    }
+    weathers[zone] = new Array(futureET);
+    for (let i = 0; i < futureET; i++) {
+      weathers[zone][i] = forecastWeathers[forecasts[i]];
     }
   }
 
@@ -199,9 +155,9 @@ export function find(condition: {
 
   const zone = condition.zone;
   const desiredWeatherMask = condition.desiredWeatherMask ??
-    zoneRates[zone].map((x, i) => hasWeather(condition.desiredWeathers, i));
+    zoneWeathers[zone].map((x, i) => hasWeather(condition.desiredWeathers, i));
   const previousWeatherMask = condition.previousWeatherMask ??
-    zoneRates[zone].map((x, i) => hasWeather(condition.previousWeathers, i));
+    zoneWeathers[zone].map((x, i) => hasWeather(condition.previousWeathers, i));
   const weathers = state.weathers[zone];
 
   const hourMask = condition.hourMask ?? Array.from({ length: 24 }, (x, i) => isHourIn(
