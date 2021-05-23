@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as strftime from 'strftime';
+import * as strftimeLT from 'strftime';
 import * as classNames from 'classnames';
 import * as W from './Weather';
 import langs from './langs/zh-CN';
@@ -10,6 +10,8 @@ import './app.css';
 const _t = (s: string) => langs[s] || s;
 const format = (template: string, args: { [index: string]: string | number }): string =>
   template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
+
+let strftime = strftimeLT;
 
 interface Condition {
   event: keyof typeof events | null;
@@ -36,14 +38,15 @@ class App extends React.Component<any, AppState> {
   }
   public render() {
     const { event, zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour, showCount } = this.state;
+    strftime = strftimeLT;
     if (event !== null) {
+      strftime = strftime.timezone(+480) as any;
       const matches = events[event].matcher();
       return (
         <div className="app">
           <div className="console clearfix">
-          <span className="console_summary">
-            {events[event].description}
-          </span>
+            <span className="console_summary">{events[event].description}</span>
+            <span className="console_timezone">UTC+08:00</span>
           </div>
           <div className="match">
             <table>

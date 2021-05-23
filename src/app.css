@@ -178,6 +178,9 @@ button:active {
 .console_summary {
   display: inline-block;
 }
+.console_timezone {
+  float: right;
+}
 
 .match {
   margin-top: 6px;
