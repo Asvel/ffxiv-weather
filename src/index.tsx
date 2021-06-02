@@ -360,7 +360,7 @@ const groupedZones: W.Zone[][] = [
     'The Rak\'tika Greatwood', 'The Tempest'],
   ['Mor Dhona'],
   ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
-  ['Bozjan Southern Front'],
+  ['Bozjan Southern Front', 'Zadnor'],
 ];
 
 const zoneShorthands = {} as { [index in W.Zone]: string };

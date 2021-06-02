@@ -46,6 +46,7 @@ export const data = {
   'Eureka Pyros': ['Fair Skies', 10, 'Heat Waves', 28, 'Thunder', 46, 'Blizzards', 64, 'Umbral Wind', 82, 'Snow'],
   'Eureka Hydatos': ['Fair Skies', 12, 'Showers', 34, 'Gloom', 56, 'Thunderstorms', 78, 'Snow'],
   'Bozjan Southern Front': ['Fair Skies', 52, 'Rain', 64, 'Wind', 76, 'Thunder', 88, 'Dust Storms'],
+  'Zadnor': ['Fair Skies', 60, 'Rain', 70, 'Wind', 80, 'Thunder', 90, 'Snow'],
   'The Crystarium': ['Clear Skies', 20, 'Fair Skies', 60, 'Clouds', 75, 'Fog', 85, 'Rain', 95, 'Thunderstorms'],
   'Eulmore': ['Gales', 10, 'Rain', 20, 'Fog', 30, 'Clouds', 45, 'Fair Skies', 85, 'Clear Skies'],
   'Lakeland': ['Clear Skies', 20, 'Fair Skies', 60, 'Clouds', 75, 'Fog', 85, 'Rain', 95, 'Thunderstorms'],
