@@ -281,7 +281,7 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         <div className="footer">
-          {_t('FFXIV Weather Bell')} 2010a
+          {_t('FFXIV Weather Bell')} 2106a
           <span className="footer_separator">·</span>
           <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">License</a>
           <span className="footer_separator">·</span>
