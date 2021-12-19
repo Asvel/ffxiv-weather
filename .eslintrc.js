@@ -5,7 +5,6 @@ module.exports = {
     'alloy/react',
     'alloy/typescript',
     'plugin:react-hooks/recommended',
-    'plugin:jest/recommended',
   ],
   env: {
     browser: true,

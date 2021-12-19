@@ -1,4 +1,4 @@
-import * as W from '../Weather';
+import * as W from '../../src/Weather';
 
 Date.now = () => 1609459200000;
 W.init();

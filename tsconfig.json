@@ -11,5 +11,6 @@
     "target": "es2018",
     "lib": ["es2018", "dom", "dom.iterable"],
     "jsx": "react-jsxdev"
-  }
+  },
+  "exclude": ["test"]
 }
