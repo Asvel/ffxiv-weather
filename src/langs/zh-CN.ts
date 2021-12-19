@@ -1,5 +1,5 @@
 export default {
-  'FFXIV Weather Bell': '最终幻想14天气时钟',
+  'FFXIV Weather Lookup': '最终幻想14天气查询',
 
   'Zone': '地区',
   'Weather': '天气',

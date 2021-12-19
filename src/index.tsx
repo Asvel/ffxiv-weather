@@ -281,11 +281,11 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         <div className="footer">
-          {_t('FFXIV Weather Bell')} 2112a
+          {_t('FFXIV Weather Lookup')} 2112a
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">许可协议</a>
+          <a href="https://github.com/Asvel/ffxiv-weather/blob/master/LICENSE.txt">许可协议</a>
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather-bell">源代码</a>
+          <a href="https://github.com/Asvel/ffxiv-weather">源代码</a>
         </div>
       </div>
     );
@@ -474,7 +474,7 @@ function formatEorzeaTime(date: Date): string {
   return `${padZero(hour)}:${padZero(minute)}`;
 }
 
-document.title = _t('FFXIV Weather Bell');
+document.title = _t('FFXIV Weather Lookup');
 
 const container = document.createElement('div');
 document.body.appendChild(container);

@@ -1,11 +1,11 @@
-# [FFXIV Weather Bell](https://asvel.github.io/ffxiv-weather-bell/)
+# [FFXIV Weather Lookup](https://asvel.github.io/ffxiv-weather/)
 
-Weather forecast and alarm for Final Fantasy XIV.
-
-Currently forecast feature is done, alarm feature is WIP, multilanguage is also WIP.
+Weather forecast for Final Fantasy XIV.
 
 # License
 
-FFXIV Weather Bell is licensed under the [MIT license](LICENSE.txt).
+Source code of this project is licensed under the [MIT license](LICENSE.txt).
 
 FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
+
+All FINAL FANTASY XIV contents and materials are copyrights of SQUARE ENIX, FINAL FANTASY XIV © 2010 - 2021 SQUARE ENIX CO., LTD. All Rights Reserved.
