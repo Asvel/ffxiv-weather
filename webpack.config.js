@@ -69,10 +69,9 @@ module.exports = function (env, argv) {
     },
     devtool: !prod && 'cheap-source-map',
     devServer: {
+      client: false,
       hot: false,
       liveReload: false,
-      injectClient: false,
-      injectHot: false,
       static: false,
     },
   };
