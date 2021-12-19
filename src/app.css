@@ -298,6 +298,7 @@ button:active {
 .footer {
   margin-top: 15px;
   color: #afaaaa;
+  font-size: 13px;
   text-align: center;
 }
 
@@ -309,5 +310,5 @@ button:active {
   text-decoration: underline;
 }
 .footer_separator {
-  margin: 0 6px;
+  margin: 0 4px;
 }

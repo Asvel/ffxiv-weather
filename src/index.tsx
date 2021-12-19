@@ -281,11 +281,11 @@ class App extends React.Component<any, AppState> {
           </div>
         )}
         <div className="footer">
-          {_t('FFXIV Weather Bell')} 2106a
+          {_t('FFXIV Weather Bell')} 2112a
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">License</a>
+          <a href="https://github.com/Asvel/ffxiv-weather-bell/blob/master/LICENSE.txt">许可协议</a>
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather-bell">Code</a>
+          <a href="https://github.com/Asvel/ffxiv-weather-bell">源代码</a>
         </div>
       </div>
     );
@@ -356,9 +356,13 @@ const groupedZones: W.Zone[][] = [
   ['Rhalgr\'s Reach', 'The Fringes', 'The Peaks', 'The Lochs'],
   ['Kugane', 'Shirogane'],
   ['The Ruby Sea', 'Yanxia', 'The Azim Steppe'],
+  ['Radz-at-Han', 'Thavnair', 'Garlemald'],
   ['The Crystarium', 'Eulmore', 'Lakeland', 'Kholusia', 'Amh Araeng', 'Il Mheg',
     'The Rak\'tika Greatwood', 'The Tempest'],
   ['Mor Dhona'],
+  ['Old Sharlayan', 'Labyrinthos'],
+  ['Mare Lamentorum', 'Ultima Thule'],
+  ['Elpis'],
   ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
   ['Bozjan Southern Front', 'Zadnor'],
 ];

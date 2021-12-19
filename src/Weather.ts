@@ -55,6 +55,14 @@ export const data = {
   'Il Mheg': ['Rain', 10, 'Fog', 20, 'Clouds', 35, 'Thunderstorms', 45, 'Clear Skies', 60, 'Fair Skies'],
   'The Rak\'tika Greatwood': ['Fog', 10, 'Rain', 20, 'Umbral Wind', 30, 'Clear Skies', 45, 'Fair Skies', 85, 'Clouds'],
   'The Tempest': ['Clouds', 20, 'Fair Skies', 80, 'Clear Skies'],
+  'Old Sharlayan': ['Clear Skies', 10, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 85, 'Snow'],
+  'Radz-at-Han': ['Fog', 10, 'Rain', 25, 'Clear Skies', 40, 'Fair Skies', 80, 'Clouds'],
+  'Labyrinthos': ['Clear Skies', 15, 'Fair Skies', 60, 'Clouds', 85, 'Rain'],
+  'Thavnair': ['Fog', 10, 'Rain', 20, 'Showers', 25, 'Clear Skies', 40, 'Fair Skies', 80, 'Clouds'],
+  'Garlemald': ['Snow', 45, 'Thunder', 50, 'Rain', 55, 'Fog', 60, 'Clouds', 85, 'Fair Skies', 95, 'Clear Skies'],
+  'Mare Lamentorum': ['Umbral Wind', 15, 'Moon Dust', 30, 'Fair Skies'],
+  'Elpis': ['Clouds', 25, 'Umbral Wind', 40, 'Fair Skies', 85, 'Clear Skies'],
+  'Ultima Thule': ['Astromagnetic Storm', 15, 'Fair Skies', 85, 'Umbral Wind'],
 };
 
 export type Zone = keyof typeof data;

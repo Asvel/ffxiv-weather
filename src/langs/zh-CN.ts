@@ -68,6 +68,14 @@ export default {
   'Il Mheg': '伊尔美格',
   'The Rak\'tika Greatwood': 'LaHee',
   'The Tempest': '黑风海',
+  'Old Sharlayan': '旧萨雷安',
+  'Radz-at-Han': '拉札罕',
+  'Labyrinthos': '迷津',
+  'Thavnair': '萨维奈',
+  'Garlemald': '加雷马',
+  'Mare Lamentorum': '叹息海',
+  'Elpis': 'エルピス',
+  'Ultima Thule': 'トゥーレ',
 
   'Clouds': '阴云',
   'Clear Skies': '碧空',
@@ -86,4 +94,6 @@ export default {
   'Blizzards': '暴雪',
   'Umbral Wind': '灵风',
   'Umbral Static': '灵电',
+  'Moon Dust': '月砂塵',
+  'Astromagnetic Storm': '磁暴',
 } as { [index: string]: string };
