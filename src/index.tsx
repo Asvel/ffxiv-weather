@@ -3,13 +3,17 @@ import * as ReactDOM from 'react-dom';
 import * as strftimeLT from 'strftime';
 import * as classNames from 'classnames';
 import * as W from './Weather';
-import langs from './langs/zh-CN';
+import texts from './texts';
 import 'normalize.css';
 import './app.css';
 
-const _t = (s: string) => langs[s] || s;
-const format = (template: string, args: { [index: string]: string | number }): string =>
-  template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
+function t(s: TemplateStringsArray | string): string {
+  const text = typeof s === 'string' ? s : s[0];
+  return texts[text]?.cn || text;
+}
+function format(template: string, args: { [index: string]: string | number }): string {
+  return template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
+}
 
 let strftime = strftimeLT;
 
@@ -52,8 +56,8 @@ class App extends React.Component<any, AppState> {
             <table>
               <thead>
               <tr>
-                <th className="match_event-start-time">{_t('Start Time')}</th>
-                <th className="match_event-end-time">{_t('End Time')}</th>
+                <th className="match_event-start-time">{t`Start Time`}</th>
+                <th className="match_event-end-time">{t`End Time`}</th>
               </tr>
               </thead>
               <tbody>
@@ -82,7 +86,7 @@ class App extends React.Component<any, AppState> {
         <div className="condition">
           <div className="condition_zone">
             <span className="condition-title">
-              {_t(zone ? 'Zone' : '请选择一个地区')}
+              {zone ? t`Zone` : t`Select Zone`}
             </span>
             {groupedZones.map((g, i) => (
               <span key={i} className="condition_zone-group">
@@ -99,7 +103,7 @@ class App extends React.Component<any, AppState> {
                       hoverHour: null,
                       showCount: 11,
                     })}
-                    children={_t(z)}
+                    children={t(z)}
                   />
                 ))}
               </span>
@@ -108,8 +112,8 @@ class App extends React.Component<any, AppState> {
           {zone && <>
             <div className="condition_weather">
               <span className="condition-title">
-                {_t('Weather')}
-                <span className="condition-tip">{_t('右击多选')}</span>
+                {t`Weather`}
+                <span className="condition-tip">{t`Right click to multiple select`}</span>
               </span>
               <span
                 className="condition_weather-selector"
@@ -119,7 +123,7 @@ class App extends React.Component<any, AppState> {
                   className={classNames('condition_weather-item', desiredWeathers.length === 0 && '-active')}
                   onClick={() => this.setState({ desiredWeathers: [] })}
                   onContextMenu={() => this.setState({ desiredWeathers: [] })}
-                  children={_t('Any')}
+                  children={t`Any`}
                 />
                 {zone && W.zoneWeathers[zone].map((x, i) => (
                   <span
@@ -127,15 +131,15 @@ class App extends React.Component<any, AppState> {
                     className={classNames('condition_weather-item', desiredWeathers.indexOf(i) !== -1 && '-active')}
                     onClick={() => this.setState({ desiredWeathers: [i] })}
                     onContextMenu={() => this.setState({ desiredWeathers: toggleWeather(desiredWeathers, i) })}
-                    children={_t(x)}
+                    children={t(x)}
                   />
                 ))}
               </span>
             </div>
             <div className="condition_weather">
               <span className="condition-title">
-                {_t('Previous Weather')}
-                <span className="condition-tip">{_t('右击多选')}</span>
+                {t`Previous Weather`}
+                <span className="condition-tip">{t`Right click to multiple select`}</span>
               </span>
               <span
                 className="condition_weather-selector"
@@ -145,7 +149,7 @@ class App extends React.Component<any, AppState> {
                   className={classNames('condition_weather-item', previousWeathers.length === 0 && '-active')}
                   onClick={() => this.setState({ previousWeathers: [] })}
                   onContextMenu={() => this.setState({ previousWeathers: [] })}
-                  children={_t('Any')}
+                  children={t`Any`}
                 />
                 {zone && W.zoneWeathers[zone].map((x, i) => (
                   <span
@@ -153,15 +157,15 @@ class App extends React.Component<any, AppState> {
                     className={classNames('condition_weather-item', previousWeathers.indexOf(i) !== -1 && '-active')}
                     onClick={() => this.setState({ previousWeathers: [i] })}
                     onContextMenu={() => this.setState({ previousWeathers: toggleWeather(previousWeathers, i) })}
-                    children={_t(x)}
+                    children={t(x)}
                   />
                 ))}
               </span>
             </div>
             <div className="condition_time">
               <span className="condition-title">
-                {_t('Time')}
-                <span className="condition-tip">{_t('点击开始时间然后选择一个时间段')}</span>
+                {t`Time`}
+                <span className="condition-tip">{t`Click start time then select a range`}</span>
               </span>
               <div className="condition_time-selector">
                 {Array.from({ length: 24 }, (x, i) => (
@@ -201,7 +205,7 @@ class App extends React.Component<any, AppState> {
         {matches.length > 1 && (
           <div className="console clearfix">
             <span className="console_summary">
-              {format(_t('未来 {future} 地球天内共有 {count} 个时段符合条件'),
+              {format(t`Found {count} matches in next {future} earth days`,
                 { future: W.future, count: matches.length })}
             </span>
           </div>
@@ -211,9 +215,9 @@ class App extends React.Component<any, AppState> {
             <table>
               <thead>
               <tr>
-                <th className="match_local-time">{_t('Local Time')}</th>
-                <th className="match_eorzea-time">{_t('Eorzea Time')}</th>
-                <th className="match_weathers">{_t('Weathers')}</th>
+                <th className="match_local-time">{t`Local Time`}</th>
+                <th className="match_eorzea-time">{t`Eorzea Time`}</th>
+                <th className="match_weathers">{t`Weathers`}</th>
               </tr>
               </thead>
               <tbody>
@@ -241,7 +245,7 @@ class App extends React.Component<any, AppState> {
         {matches.length === 1 && (
           <div className="console clearfix">
             <span className="console_summary">
-              {_t('正在展示未来的天气序列，选择一些条件可以查询符合的时段')}
+              {t`Showing future weather list, select some conditions to query matched periods`}
             </span>
           </div>
         )}
@@ -264,7 +268,7 @@ class App extends React.Component<any, AppState> {
                   {[i, i + 1, i + 2].map(j => j >= 0 && list[j]()).map((x, j) => x ? (
                     <td key={j}>
                       <span className="match_list-time"><FriendlyTime date={x.begin} /></span>
-                      <span className="match_list-weather">{_t(x.weathers[1])}</span>
+                      <span className="match_list-weather">{t(x.weathers[1])}</span>
                     </td>
                   ) : <td key={j} />)}
                 </tr>
@@ -276,16 +280,16 @@ class App extends React.Component<any, AppState> {
         {showCount < (matches.length === 1 ? Math.floor(list.length / 3) : matches.length) && (
           <div className="more">
             <div className="more_button" onClick={() => this.setState({ showCount: showCount * 2 })}>
-              {_t('Show more')}
+              {t`Show more`}
             </div>
           </div>
         )}
         <div className="footer">
-          {_t('FFXIV Weather Lookup')} 2112a
+          {t`FFXIV Weather Lookup`} 2201a
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather/blob/master/LICENSE.txt">许可协议</a>
+          <a href="https://github.com/Asvel/ffxiv-weather/blob/master/LICENSE.txt">{t`License`}</a>
           <span className="footer_separator">·</span>
-          <a href="https://github.com/Asvel/ffxiv-weather">源代码</a>
+          <a href="https://github.com/Asvel/ffxiv-weather">{t`Code`}</a>
         </div>
       </div>
     );
@@ -328,16 +332,16 @@ class Weathers extends React.Component<WeathersProps> {
     return weathers.length <= max ? (
       <span className={className}>
         {weathers.map((x, i) => (
-          <span key={i}>{_t(x)}</span>
+          <span key={i}>{t(x)}</span>
         ))}
       </span>
     ) : (
       <span className={className}>
         {weathers.slice(0, max - 2).map((x, i) => (
-          <span key={i}>{_t(x)}</span>
+          <span key={i}>{t(x)}</span>
         ))}
         <span>...</span>
-        <span>{_t(weathers[weathers.length - 1])}</span>
+        <span>{t(weathers[weathers.length - 1])}</span>
       </span>
     );
   }
@@ -397,7 +401,7 @@ const shorthandZones = {} as { [index: string]: W.Zone };
 
 const events = {
   garlok: {
-    description: _t('伽洛克 - 天气保持薄雾、碧空、晴朗、阴云200分钟时开始，不再是这些天气时结束。'),
+    description: t`伽洛克 - 天气保持薄雾、碧空、晴朗、阴云200分钟时开始，不再是这些天气时结束。`,
     matcher: () => W
       .find({
         zone: 'Eastern La Noscea',
@@ -411,7 +415,7 @@ const events = {
       .filter(m => m.begin < m.end),
   },
   laideronnette: {
-    description: _t('雷德罗巨蛇 - 天气保持小雨30分钟时开始，天气不再是小雨时结束。'),
+    description: t`雷德罗巨蛇 - 天气保持小雨30分钟时开始，天气不再是小雨时结束。`,
     matcher: () => W
       .find({
         zone: 'Central Shroud',
@@ -474,7 +478,7 @@ function formatEorzeaTime(date: Date): string {
   return `${padZero(hour)}:${padZero(minute)}`;
 }
 
-document.title = _t('FFXIV Weather Lookup');
+document.title = t`FFXIV Weather Lookup`;
 
 const container = document.createElement('div');
 document.body.appendChild(container);
