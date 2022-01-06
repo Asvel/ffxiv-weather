@@ -1,5 +1,5 @@
 
-export const data = {
+const data = {
   'Limsa Lominsa': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 80, 'Fog', 90, 'Rain'],
   'Middle La Noscea': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Wind', 80, 'Fog', 90, 'Rain'],
   'Lower La Noscea': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Wind', 80, 'Fog', 90, 'Rain'],
@@ -195,3 +195,86 @@ export function find(condition: {
   }
   return ret;
 }
+
+export const groupedZones: Zone[][] = [
+  ['Limsa Lominsa', 'Middle La Noscea', 'Lower La Noscea', 'Eastern La Noscea',
+    'Western La Noscea', 'Upper La Noscea', 'Outer La Noscea', 'The Mist'],
+  ['Gridania', 'Central Shroud', 'East Shroud', 'South Shroud', 'North Shroud',
+    'The Lavender Beds'],
+  ['Ul\'dah', 'Western Thanalan', 'Central Thanalan', 'Eastern Thanalan',
+    'Southern Thanalan', 'Northern Thanalan', 'The Goblet'],
+  ['Ishgard', 'Coerthas Central Highlands', 'Coerthas Western Highlands'],
+  ['The Sea of Clouds', 'Azys Lla', 'The Diadem'],
+  ['Idyllshire', 'The Dravanian Forelands', 'The Dravanian Hinterlands', 'The Churning Mists'],
+  ['Rhalgr\'s Reach', 'The Fringes', 'The Peaks', 'The Lochs'],
+  ['Kugane', 'Shirogane'],
+  ['The Ruby Sea', 'Yanxia', 'The Azim Steppe'],
+  ['Radz-at-Han', 'Thavnair', 'Garlemald'],
+  ['The Crystarium', 'Eulmore', 'Lakeland', 'Kholusia', 'Amh Araeng', 'Il Mheg',
+    'The Rak\'tika Greatwood', 'The Tempest'],
+  ['Mor Dhona'],
+  ['Old Sharlayan', 'Labyrinthos'],
+  ['Mare Lamentorum', 'Ultima Thule'],
+  ['Elpis'],
+  ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
+  ['Bozjan Southern Front', 'Zadnor'],
+];
+
+export const zoneShorthands = {} as { [index in Zone]: string };
+export const shorthandZones = {} as { [index: string]: Zone };
+(() => {
+  const wordCounts: { [index: string]: number }[] = [{}, {}, {}];
+  const shorthands = zones
+    .map(zone => {
+      let parts = zone.replace(/[^\w ]/g, '').split(' ');
+      parts = parts[0] === 'The' ? parts.slice(1) : parts;
+      for (let i = 0; i < parts.length; i++) {
+        wordCounts[i][parts[i]] = (wordCounts[i][parts[i]] || 0) + 1;
+      }
+      return parts;
+    })
+    .map(parts => {
+      let shorthand;
+      if (wordCounts[0][parts[0]] > 1 || wordCounts[1][parts[1]] > 1) {
+        shorthand = parts[0].slice(0, 2) + parts[1].slice(0, 2);
+      } else {
+        shorthand = parts.join('').slice(0, 4);
+      }
+      return shorthand.toLowerCase();
+    });
+  for (let i = 0; i < zones.length; i++) {
+    zoneShorthands[zones[i]] = shorthands[i];
+    shorthandZones[shorthands[i]] = zones[i];
+  }
+})();
+
+export const events = {
+  garlok: {
+    description: 'Garlok',
+    matcher: () =>
+      find({
+        zone: 'Eastern La Noscea',
+        desiredWeathers: [0, 1, 2, 3],
+      })
+      .map(m => {
+        const match = m(true);
+        match.begin.setMinutes(match.begin.getMinutes() + 200);
+        return match;
+      })
+      .filter(m => m.begin < m.end),
+  },
+  laideronnette: {
+    description: 'Laideronnette',
+    matcher: () =>
+      find({
+        zone: 'Central Shroud',
+        desiredWeathers: [1],
+      })
+      .map(m => {
+        const match = m(true);
+        match.begin.setMinutes(match.begin.getMinutes() + 30);
+        return match;
+      })
+      .filter(m => m.begin < m.end),
+  },
+};

@@ -255,6 +255,13 @@ button:active {
 .match_list-time {
   margin-right: 5px;
 }
+.match_list-weather {
+  display: inline-block;
+  width: 28px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: visible;
+}
 
 .friendly-time_seconds {
   font-size: 12px;
@@ -302,13 +309,25 @@ button:active {
   text-align: center;
 }
 
-.footer a {
+.footer_clickable {
   color: #afaaaa;
   text-decoration: none;
+  cursor: pointer;
 }
-.footer a:hover {
+.footer_clickable:hover,
+.footer_clickable.-active {
   text-decoration: underline;
 }
 .footer_separator {
   margin: 0 4px;
+}
+.footer_separator:last-child {
+  display: none;
+}
+
+.footer_language-switcher {
+  position: relative;
+}
+.footer_language-list {
+  margin-top: 2px;
 }
