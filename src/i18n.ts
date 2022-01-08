@@ -598,7 +598,7 @@ const texts = {
     fr: 'Amh Araeng',
     ja: 'アム・アレーン',
     zh: '安穆艾兰',
-    ko: '',
+    ko: '아므 아랭',
   },
   'Il Mheg': {
     en: 'Il Mheg',
@@ -606,7 +606,7 @@ const texts = {
     fr: 'Il Mheg',
     ja: 'イル・メグ',
     zh: '伊尔美格',
-    ko: '',
+    ko: '일 메그',
   },
   'The Rak\'tika Greatwood': {
     en: 'LaHee',
