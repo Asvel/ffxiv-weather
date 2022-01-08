@@ -9,7 +9,7 @@ export class Store {
   beginHour: number;
   endHour: number;
   hoverHour: number | null;
-  showCount: number;
+  shownLine: number;
 
   constructor() {
     this.reset();
@@ -29,7 +29,7 @@ export class Store {
     this.beginHour = 0;
     this.endHour = 23;
     this.hoverHour = null;
-    this.showCount = 11;
+    this.shownLine = 12;
   }
 
   switchZone(zone: Store['zone']) {
@@ -73,7 +73,7 @@ export class Store {
   }
 
   showMore() {
-    this.showCount *= 2;
+    this.shownLine *= 2;
   }
 
   get hashString(): string {
@@ -99,6 +99,34 @@ export class Store {
       this.beginHour = Number(beginHour || 0);
       this.endHour = Number(endHour || 23);
     }
+  }
+
+  get matches() {
+    const { zone, desiredWeathers, previousWeathers, beginHour, endHour } = this;
+    return zone !== null ? W.find({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) : [];
+  }
+  get shownMatches() {
+    return this.matches.slice(this.nonpastIndex, this.shownLine).map(m => m());
+  }
+  get nonpastIndex() {  // for matches
+    const now = new Date();
+    let index = 0;
+    while (index < this.matches.length && this.matches[index]().end < now) index++;
+    return index;
+  }
+
+  get list() {
+    const { zone } = this;
+    return zone !== null ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
+  }
+  get shownList() {
+    return this.list.slice(0, this.shownLine * 3).map(m => m());
+  }
+  get nowIndex() {  // for list
+    if (this.list.length === 0) return 0;
+    const earliest = this.list[0]().begin.valueOf();
+    const distance = Date.now() - earliest;
+    return Math.floor(distance / W.weatherDuration);
   }
 }
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import * as mobxReact from 'mobx-react-lite';
 import * as strftime from 'strftime';
 import * as W from '../Weather';

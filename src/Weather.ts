@@ -98,12 +98,12 @@ export let state: {
   buffer: (boolean | undefined)[],
 };
 
+export const weatherDuration = 8 * 175 * 1000;
 export const future = 60;
 
 export function init(): void {
-  const weatherDuration = 8 * 175 * 1000;
   const now = Date.now();
-  const start = now - (now % weatherDuration) - weatherDuration;
+  const start = now - (now % (weatherDuration * 3)) - weatherDuration * 7;
   if (state !== undefined && start === state.start) return;
 
   const futureET = Math.ceil(future * 24 * 60 * 60 / 175 / 8) + 1;

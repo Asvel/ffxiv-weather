@@ -1,4 +1,3 @@
-import * as React from 'react';
 import * as mobxReact from 'mobx-react-lite';
 import type { Store } from '../store';
 import { StoreContext } from './useStore';

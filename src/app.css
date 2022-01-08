@@ -193,7 +193,7 @@ button:active {
 }
 .match th,
 .match td {
-  padding: 6px 4px;
+  padding: 7px 4px 5px;
   text-align: left;
 }
 @media (min-width: 481px) {
@@ -252,6 +252,9 @@ button:active {
   width: 14%;
   text-align: left;
 }
+.match_list-past {
+  color: #b8b3b3;
+}
 .match_list-time {
   margin-right: 5px;
 }
@@ -260,6 +263,15 @@ button:active {
   width: 28px;
   text-align: left;
   white-space: nowrap;
+  overflow: visible;
+}
+.match_list-current:before {
+  content: "⇒";
+  position: relative;
+  display: inline-block;
+  width: 0;
+  left: -18px;
+  top: -1px;
   overflow: visible;
 }
 
