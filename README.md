@@ -1,6 +1,6 @@
 # [FFXIV Weather Lookup](https://asvel.github.io/ffxiv-weather/)
 
-Weather forecast for Final Fantasy XIV.
+Weather forecast and lookup for Final Fantasy XIV.
 
 # License
 
