@@ -10,7 +10,8 @@ export const Main = mobxReact.observer(() => {
   return (
     <div className="app">
       <Condition />
-      {store.matches.length === 1 ? <Timetable /> : <Matches />}
+      {store.matches.length === 1 && <Timetable />}
+      {store.matches.length > 1 && <Matches />}
       <Footer />
     </div>
   );
