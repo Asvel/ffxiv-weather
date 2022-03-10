@@ -677,7 +677,7 @@ const texts = {
     de: 'Elpis',
     fr: 'Elpis',
     ja: 'エルピス',
-    zh: 'エルピス',
+    zh: '厄尔庇斯',
     ko: 'エルピス',
   },
   'Ultima Thule': {
@@ -685,7 +685,7 @@ const texts = {
     de: 'Thule',
     fr: 'Thulé',
     ja: 'トゥーレ',
-    zh: 'トゥーレ',
+    zh: '天垓',
     ko: 'トゥーレ',
   },
 
@@ -830,7 +830,7 @@ const texts = {
     de: 'Mondstaubig',
     fr: 'Tempêtes de régolithe',
     ja: '月砂塵',
-    zh: '月砂塵',
+    zh: '月尘',
     ko: '月砂塵',
   },
   'Astromagnetic Storm': {
