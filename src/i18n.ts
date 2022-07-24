@@ -45,7 +45,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '地区',
-    ko: '',
+    ko: '지역',
   },
   'Select Zone': {
     en: '',
@@ -53,23 +53,23 @@ const texts = {
     fr: '',
     ja: '',
     zh: '请选择一个地区',
-    ko: '',
+    ko: '지역을 선택하세요',
   },
   'Weather': {
     en: '',
     de: '',
     fr: '',
-    ja: '',
+    ja: '天気',
     zh: '天气',
-    ko: '',
+    ko: '날씨',
   },
   'Previous Weather': {
     en: '',
     de: '',
     fr: '',
-    ja: '',
+    ja: '前の天気',
     zh: '前置天气',
-    ko: '',
+    ko: '이전 날씨',
   },
   'Right click to multiple select': {
     en: '',
@@ -77,7 +77,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '右击多选',
-    ko: '',
+    ko: '우클릭으로 여러 개 선택',
   },
   'Time': {
     en: '',
@@ -101,7 +101,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '任意',
-    ko: '',
+    ko: '아무거나',
   },
   'Found {count} matches in next {future} earth days': {
     en: '',
@@ -125,7 +125,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '本地时间',
-    ko: '',
+    ko: '현실 시간',
   },
   'Eorzea Time': {
     en: '',
@@ -133,7 +133,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '艾欧泽亚时间',
-    ko: '',
+    ko: '에오르제아 시간',
   },
   'Start Time': {
     en: '',
@@ -157,7 +157,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '天气',
-    ko: '',
+    ko: '날씨',
   },
   'Show more': {
     en: '',
@@ -165,7 +165,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '显示更多',
-    ko: '',
+    ko: '더 보기',
   },
   'License': {
     en: '',
