@@ -630,7 +630,7 @@ const texts = {
     fr: 'Sharlayan',
     ja: 'シャーレアン',
     zh: '萨雷安',
-    ko: 'シャーレアン',
+    ko: '샬레이안',
   },
   'Radz-at-Han': {
     en: 'Radz-at-Han',
@@ -638,7 +638,7 @@ const texts = {
     fr: 'Radz-at-Han',
     ja: 'ラザハン',
     zh: '拉札罕',
-    ko: 'ラザハン',
+    ko: '라자한',
   },
   'Labyrinthos': {
     en: 'Labyrinthos',
@@ -646,7 +646,7 @@ const texts = {
     fr: 'Labyrinthos',
     ja: 'ラヴィリンソス',
     zh: '迷津',
-    ko: 'ラヴィリンソス',
+    ko: '라비린토스',
   },
   'Thavnair': {
     en: 'Thavnair',
@@ -654,7 +654,7 @@ const texts = {
     fr: 'Thavnair',
     ja: 'サベネア',
     zh: '萨维奈',
-    ko: 'サベネア',
+    ko: '사베네어',
   },
   'Garlemald': {
     en: 'Garlemald',
@@ -662,7 +662,7 @@ const texts = {
     fr: 'Garlemald',
     ja: 'ガレマルド',
     zh: '加雷马',
-    ko: 'ガレマルド',
+    ko: '갈레말드',
   },
   'Mare Lamentorum': {
     en: 'Mare Lamentorum',
@@ -670,7 +670,7 @@ const texts = {
     fr: 'Mare Lamentorum',
     ja: '嘆きの海',
     zh: '叹息海',
-    ko: '嘆きの海',
+    ko: '비탄의 바다',
   },
   'Elpis': {
     en: 'Elpis',
@@ -678,7 +678,7 @@ const texts = {
     fr: 'Elpis',
     ja: 'エルピス',
     zh: '厄尔庇斯',
-    ko: 'エルピス',
+    ko: '엘피스',
   },
   'Ultima Thule': {
     en: 'Thule',
@@ -686,7 +686,7 @@ const texts = {
     fr: 'Thulé',
     ja: 'トゥーレ',
     zh: '天垓',
-    ko: 'トゥーレ',
+    ko: '울툴레',
   },
 
   'Clear Skies': {
@@ -831,7 +831,7 @@ const texts = {
     fr: 'Tempêtes de régolithe',
     ja: '月砂塵',
     zh: '月尘',
-    ko: '月砂塵',
+    ko: '달모래먼지',
   },
   'Astromagnetic Storm': {
     en: 'Astromagnetic Storm',
@@ -839,7 +839,7 @@ const texts = {
     fr: 'Astromagnétique',
     ja: '磁気嵐',
     zh: '磁暴',
-    ko: '磁気嵐',
+    ko: '그림자 바람',
   },
 
   'Garlok': {
