@@ -8,7 +8,7 @@ export const Footer = mobxReact.observer(() => {
   const [ languageExpanded, setLanguageExpanded ] = React.useState(false);
   return (
     <div className="footer">
-      {t`FFXIV Weather Lookup`} 2201a
+      {t`FFXIV Weather Lookup`} 2207a
       <span className="footer_separator">·</span>
       <a className="footer_clickable" href="https://github.com/Asvel/ffxiv-weather#license">{t`License`}</a>
       <span className="footer_separator">·</span>
