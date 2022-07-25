@@ -10,6 +10,7 @@ export class Store {
   endHour: number;
   hoverHour: number | null;
   shownLine: number;
+  lastHashChanged: number;
 
   constructor() {
     this.reset();
@@ -77,6 +78,8 @@ export class Store {
   }
 
   get hashString(): string {
+    this.lastHashChanged = Date.now();
+
     if (this.event !== null) return '#' + this.event;
     if (!this.zone) return '';
     const zone = W.zoneShorthands[this.zone];
@@ -88,6 +91,9 @@ export class Store {
     return '#' + parts.join('-');
   }
   set hashString(value: string) {
+    // Giving little bit of time before the update can prevent unexpected reset of the UI state.
+    if (Date.now() - this.lastHashChanged < 500) return;
+
     const [ firstPart, desiredWeathers, previousWeathers, beginHour, endHour ] = value.slice(1).split('-');
     this.reset();
     if (firstPart in W.events) {
