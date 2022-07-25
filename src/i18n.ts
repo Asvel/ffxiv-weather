@@ -815,7 +815,7 @@ const texts = {
     fr: 'Vent ombral',
     ja: '霊風',
     zh: '灵风',
-    ko: '그림자바람',
+    ko: '그림자 바람',
   },
   'Umbral Static': {
     en: 'Umbral Static',
@@ -839,7 +839,7 @@ const texts = {
     fr: 'Astromagnétique',
     ja: '磁気嵐',
     zh: '磁暴',
-    ko: '그림자 바람',
+    ko: '자기장 폭풍',
   },
 
   'Garlok': {
