@@ -45,7 +45,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '地区',
-    ko: '',
+    ko: '지역',
   },
   'Select Zone': {
     en: '',
@@ -53,23 +53,23 @@ const texts = {
     fr: '',
     ja: '',
     zh: '请选择一个地区',
-    ko: '',
+    ko: '지역을 선택하세요',
   },
   'Weather': {
     en: '',
     de: '',
     fr: '',
-    ja: '',
+    ja: '天気',
     zh: '天气',
-    ko: '',
+    ko: '날씨',
   },
   'Previous Weather': {
     en: '',
     de: '',
     fr: '',
-    ja: '',
+    ja: '前の天気',
     zh: '前置天气',
-    ko: '',
+    ko: '이전 날씨',
   },
   'Right click to multiple select': {
     en: '',
@@ -77,7 +77,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '右击多选',
-    ko: '',
+    ko: '우클릭으로 여러 개 선택',
   },
   'Time': {
     en: '',
@@ -101,7 +101,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '任意',
-    ko: '',
+    ko: '아무거나',
   },
   'Found {count} matches in next {future} earth days': {
     en: '',
@@ -125,7 +125,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '本地时间',
-    ko: '',
+    ko: '현실 시간',
   },
   'Eorzea Time': {
     en: '',
@@ -133,7 +133,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '艾欧泽亚时间',
-    ko: '',
+    ko: '에오르제아 시간',
   },
   'Start Time': {
     en: '',
@@ -157,7 +157,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '天气',
-    ko: '',
+    ko: '날씨',
   },
   'Show more': {
     en: '',
@@ -165,7 +165,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '显示更多',
-    ko: '',
+    ko: '더 보기',
   },
   'License': {
     en: '',
@@ -630,7 +630,7 @@ const texts = {
     fr: 'Sharlayan',
     ja: 'シャーレアン',
     zh: '萨雷安',
-    ko: 'シャーレアン',
+    ko: '샬레이안',
   },
   'Radz-at-Han': {
     en: 'Radz-at-Han',
@@ -638,7 +638,7 @@ const texts = {
     fr: 'Radz-at-Han',
     ja: 'ラザハン',
     zh: '拉札罕',
-    ko: 'ラザハン',
+    ko: '라자한',
   },
   'Labyrinthos': {
     en: 'Labyrinthos',
@@ -646,7 +646,7 @@ const texts = {
     fr: 'Labyrinthos',
     ja: 'ラヴィリンソス',
     zh: '迷津',
-    ko: 'ラヴィリンソス',
+    ko: '라비린토스',
   },
   'Thavnair': {
     en: 'Thavnair',
@@ -654,7 +654,7 @@ const texts = {
     fr: 'Thavnair',
     ja: 'サベネア',
     zh: '萨维奈',
-    ko: 'サベネア',
+    ko: '사베네어',
   },
   'Garlemald': {
     en: 'Garlemald',
@@ -662,7 +662,7 @@ const texts = {
     fr: 'Garlemald',
     ja: 'ガレマルド',
     zh: '加雷马',
-    ko: 'ガレマルド',
+    ko: '갈레말드',
   },
   'Mare Lamentorum': {
     en: 'Mare Lamentorum',
@@ -670,7 +670,7 @@ const texts = {
     fr: 'Mare Lamentorum',
     ja: '嘆きの海',
     zh: '叹息海',
-    ko: '嘆きの海',
+    ko: '비탄의 바다',
   },
   'Elpis': {
     en: 'Elpis',
@@ -678,7 +678,7 @@ const texts = {
     fr: 'Elpis',
     ja: 'エルピス',
     zh: '厄尔庇斯',
-    ko: 'エルピス',
+    ko: '엘피스',
   },
   'Ultima Thule': {
     en: 'Thule',
@@ -686,7 +686,7 @@ const texts = {
     fr: 'Thulé',
     ja: 'トゥーレ',
     zh: '天垓',
-    ko: 'トゥーレ',
+    ko: '울툴레',
   },
 
   'Clear Skies': {
@@ -831,7 +831,7 @@ const texts = {
     fr: 'Tempêtes de régolithe',
     ja: '月砂塵',
     zh: '月尘',
-    ko: '月砂塵',
+    ko: '달모래먼지',
   },
   'Astromagnetic Storm': {
     en: 'Astromagnetic Storm',
@@ -839,7 +839,7 @@ const texts = {
     fr: 'Astromagnétique',
     ja: '磁気嵐',
     zh: '磁暴',
-    ko: '磁気嵐',
+    ko: '그림자 바람',
   },
 
   'Garlok': {
