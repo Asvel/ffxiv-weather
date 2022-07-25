@@ -88,6 +88,7 @@ export class Store {
     return '#' + parts.join('-');
   }
   set hashString(value: string) {
+    if (value === this.hashString) return;
     const [ firstPart, desiredWeathers, previousWeathers, beginHour, endHour ] = value.slice(1).split('-');
     this.reset();
     if (firstPart in W.events) {
