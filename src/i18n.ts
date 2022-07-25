@@ -446,7 +446,7 @@ const texts = {
     fr: 'Rhalgr',
     ja: 'ラールガー',
     zh: '神拳痕',
-    ko: '랄거의',
+    ko: '랄거',
   },
   'The Fringes': {
     en: 'Fringes',
@@ -454,7 +454,7 @@ const texts = {
     fr: 'Marges',
     ja: 'ギ辺',
     zh: '边区',
-    ko: '변방지대',
+    ko: '기라변방',
   },
   'The Peaks': {
     en: 'Peaks',
@@ -462,7 +462,7 @@ const texts = {
     fr: 'Pics',
     ja: 'ギ山',
     zh: '山区',
-    ko: '산악지대',
+    ko: '기라산악',
   },
   'The Lochs': {
     en: 'Lochs',
@@ -470,7 +470,7 @@ const texts = {
     fr: 'Lacs',
     ja: 'ギ湖',
     zh: '湖区',
-    ko: '호반지대',
+    ko: '기라호반',
   },
   'Kugane': {
     en: 'Kugane',
