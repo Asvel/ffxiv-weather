@@ -60,6 +60,9 @@ module.exports = function (env, argv) {
         logger: 'webpack-infrastructure',
       }),
     ],
+    performance: {
+      hints: false,
+    },
     stats: {
       preset: 'errors-warnings',
       builtAt: true,
