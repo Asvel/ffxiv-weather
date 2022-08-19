@@ -1,4 +1,4 @@
-import * as ReactDOM from 'react-dom';
+import * as ReactDOMClient from 'react-dom/client';
 import * as mobx from 'mobx';
 import * as W from './Weather';
 import { t } from './i18n';
@@ -14,7 +14,7 @@ mobx.autorun(() => {
 const store = new Store();
 const container = document.createElement('div');
 document.body.appendChild(container);
-ReactDOM.render(<App store={store} />, container);
+ReactDOMClient.createRoot(container).render(<App store={store} />);
 
 Object.defineProperty(window, 'store', {
   get value() {

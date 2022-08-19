@@ -57,9 +57,7 @@ module.exports = function (env, argv) {
       }),
       new ForkTsCheckerWebpackPlugin({
         async: !prod,
-        logger: {
-          issues: 'webpack-infrastructure',
-        },
+        logger: 'webpack-infrastructure',
       }),
     ],
     stats: {
@@ -76,3 +74,18 @@ module.exports = function (env, argv) {
     },
   };
 };
+
+// filter out logs like '[ForkTsCheckerWebpackPlugin] No errors found.', incredibly it can't be done by configuration
+{
+  const infrastructureLogger = require('fork-ts-checker-webpack-plugin/lib/infrastructure-logger');
+  const { getInfrastructureLogger } = infrastructureLogger;
+  infrastructureLogger.getInfrastructureLogger = function () {
+    const ret = getInfrastructureLogger.apply(this, arguments);
+    const info = { ret };
+    ret.info = function () {
+      if (/^\u001b\[3[26]m/.test(arguments[0])) return;
+      info.apply(this, arguments);
+    };
+    return ret;
+  };
+}
