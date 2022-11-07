@@ -24,6 +24,7 @@ const data = {
   'Ishgard': ['Snow', 60, 'Fair Skies', 70, 'Clear Skies', 75, 'Clouds', 90, 'Fog'],
   'Coerthas Central Highlands': ['Blizzards', 20, 'Snow', 60, 'Fair Skies', 70, 'Clear Skies', 75, 'Clouds', 90, 'Fog'],
   'Coerthas Western Highlands': ['Blizzards', 20, 'Snow', 60, 'Fair Skies', 70, 'Clear Skies', 75, 'Clouds', 90, 'Fog'],
+  'Empyreum': ['Snow', 5, 'Fair Skies', 25, 'Clear Skies', 65, 'Clouds', 80, 'Fog'],
   'The Sea of Clouds': ['Clear Skies', 30, 'Fair Skies', 60, 'Clouds', 70, 'Fog', 80, 'Wind', 90, 'Umbral Wind'],
   'Azys Lla': ['Fair Skies', 35, 'Clouds', 70, 'Thunder'],
   'The Diadem': ['Fair Skies', 30, 'Fog', 60, 'Wind', 90, 'Umbral Wind'],
@@ -63,6 +64,7 @@ const data = {
   'Mare Lamentorum': ['Umbral Wind', 15, 'Moon Dust', 30, 'Fair Skies'],
   'Elpis': ['Clouds', 25, 'Umbral Wind', 40, 'Fair Skies', 85, 'Clear Skies'],
   'Ultima Thule': ['Astromagnetic Storm', 15, 'Fair Skies', 85, 'Umbral Wind'],
+  'Unnamed Island': ['Clear Skies', 25, 'Fair Skies', 70, 'Clouds', 80, 'Rain', 90, 'Fog', 95, 'Showers'],
 };
 
 export type Zone = keyof typeof data;
@@ -203,8 +205,8 @@ export const groupedZones: Zone[][] = [
     'The Lavender Beds'],
   ['Ul\'dah', 'Western Thanalan', 'Central Thanalan', 'Eastern Thanalan',
     'Southern Thanalan', 'Northern Thanalan', 'The Goblet'],
-  ['Ishgard', 'Coerthas Central Highlands', 'Coerthas Western Highlands'],
-  ['The Sea of Clouds', 'Azys Lla', 'The Diadem'],
+  ['Ishgard', 'Coerthas Central Highlands', 'Coerthas Western Highlands', 'Empyreum'],
+  ['The Sea of Clouds', 'Azys Lla'],
   ['Idyllshire', 'The Dravanian Forelands', 'The Dravanian Hinterlands', 'The Churning Mists'],
   ['Rhalgr\'s Reach', 'The Fringes', 'The Peaks', 'The Lochs'],
   ['Kugane', 'Shirogane'],
@@ -218,6 +220,7 @@ export const groupedZones: Zone[][] = [
   ['Elpis'],
   ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
   ['Bozjan Southern Front', 'Zadnor'],
+  ['Unnamed Island'],
 ];
 
 export const zoneShorthands = {} as { [index in Zone]: string };

@@ -293,7 +293,7 @@ const texts = {
     de: 'Lavendelbeete',
     fr: 'Lavandière',
     ja: 'ラベンダー',
-    zh: '苗圃',
+    zh: '薰衣草苗圃',
     ko: '라벤더',
   },
   'Ul\'dah': {
@@ -375,6 +375,14 @@ const texts = {
     ja: 'ク西',
     zh: '西高',
     ko: '서부고지',
+  },
+  'Empyreum': {
+    en: 'Empyreum',
+    de: 'Empyreum',
+    fr: 'Empyrée',
+    ja: 'エンピレアム',
+    zh: '穹顶皓天',
+    ko: '지고천 거리',
   },
   'The Sea of Clouds': {
     en: 'Sea of Clouds',
@@ -687,6 +695,14 @@ const texts = {
     ja: 'トゥーレ',
     zh: '天垓',
     ko: '울툴레',
+  },
+  'Unnamed Island': {
+    en: 'Unnamed Island',
+    de: 'Einsame Insel',
+    fr: 'Île sans nom',
+    ja: '名もなき島',
+    zh: '无名岛',
+    ko: '名もなき島',
   },
 
   'Clear Skies': {
