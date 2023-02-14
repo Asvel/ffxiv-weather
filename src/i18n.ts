@@ -702,7 +702,7 @@ const texts = {
     fr: 'Île sans nom',
     ja: '名もなき島',
     zh: '无名岛',
-    ko: '名もなき島',
+    ko: '이름 없는 섬',
   },
 
   'Clear Skies': {
