@@ -131,7 +131,7 @@ export class Store {
   }
   get shownMatches() {
     return this.matches
-      .slice(this.nonpastIndex, this.shownLine)
+      .slice(this.nonpastIndex, this.nonpastIndex + this.shownLine)
       .map(m => (m as any).value ??= m());
   }
   get nonpastIndex() {  // for matches
