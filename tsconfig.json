@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "module": "es2020",
-    "moduleResolution": "node",
-    "target": "es2018",
-    "lib": ["es2018", "dom", "dom.iterable"],
-    "jsx": "react-jsxdev"
+    "target": "es2022",
+    "module": "preserve",
+    "types": ["@rsbuild/core/types"],
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
   },
-  "exclude": ["test"]
+  "include": ["src"]
 }

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { createContext, useContext } from 'solid-js';
 import type { Store } from '../store';
 
-export const StoreContext = React.createContext<Store>(undefined as any);
+export const StoreContext = createContext<Store>();
 export function useStore(): Store {
-  return React.useContext(StoreContext);
+  return useContext(StoreContext)!;
 }

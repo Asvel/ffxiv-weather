@@ -1,26 +1,19 @@
-import * as mobxReact from 'mobx-react-lite';
-import * as classNames from 'classnames';
 import { t } from '../i18n';
 
-export const WeatherSequence = mobxReact.observer<{
-  weathers: string[],
-  max: number,
-  className?: string,
-}>(({ weathers, max, className }) => {
-  className = classNames(className, 'weathers');
-  return weathers.length <= max ? (
-    <span className={className}>
-      {weathers.map((x, i) => (
-        <span key={i}>{t(x)}</span>
-      ))}
-    </span>
-  ) : (
-    <span className={className}>
-      {weathers.slice(0, max - 2).map((x, i) => (
-        <span key={i}>{t(x)}</span>
-      ))}
-      <span>...</span>
-      <span>{t(weathers[weathers.length - 1])}</span>
+export function WeatherSequence(props: { weathers: string[], max: number }) {
+  return (
+    <span class="weathers">
+      {props.weathers.length <= props.max ? (
+        props.weathers.map(x => (
+          <span>{t(x)}</span>
+        ))
+      ) : (<>
+        {/*@once*/props.weathers.slice(0, props.max - 2).map(x => (
+          <span>{t(x)}</span>
+        ))}
+        <span>...</span>
+        <span>{t(props.weathers[props.weathers.length - 1])}</span>
+      </>)}
     </span>
   );
-});
+}

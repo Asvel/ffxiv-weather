@@ -1,40 +1,38 @@
-import * as mobxReact from 'mobx-react-lite';
-import * as strftime from 'strftime';
+import strftime = require('strftime');
 import * as W from '../Weather';
 import { t, getCurrentLanguage } from '../i18n';
-import { useStore } from './useStore';
 import { FriendlyTime } from './FriendlyTime';
-import { Footer } from "./Footer";
+import { Footer } from './Footer';
 
-export const EventMain = mobxReact.observer(() => {
-  const event = W.events[useStore().event!];
+export function EventMain({ eventId }: { eventId: W.EventId }) {  // eslint-disable-line solid/no-destructure
+  const event = W.events[eventId];
   const matches = event.matcher();
   const forceUtc8 = getCurrentLanguage() === 'zh';
   const strftimeT = forceUtc8 ? strftime.timezone(+480) : strftime;
   return (
-    <div className="app">
-      <div className="console clearfix">
-        <span className="console_summary">{t(event.description)}</span>
-        {getCurrentLanguage() === 'zh' && <span className="console_timezone">UTC+08:00</span>}
+    <div class="app">
+      <div class="console clearfix">
+        <span class="console_summary">{t(event.description)}</span>
+        {forceUtc8 && <span class="console_timezone">UTC+08:00</span>}
       </div>
-      <div className="match">
+      <div class="match">
         <table>
           <thead>
           <tr>
-            <th className="match_event-start-time">{t`Start Time`}</th>
-            <th className="match_event-end-time">{t`End Time`}</th>
+            <th class="match_event-start-time">{t`Start Time`}</th>
+            <th class="match_event-end-time">{t`End Time`}</th>
           </tr>
           </thead>
           <tbody>
-          {matches.slice(0, 20).map((x, i) => (
-            <tr key={i}>
-              <td className="match_event-start-time">
-                <span className="match_local-time-date">{strftimeT('%m/%d ', x.begin)}</span>
-                <FriendlyTime date={x.begin} />
+          {/*@once*/matches.slice(0, 20).map(({ begin, end }) => (  // eslint-disable-line solid/no-destructure
+            <tr>
+              <td class="match_event-start-time">
+                <span class="match_local-time-date">{/*@once*/strftimeT('%m/%d ', begin)}</span>
+                <FriendlyTime date={begin} />
               </td>
-              <td className="match_event-end-time">
-                <span className="match_local-time-date">{strftimeT('%m/%d ', x.end)}</span>
-                <FriendlyTime date={x.end} />
+              <td class="match_event-end-time">
+                <span class="match_local-time-date">{/*@once*/strftimeT('%m/%d ', end)}</span>
+                <FriendlyTime date={end} />
               </td>
             </tr>
           ))}
@@ -44,4 +42,4 @@ export const EventMain = mobxReact.observer(() => {
       <Footer />
     </div>
   );
-});
+}

@@ -1,24 +1,45 @@
-import * as mobx from 'mobx';
+import { createEffect, batch } from 'solid-js';
+import { createMutable } from 'solid-js/store';
+import { createLazyMemo } from '@solid-primitives/memo';
 import * as W from './Weather';
 
 export class Store {
-  event: keyof typeof W.events | null = null;
+  event: W.EventId | null = null;
   zone: W.Zone | null;
   desiredWeathers: number[];
   previousWeathers: number[];
   beginHour: number;
   endHour: number;
+  selectingHour: number | null;
   hoverHour: number | null;
   shownLine: number;
 
-  constructor() {
+  private constructor() {
     this.reset();
-    mobx.makeAutoObservable(this);
-
-    mobx.reaction(() => observableHash.get(), () => this.hashString = observableHash.get(), { fireImmediately: true });
-    mobx.reaction(() => this.hashString, () => observableHash.set(this.hashString));
 
     window.setTimeout(W.init, 100);  // improve first searching response speed
+  }
+  static create() {  // eslint-disable-line @typescript-eslint/member-ordering
+    const store: Store = createMutable(new Store() as any);
+    for (const [ key, desc ] of Object.entries(Object.getOwnPropertyDescriptors(Object.getPrototypeOf(store)))) {
+      if (key === 'constructor') continue;
+      if (desc.get) {
+        const get = createLazyMemo(desc.get.bind(store));
+        // const get = createLazyMemo(() => { console.log(desc.get!.name); return desc.get!.apply(store); });
+        Object.defineProperty(store, key, { get });
+      }
+      if (typeof desc.value === 'function') {
+        const og = desc.value;
+        const value = (...args: any[]) => batch(() => og.apply(store, args));
+        Object.defineProperty(store, key, { value });
+      }
+    }
+
+    store.hashString$ = window.location.hash;  // eslint-disable-line solid/reactivity
+    createEffect(() => window.location.hash = store.hashString);
+    window.addEventListener('hashchange', () => store.hashString$ = window.location.hash);  // eslint-disable-line solid/reactivity
+
+    return store;
   }
 
   reset() {
@@ -28,6 +49,7 @@ export class Store {
     this.previousWeathers = [];
     this.beginHour = 0;
     this.endHour = 23;
+    this.selectingHour = null;
     this.hoverHour = null;
     this.shownLine = 12;
   }
@@ -37,7 +59,7 @@ export class Store {
     this.zone = zone;
   }
 
-  #switchWeather(target: 'desiredWeathers' | 'previousWeathers', weather: number | 'any', multiSelect: boolean) {
+  _switchWeather(target: 'desiredWeathers' | 'previousWeathers', weather: number | 'any', multiSelect: boolean) {
     if (weather === 'any') {
       this[target] = [];
     } else if (!multiSelect) {
@@ -52,19 +74,20 @@ export class Store {
     }
   }
   switchDesiredWeather(weather: number | 'any', multiSelect: boolean) {
-    this.#switchWeather('desiredWeathers', weather, multiSelect);
+    this._switchWeather('desiredWeathers', weather, multiSelect);
   }
   switchPreviousWeathers(weather: number | 'any', multiSelect: boolean) {
-    this.#switchWeather('previousWeathers', weather, multiSelect);
+    this._switchWeather('previousWeathers', weather, multiSelect);
   }
 
   selectHourBound(hour: number) {
-    if (this.hoverHour === null) {
-      this.beginHour = hour;
-      this.endHour = hour;
+    if (this.selectingHour === null) {
+      this.selectingHour = hour;
       this.hoverHour = hour;
     } else {
+      this.beginHour = this.selectingHour;
       this.endHour = hour;
+      this.selectingHour = null;
       this.hoverHour = null;
     }
   }
@@ -87,7 +110,7 @@ export class Store {
     while (parts[parts.length - 1] === defaults[parts.length - 1]) parts.length--;
     return '#' + parts.join('-');
   }
-  set hashString(value: string) {
+  set hashString$(value: string) {  // eslint-disable-line -- FIXME: remove the $ if solid mutable setter bug fixed
     if (value === this.hashString) return;
     const [ firstPart, desiredWeathers, previousWeathers, beginHour, endHour ] = value.slice(1).split('-');
     this.reset();
@@ -107,7 +130,9 @@ export class Store {
     return zone !== null ? W.find({ zone, desiredWeathers, previousWeathers, beginHour, endHour }) : [];
   }
   get shownMatches() {
-    return this.matches.slice(this.nonpastIndex, this.shownLine).map(m => m());
+    return this.matches
+      .slice(this.nonpastIndex, this.shownLine)
+      .map(m => (m as any).value ??= m());
   }
   get nonpastIndex() {  // for matches
     const now = new Date();
@@ -121,7 +146,9 @@ export class Store {
     return zone !== null ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
   }
   get shownList() {
-    return this.list.slice(0, this.shownLine * 3).map(m => m());
+    return this.list
+      .slice(0, this.shownLine * 3)
+      .map(m => (m as any).value ??= m());
   }
   get nowIndex() {  // for list
     if (this.list.length === 0) return 0;
@@ -130,7 +157,3 @@ export class Store {
     return Math.floor(distance / W.weatherDuration);
   }
 }
-
-const observableHash = mobx.observable.box(window.location.hash);
-mobx.reaction(() => observableHash.get(), () => window.location.hash = observableHash.get());
-window.addEventListener('hashchange', mobx.action(() => observableHash.set(window.location.hash)), false);

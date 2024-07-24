@@ -1,4 +1,5 @@
-import * as mobx from 'mobx';
+import { createSignal } from 'solid-js';
+import { createEffectGlobal } from './utils';
 
 export const languages = {
   en: 'English',
@@ -9,24 +10,16 @@ export const languages = {
   ko: '한국어',
 };
 
-const language = mobx.observable.box(localStorage.getItem('ffxiv-weather.language') ?? 'default');
-mobx.reaction(() => language.get(), () => localStorage.setItem('ffxiv-weather.language', language.get()));
-if (language.get() === 'default') {
-  for (const lang of navigator.languages) {
-    if (lang.slice(0, 2) in languages) {
-      mobx.runInAction(() => language.set(lang.slice(0, 2)));
-      break;
-    }
-    mobx.runInAction(() => language.set('zh'));
-  }
+export const [ getCurrentLanguage, setCurrentLanguage ] =
+  createSignal(localStorage.getItem('ffxiv-weather.language') ?? 'default');
+if (getCurrentLanguage() === 'default') {  // eslint-disable-line solid/reactivity
+  setCurrentLanguage(navigator.languages.find(lang => lang.slice(0, 2) in languages) ?? 'zh');
 }
-
-export const getCurrentLanguage = () => language.get();
-export const setCurrentLanguage = mobx.action((lang: string) => language.set(lang));
+createEffectGlobal(() => localStorage.setItem('ffxiv-weather.language', getCurrentLanguage()));
 
 export function t(s: TemplateStringsArray | string): string {
   const text = typeof s === 'string' ? s : s[0];
-  return texts[text]?.[language.get()] || text;
+  return texts[text]?.[getCurrentLanguage()] || text;
 }
 
 const texts = {

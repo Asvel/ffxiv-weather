@@ -171,8 +171,8 @@ export function find(condition: {
     zoneWeathers[zone].map((x, i) => hasWeather(condition.previousWeathers, i));
   const weathers = state.weathers[zone];
 
-  const hourMask = condition.hourMask ?? Array.from({ length: 24 }, (x, i) => isHourIn(
-    condition.beginHour ?? 0, condition.endHour === undefined ? 23 : condition.endHour, i));
+  const hourMask = condition.hourMask ?? Array.from({ length: 24 }, (_, i) =>
+    isHourIn(condition.beginHour ?? 0, condition.endHour ?? 23, i));
   const baseHour = Math.round(state.start / 175 / 100);
 
   const matched = state.buffer.fill(false);
@@ -281,3 +281,4 @@ export const events = {
       .filter(m => m.begin < m.end),
   },
 };
+export type EventId = keyof typeof events;

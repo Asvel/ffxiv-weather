@@ -1,24 +1,24 @@
-import * as mobxReact from 'mobx-react-lite';
-import * as classNames from 'classnames';
+import { createSelector } from 'solid-js';
 import * as W from '../Weather';
 import { t } from '../i18n';
+import { indexRender } from '../utils';
 import { useStore } from './useStore';
 
-export const Condition = mobxReact.observer(() => {
+export function Condition() {
   const store = useStore();
-  const { zone, desiredWeathers, previousWeathers, beginHour, endHour, hoverHour } = store;
+  const isZoneSelected = createSelector(() => store.zone);
   return (
-    <div className="condition">
-      <div className="condition_zone">
-        <span className="condition-title">
-          {zone ? t`Zone` : t`Select Zone`}
+    <div class="condition">
+      <div class="condition_zone">
+        <span class="condition-title">
+          {store.zone ? t`Zone` : t`Select Zone`}
         </span>
-        {W.groupedZones.map((g, i) => (
-          <span key={i} className="condition_zone-group">
-            {g.map(z => (
+        {/*@once*/W.groupedZones.map(g => (
+          <span class="condition_zone-group">
+            {/*@once*/g.map(z => (
               <span
-                key={z}
-                className={classNames('condition_zone-item', zone === z && '-active')}
+                class="condition_zone-item"
+                classList={{ '-active': isZoneSelected(z) }}
                 onClick={() => store.switchZone(z)}
                 children={t(z)}
               />
@@ -26,75 +26,85 @@ export const Condition = mobxReact.observer(() => {
           </span>
         ))}
       </div>
-      {zone && <>
-        <div className="condition_weather">
-          <span className="condition-title">
+      {store.zone && <>
+        <div class="condition_weather">
+          <span class="condition-title">
             {t`Weather`}
-            <span className="condition-tip">{t`Right click to multiple select`}</span>
+            <span class="condition-tip">{t`Right click to multiple select`}</span>
           </span>
           <span
-            className="condition_weather-selector"
+            class="condition_weather-selector"
             onContextMenu={e => e.preventDefault()}
           >
             <span
-              className={classNames('condition_weather-item', desiredWeathers.length === 0 && '-active')}
+              class="condition_weather-item"
+              classList={{ '-active': store.desiredWeathers.length === 0 }}
               onClick={() => store.switchDesiredWeather('any', false)}
               onContextMenu={() => store.switchDesiredWeather('any', true)}
               children={t`Any`}
             />
-            {zone && W.zoneWeathers[zone].map((x, i) => (
+            {store.zone && indexRender(() => W.zoneWeathers[store.zone!], (x, i) => (
               <span
-                key={i}
-                className={classNames('condition_weather-item', desiredWeathers.indexOf(i) !== -1 && '-active')}
+                class="condition_weather-item"
+                classList={{ '-active': store.desiredWeathers.indexOf(i) !== -1 }}
                 onClick={() => store.switchDesiredWeather(i, false)}
                 onContextMenu={() => store.switchDesiredWeather(i, true)}
-                children={t(x)}
+                children={t(x())}
               />
             ))}
           </span>
         </div>
-        <div className="condition_weather">
-          <span className="condition-title">
+        <div class="condition_weather">
+          <span class="condition-title">
             {t`Previous Weather`}
-            <span className="condition-tip">{t`Right click to multiple select`}</span>
+            <span class="condition-tip">{t`Right click to multiple select`}</span>
           </span>
           <span
-            className="condition_weather-selector"
+            class="condition_weather-selector"
             onContextMenu={e => e.preventDefault()}
           >
             <span
-              className={classNames('condition_weather-item', previousWeathers.length === 0 && '-active')}
+              class="condition_weather-item"
+              classList={{ '-active': store.previousWeathers.length === 0 }}
               onClick={() => store.switchPreviousWeathers('any', false)}
               onContextMenu={() => store.switchPreviousWeathers('any', true)}
               children={t`Any`}
             />
-            {zone && W.zoneWeathers[zone].map((x, i) => (
+            {store.zone && indexRender(() => W.zoneWeathers[store.zone!], (x, i) => (
               <span
-                key={i}
-                className={classNames('condition_weather-item', previousWeathers.indexOf(i) !== -1 && '-active')}
+                class="condition_weather-item"
+                classList={{ '-active': store.previousWeathers.indexOf(i) !== -1 }}
                 onClick={() => store.switchPreviousWeathers(i, false)}
                 onContextMenu={() => store.switchPreviousWeathers(i, true)}
-                children={t(x)}
+                children={t(x())}
               />
             ))}
           </span>
         </div>
-        <div className="condition_time">
-          <span className="condition-title">
+        <div class="condition_time">
+          <span class="condition-title">
             {t`Time`}
-            <span className="condition-tip">{t`Click start time then select a range`}</span>
+            <span class="condition-tip">{t`Click start time then select a range`}</span>
           </span>
-          <div className="condition_time-selector">
-            {Array.from({ length: 24 }, (x, i) => (
+          <div class="condition_time-selector">
+            {Array.from({ length: 24 }, (_, i) => store.selectingHour === null ? (
               <span
-                key={i}
-                className={classNames(
-                  'condition_time-item',
-                  W.isHourIn(beginHour, endHour, i) && '-active',
-                  hoverHour !== null && W.isHourIn(beginHour, hoverHour, i) && '-hover',
-                )}
+                class="condition_time-item"
+                classList={{
+                  '-active': W.isHourIn(store.beginHour, store.endHour, i),
+                }}
                 onClick={() => store.selectHourBound(i)}
-                onMouseEnter={hoverHour === null ? undefined : () => store.setHoverHour(i)}
+                children={i}
+              />
+            ) : (
+              <span
+                class="condition_time-item"
+                classList={{
+                  '-active': i === store.selectingHour,
+                  '-hover': W.isHourIn(store.selectingHour, store.hoverHour!, i),
+                }}
+                onClick={() => store.selectHourBound(i)}
+                onMouseEnter={() => store.setHoverHour(i)}
                 children={i}
               />
             ))}
@@ -103,4 +113,4 @@ export const Condition = mobxReact.observer(() => {
       </>}
     </div>
   );
-});
+}

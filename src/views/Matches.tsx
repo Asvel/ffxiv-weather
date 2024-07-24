@@ -1,47 +1,46 @@
-import * as mobxReact from 'mobx-react-lite';
-import * as strftime from 'strftime';
+import strftime = require('strftime');
 import * as W from '../Weather';
-import * as utils from '../utils';
 import { t } from '../i18n';
+import { format, formatEorzeaDate, formatEorzeaTime, mapRender } from '../utils';
 import { useStore } from './useStore';
 import { FriendlyTime } from './FriendlyTime';
 import { WeatherSequence } from './WeatherSequence';
 import { ShowMore } from './ShowMore';
 
-export const Matches = mobxReact.observer(() => {
+export function Matches() {
   const store = useStore();
   return (
     <>
-      <div className="console clearfix">
-        <span className="console_summary">
-          {utils.format(t`Found {count} matches in next {future} earth days`,
+      <div class="console clearfix">
+        <span class="console_summary">
+          {format(t`Found {count} matches in next {future} earth days`,
             { future: W.future, count: store.matches.length })}
         </span>
       </div>
-      <div className="match">
+      <div class="match">
         <table>
           <thead>
           <tr>
-            <th className="match_local-time">{t`Local Time`}</th>
-            <th className="match_eorzea-time">{t`Eorzea Time`}</th>
-            <th className="match_weathers">{t`Weathers`}</th>
+            <th class="match_local-time">{t`Local Time`}</th>
+            <th class="match_eorzea-time">{t`Eorzea Time`}</th>
+            <th class="match_weathers">{t`Weathers`}</th>
           </tr>
           </thead>
           <tbody>
-          {store.shownMatches.map((x, i) => (
-            <tr key={i}>
-              <td className="match_local-time">
-                <span className="match_local-time-date">{strftime('%m/%d ', x.begin)}</span>
-                <FriendlyTime date={x.begin} />
-                <span className="match_local-time-separator">-</span>
-                <FriendlyTime date={x.end} />
+          {mapRender(() => store.shownMatches, ({ begin, duration, end, weathers }) => (  // eslint-disable-line solid/no-destructure
+            <tr>
+              <td class="match_local-time">
+                <span class="match_local-time-date">{/*@once*/strftime('%m/%d ', begin)}</span>
+                <FriendlyTime date={begin} />
+                <span class="match_local-time-separator">-</span>
+                <FriendlyTime date={end} />
               </td>
-              <td className="match_eorzea-time">
-                <span className="match_eorzea-time-date">{utils.formatEorzeaDate(x.begin)}</span>
-                {utils.formatEorzeaTime(x.begin)}, {x.duration}h
+              <td class="match_eorzea-time">
+                <span class="match_eorzea-time-date">{/*@once*/formatEorzeaDate(begin)}</span>
+                {/*@once*/formatEorzeaTime(begin)}, {duration}h
               </td>
-              <td className="match_weathers">
-                <WeatherSequence weathers={x.weathers} max={4} />
+              <td class="match_weathers">
+                <WeatherSequence weathers={weathers} max={4} />
               </td>
             </tr>
           ))}
@@ -51,4 +50,4 @@ export const Matches = mobxReact.observer(() => {
       {store.shownLine < store.matches.length && <ShowMore />}
     </>
   );
-});
+}

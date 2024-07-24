@@ -1,3 +1,10 @@
+import {
+  createEffect, createMemo,
+  createRoot,
+  getOwner, runWithOwner,
+  mapArray, indexArray,
+  type Accessor, type JSX,
+} from 'solid-js';
 
 export function format(template: string, args: { [index: string]: string | number }): string {
   return template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
@@ -18,3 +25,15 @@ export function formatEorzeaTime(date: Date): string {
   return `${padZero(hour)}:${padZero(minute)}`;
 }
 const padZero = (n: number) => n < 10 ? '0' + n : n;
+
+const owner = createRoot(() => getOwner());
+export const createEffectGlobal: typeof createEffect = (fn: any) => runWithOwner(owner, () => createEffect(fn));
+
+export function mapRender<T extends readonly any[], U extends JSX.Element>(
+  list: Accessor<T>, mapFn: (item: T[number], index: Accessor<number>) => U) {
+  return createMemo(mapArray(list, mapFn)) as unknown as JSX.Element;  // eslint-disable-line solid/reactivity
+}
+export function indexRender<T extends readonly any[], U extends JSX.Element>(
+  list: Accessor<T>, mapFn: (item: Accessor<T[number]>, index: number) => U) {
+  return createMemo(indexArray(list, mapFn)) as unknown as JSX.Element;  // eslint-disable-line solid/reactivity
+}

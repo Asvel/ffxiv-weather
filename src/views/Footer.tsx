@@ -1,34 +1,34 @@
-import * as React from 'react';
-import * as mobxReact from 'mobx-react-lite';
-import * as classNames from 'classnames';
+import { createSignal, createSelector } from 'solid-js';
 import * as i18n from '../i18n';
 import { t } from '../i18n';
 
-export const Footer = mobxReact.observer(() => {
-  const [ languageExpanded, setLanguageExpanded ] = React.useState(false);
+export function Footer() {
+  const [ getLanguageExpanded, setLanguageExpanded ] = createSignal(false);
+  const isCurrentLanguage = createSelector(() => i18n.getCurrentLanguage());
   return (
-    <div className="footer">
-      {t`FFXIV Weather Lookup`} 2211a
-      <span className="footer_separator">·</span>
-      <a className="footer_clickable" href="https://github.com/Asvel/ffxiv-weather#license">{t`License`}</a>
-      <span className="footer_separator">·</span>
-      <a className="footer_clickable" href="https://github.com/Asvel/ffxiv-weather">{t`Code`}</a>
-      <span className="footer_separator">·</span>
-      <span className="footer_clickable" onClick={() => setLanguageExpanded(!languageExpanded)}>Language</span>
-      {languageExpanded && (
-        <div className="footer_language-list">
-          {Object.entries(i18n.languages).map(([ lang, langName ]) => (
-            <React.Fragment key={lang}>
+    <div class="footer">
+      {t`FFXIV Weather Lookup`} 2407a
+      <span class="footer_separator">·</span>
+      <a class="footer_clickable" href="https://github.com/Asvel/ffxiv-weather#license">{t`License`}</a>
+      <span class="footer_separator">·</span>
+      <a class="footer_clickable" href="https://github.com/Asvel/ffxiv-weather">{t`Code`}</a>
+      <span class="footer_separator">·</span>
+      <span class="footer_clickable" onClick={() => setLanguageExpanded(!getLanguageExpanded())}>Language</span>
+      {getLanguageExpanded() && (
+        <div class="footer_language-list">
+          {/*@once*/Object.entries(i18n.languages).map(([ lang, langName ]) => (
+            <>
               <span
-                className={classNames('footer_clickable', lang === i18n.getCurrentLanguage() && '-active' )}
+                class="footer_clickable"
+                classList={{ '-active': isCurrentLanguage(lang) }}
                 onClick={() => i18n.setCurrentLanguage(lang)}
                 children={langName}
               />
-              <span className="footer_separator">·</span>
-            </React.Fragment>
+              <span class="footer_separator">·</span>
+            </>
           ))}
         </div>
       )}
     </div>
   );
-});
+}
