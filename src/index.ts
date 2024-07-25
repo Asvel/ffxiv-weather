@@ -8,6 +8,7 @@ import './app.css';
 
 createEffectGlobal(() => {
   document.title = t`FFXIV Weather Lookup`;
+  document.documentElement.lang = t`en`;
 });
 
 const container = document.createElement('div');

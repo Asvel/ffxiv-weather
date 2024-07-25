@@ -30,6 +30,14 @@ const texts = {
     zh: '最终幻想14天气查询',
     ko: '',
   },
+  'en': {
+    en: 'en',
+    de: 'de',
+    fr: 'fr',
+    ja: 'ja',
+    zh: 'zh-CN',
+    ko: 'ko',
+  },
 
   'Zone': {
     en: '',
