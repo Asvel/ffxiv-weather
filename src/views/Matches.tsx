@@ -1,7 +1,6 @@
-import strftime = require('strftime');
 import * as W from '../Weather';
 import { t } from '../i18n';
-import { format, formatEorzeaDate, formatEorzeaTime, mapRender } from '../utils';
+import { format, formatDateMD, formatEorzeaDate, formatEorzeaTime, mapRender } from '../utils';
 import { useStore } from './useStore';
 import { FriendlyTime } from './FriendlyTime';
 import { WeatherSequence } from './WeatherSequence';
@@ -30,7 +29,7 @@ export function Matches() {
           {mapRender(() => store.shownMatches, ({ begin, duration, end, weathers }) => (  // eslint-disable-line solid/no-destructure
             <tr>
               <td class="match_local-time">
-                <span class="match_local-time-date">{/*@once*/strftime('%m/%d ', begin)}</span>
+                <span class="match_local-time-date">{/*@once*/formatDateMD(begin)} </span>
                 <FriendlyTime date={begin} />
                 <span class="match_local-time-separator">-</span>
                 <FriendlyTime date={end} />

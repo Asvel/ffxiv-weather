@@ -10,6 +10,15 @@ export function format(template: string, args: { [index: string]: string | numbe
   return template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
 }
 
+export function formatDateMD(date: Date): string {
+  return `${padZero(date.getMonth() + 1)}/${padZero(date.getDate())}`;
+}
+export function formatTimeHM(date: Date): string {
+  return `${padZero(date.getHours())}:${padZero(date.getMinutes())}`;
+}
+export function formatTimeS(date: Date): string {
+  return `:${padZero(date.getSeconds())}`;
+}
 export function formatEorzeaDate(date: Date): string {
   const dayCount = Math.floor(date.valueOf() / (1000 * 175 * 24));
   const day = dayCount % 32;

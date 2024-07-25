@@ -1,8 +1,7 @@
 import { createMemo } from 'solid-js';
-import strftime = require('strftime');
 import * as W from '../Weather';
 import { t, getCurrentLanguage } from '../i18n';
-import { indexRender } from '../utils';
+import { indexRender, formatDateMD } from '../utils';
 import { FriendlyTime } from './FriendlyTime';
 import { Footer } from './Footer';
 
@@ -25,16 +24,16 @@ export function EventMain({ eventId }: { eventId: W.EventId }) {  // eslint-disa
           </tr>
           </thead>
           <tbody>
-          {indexRender(createMemo(() => forceUtc8()
+          {indexRender(createMemo(() => forceUtc8()  // eslint-disable-line solid/reactivity
             ? matches.map(m => ({ begin: shiftDateAsUtc8(m.begin), end: shiftDateAsUtc8(m.end) }))
             : matches), m => (
             <tr>
               <td class="match_event-start-time">
-                <span class="match_local-time-date">{strftime('%m/%d ', m().begin)}</span>
+                <span class="match_local-time-date">{formatDateMD(m().begin)} </span>
                 <FriendlyTime date={m().begin} />
               </td>
               <td class="match_event-end-time">
-                <span class="match_local-time-date">{strftime('%m/%d ', m().end)}</span>
+                <span class="match_local-time-date">{formatDateMD(m().end)} </span>
                 <FriendlyTime date={m().end} />
               </td>
             </tr>

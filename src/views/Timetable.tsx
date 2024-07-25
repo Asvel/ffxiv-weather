@@ -1,6 +1,5 @@
-import strftime = require('strftime');
 import { t } from '../i18n';
-import { mapRender } from '../utils';
+import { mapRender, formatDateMD } from '../utils';
 import { useStore } from './useStore';
 import { FriendlyTime } from './FriendlyTime';
 import { ShowMore } from './ShowMore';
@@ -28,7 +27,7 @@ export function Timetable() {
           {mapRender(() => Array.from({ length: store.shownList.length / 3 }, (_, i) => i * 3), i => (
             <tr>
               <td class="match_list-date" classList={{ 'match_list-past': i + 2 < store.nowIndex }}>
-                {strftime('%m/%d', store.shownList[i].begin)}
+                {formatDateMD(store.shownList[i].begin)}
               </td>
               {/*@once*/[i, i + 1, i + 2].map(j => (
                 <td classList={{ 'match_list-past': j < store.nowIndex, 'match_list-current': j === store.nowIndex }}>

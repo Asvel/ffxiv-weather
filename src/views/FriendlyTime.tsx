@@ -1,10 +1,10 @@
-import strftime = require('strftime');
+import { formatTimeHM, formatTimeS } from '../utils';
 
 export function FriendlyTime(props: { date: Date }) {
   return (
     <>
-      <span>{strftime('%H:%M', props.date)}</span>
-      <span class="friendly-time_seconds">{strftime(':%S', props.date)}</span>
+      <span>{formatTimeHM(props.date)}</span>
+      <span class="friendly-time_seconds">{formatTimeS(props.date)}</span>
     </>
   );
 }
