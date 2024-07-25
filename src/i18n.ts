@@ -10,11 +10,10 @@ export const languages = {
   ko: '한국어',
 };
 
-export const [ getCurrentLanguage, setCurrentLanguage ] =
-  createSignal(localStorage.getItem('ffxiv-weather.language') ?? 'default');
-if (getCurrentLanguage() === 'default') {  // eslint-disable-line solid/reactivity
-  setCurrentLanguage(navigator.languages.find(lang => lang.slice(0, 2) in languages) ?? 'zh');
-}
+export const [ getCurrentLanguage, setCurrentLanguage ] = createSignal(
+  localStorage.getItem('ffxiv-weather.language') ??
+  navigator.languages.find(lang => lang.slice(0, 2) in languages)?.slice(0, 2) ??
+  'zh');
 createEffectGlobal(() => localStorage.setItem('ffxiv-weather.language', getCurrentLanguage()));
 
 export function t(s: TemplateStringsArray | string): string {
