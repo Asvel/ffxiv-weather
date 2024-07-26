@@ -16,9 +16,23 @@ export const [ getCurrentLanguage, setCurrentLanguage ] = createSignal(
   'zh');
 createEffectGlobal(() => localStorage.setItem('ffxiv-weather.language', getCurrentLanguage()));
 
-export function t(s: TemplateStringsArray | string): string {
-  const text = typeof s === 'string' ? s : s[0];
-  return texts[text]?.[getCurrentLanguage()] || text;
+export function t(s: TemplateStringsArray | string, ...args: any[]): string {
+  const lang = getCurrentLanguage();
+  if (typeof s === 'string') {
+    return texts[s]?.[lang] || s;
+  } else if (s.length === 1) {
+    return texts[s[0]]?.[lang] || s[0];
+  } else {
+    const parts = [];
+    for (let i = 0; i < s.length - 1; i++) {
+      parts.push(s[i]);
+      parts.push('{', i, '}');
+    }
+    parts.push(s[s.length - 1]);
+    let template = parts.join('');
+    template = texts[template]?.[lang] || template;
+    return template.replace(/{(\d+)}/g, (_, $1) => args[$1]);
+  }
 }
 
 const texts = {
@@ -103,12 +117,12 @@ const texts = {
     zh: '任意',
     ko: '아무거나',
   },
-  'Found {count} matches in next {future} earth days': {
+  'Found {0} matches in next {1} earth days': {
     en: '',
     de: '',
     fr: '',
     ja: '',
-    zh: '未来 {future} 地球天内共有 {count} 个时段符合条件',
+    zh: '未来 {1} 地球天内共有 {0} 个时段符合条件',
     ko: '',
   },
   'Showing future weather list, select some conditions to query matched periods': {

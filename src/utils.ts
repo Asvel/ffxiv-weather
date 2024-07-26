@@ -6,10 +6,6 @@ import {
   type Accessor, type JSX,
 } from 'solid-js';
 
-export function format(template: string, args: { [index: string]: string | number }): string {
-  return template.replace(/{(\w+)}/g, (match, key) => args[key] as string);
-}
-
 export function formatDateMD(date: Date): string {
   return `${padZero(date.getMonth() + 1)}/${padZero(date.getDate())}`;
 }

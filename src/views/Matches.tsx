@@ -1,6 +1,6 @@
 import * as W from '../Weather';
 import { t } from '../i18n';
-import { format, formatDateMD, formatEorzeaDate, formatEorzeaTime, mapRender } from '../utils';
+import { mapRender, formatDateMD, formatEorzeaDate, formatEorzeaTime } from '../utils';
 import { useStore } from './useStore';
 import { FriendlyTime } from './FriendlyTime';
 import { WeatherSequence } from './WeatherSequence';
@@ -12,8 +12,7 @@ export function Matches() {
     <>
       <div class="console clearfix">
         <span class="console_summary">
-          {format(t`Found {count} matches in next {future} earth days`,
-            { future: W.future, count: store.matches.length })}
+          {t`Found ${store.matches.length} matches in next ${W.future} earth days`}
         </span>
       </div>
       <div class="match">
