@@ -6,8 +6,8 @@ import * as W from './Weather';
 export class Store {
   event: W.EventId | null = null;
   zone: W.Zone | null;
-  desiredWeathers: number[];
-  previousWeathers: number[];
+  desiredWeathers: ReadonlySet<number>;  // Solid Mutable can't track inner changes
+  previousWeathers: ReadonlySet<number>;
   beginHour: number;
   endHour: number;
   selectingHour: number | null;
@@ -45,8 +45,8 @@ export class Store {
   reset() {
     this.event = null;
     this.zone = null;
-    this.desiredWeathers = [];
-    this.previousWeathers = [];
+    this.desiredWeathers = new Set();
+    this.previousWeathers = new Set();
     this.beginHour = 0;
     this.endHour = 23;
     this.selectingHour = null;
@@ -61,16 +61,12 @@ export class Store {
 
   _switchWeather(target: 'desiredWeathers' | 'previousWeathers', weather: number | 'any', multiSelect: boolean) {
     if (weather === 'any') {
-      this[target] = [];
+      this[target] = new Set();
     } else if (!multiSelect) {
-      this[target] = [weather];
+      this[target] = new Set([weather]);
     } else {
-      const index = this[target].indexOf(weather);
-      if (index === -1) {
-        this[target].push(weather);
-      } else {
-        this[target].splice(index, 1);
-      }
+      (this[target] = new Set(this[target]))
+        [this[target].has(weather) ? 'delete' : 'add'](weather);
     }
   }
   switchDesiredWeather(weather: number | 'any', multiSelect: boolean) {
@@ -103,8 +99,8 @@ export class Store {
     if (this.event !== null) return '#' + this.event;
     if (!this.zone) return '';
     const zone = W.zoneShorthands[this.zone];
-    const desiredWeathers = this.desiredWeathers.slice().sort((a, b) => a - b).join('');
-    const previousWeathers = this.previousWeathers.slice().sort((a, b) => a - b).join('');
+    const desiredWeathers = Array.from(this.desiredWeathers.keys()).sort((a, b) => a - b).join('');
+    const previousWeathers = Array.from(this.previousWeathers.keys()).sort((a, b) => a - b).join('');
     const parts = [zone, desiredWeathers, previousWeathers, this.beginHour, this.endHour];
     const defaults = [null, '', '', 0, 23];
     while (parts[parts.length - 1] === defaults[parts.length - 1]) parts.length--;
@@ -118,8 +114,8 @@ export class Store {
       this.event = firstPart as any;
     } else if (firstPart in W.shorthandZones) {
       this.zone = W.shorthandZones[firstPart];
-      this.desiredWeathers = desiredWeathers ? desiredWeathers.split('').map(Number) : [];
-      this.previousWeathers = previousWeathers ? previousWeathers.split('').map(Number) : [];
+      this.desiredWeathers = new Set(desiredWeathers?.split('')?.map(Number));
+      this.previousWeathers = new Set(previousWeathers?.split('')?.map(Number));
       this.beginHour = Number(beginHour || 0);
       this.endHour = Number(endHour || 23);
     }
@@ -143,7 +139,7 @@ export class Store {
 
   get list() {
     const { zone } = this;
-    return zone !== null ? W.find({ zone, hourMask: { 0: true, 8: true, 16: true } }) : [];
+    return zone !== null ? W.find({ zone, hours: new Set([0, 8, 16]) }) : [];
   }
   get shownList() {
     return this.list

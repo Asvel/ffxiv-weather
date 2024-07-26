@@ -106,7 +106,7 @@ export const future = 60;
 export function init(): void {
   const now = Date.now();
   const start = now - (now % (weatherDuration * 3)) - weatherDuration * 7;
-  if (state !== undefined && start === state.start) return;
+  if (state?.start === start) return;
 
   const futureET = Math.ceil(future * 24 * 60 * 60 / 175 / 8) + 1;
   const forecasts = new Array(futureET);
@@ -146,32 +146,26 @@ export function isHourIn(begin: number, end: number, hour: number): boolean {
   return (begin <= hour && hour <= end) || (end < begin && (hour <= end || begin <= hour));
 }
 
-export function hasWeather(weathers: number[] | undefined, w: number): boolean {
-  return !weathers || weathers.length === 0 || weathers.indexOf(w) !== -1;
+export function hasWeather(weathers: ReadonlySet<number> | undefined, weather: number): boolean {
+  return weathers === undefined || weathers.size === 0 || weathers.has(weather);
 }
-
-type Mask = boolean[] | { [index: number]: boolean };
 
 export function find(condition: {
   zone: Zone,
-  desiredWeatherMask?: Mask,
-  desiredWeathers?: number[],
-  previousWeatherMask?: Mask,
-  previousWeathers?: number[],
-  hourMask?: Mask,
+  desiredWeathers?: ReadonlySet<number>,
+  previousWeathers?: ReadonlySet<number>,
+  hours?: ReadonlySet<number>,
   beginHour?: number,
   endHour?: number,
 }): ((skipWeatherList?: boolean) => Match)[] {
   init();
 
   const zone = condition.zone;
-  const desiredWeatherMask = condition.desiredWeatherMask ??
-    zoneWeathers[zone].map((x, i) => hasWeather(condition.desiredWeathers, i));
-  const previousWeatherMask = condition.previousWeatherMask ??
-    zoneWeathers[zone].map((x, i) => hasWeather(condition.previousWeathers, i));
+  const desiredWeatherMask = zoneWeathers[zone].map((_, i) => hasWeather(condition.desiredWeathers, i));
+  const previousWeatherMask = zoneWeathers[zone].map((_, i) => hasWeather(condition.previousWeathers, i));
   const weathers = state.weathers[zone];
 
-  const hourMask = condition.hourMask ?? Array.from({ length: 24 }, (_, i) =>
+  const hourMask = Array.from({ length: 24 }, (_, i) => condition.hours?.has(i) ??
     isHourIn(condition.beginHour ?? 0, condition.endHour ?? 23, i));
   const baseHour = Math.round(state.start / 175 / 100);
 
@@ -257,7 +251,7 @@ export const events = {
     matcher: () =>
       find({
         zone: 'Eastern La Noscea',
-        desiredWeathers: [0, 1, 2, 3],
+        desiredWeathers: new Set([0, 1, 2, 3]),
       })
       .map(m => {
         const match = m(true);
@@ -271,7 +265,7 @@ export const events = {
     matcher: () =>
       find({
         zone: 'Central Shroud',
-        desiredWeathers: [1],
+        desiredWeathers: new Set([1]),
       })
       .map(m => {
         const match = m(true);

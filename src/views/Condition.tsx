@@ -38,7 +38,7 @@ export function Condition() {
           >
             <span
               class="condition_weather-item"
-              classList={{ '-active': store.desiredWeathers.length === 0 }}
+              classList={{ '-active': store.desiredWeathers.size === 0 }}
               onClick={() => store.switchDesiredWeather('any', false)}
               onContextMenu={() => store.switchDesiredWeather('any', true)}
               children={t`Any`}
@@ -46,7 +46,7 @@ export function Condition() {
             {store.zone && indexRender(() => W.zoneWeathers[store.zone!], (x, i) => (
               <span
                 class="condition_weather-item"
-                classList={{ '-active': store.desiredWeathers.indexOf(i) !== -1 }}
+                classList={{ '-active': store.desiredWeathers.has(i) }}
                 onClick={() => store.switchDesiredWeather(i, false)}
                 onContextMenu={() => store.switchDesiredWeather(i, true)}
                 children={t(x())}
@@ -65,7 +65,7 @@ export function Condition() {
           >
             <span
               class="condition_weather-item"
-              classList={{ '-active': store.previousWeathers.length === 0 }}
+              classList={{ '-active': store.previousWeathers.size === 0 }}
               onClick={() => store.switchPreviousWeathers('any', false)}
               onContextMenu={() => store.switchPreviousWeathers('any', true)}
               children={t`Any`}
@@ -73,7 +73,7 @@ export function Condition() {
             {store.zone && indexRender(() => W.zoneWeathers[store.zone!], (x, i) => (
               <span
                 class="condition_weather-item"
-                classList={{ '-active': store.previousWeathers.indexOf(i) !== -1 }}
+                classList={{ '-active': store.previousWeathers.has(i) }}
                 onClick={() => store.switchPreviousWeathers(i, false)}
                 onContextMenu={() => store.switchPreviousWeathers(i, true)}
                 children={t(x())}
