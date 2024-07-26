@@ -12,7 +12,7 @@ export function Matches() {
     <>
       <div class="console clearfix">
         <span class="console_summary">
-          {t`Found ${store.matches.length} matches in next ${W.future} earth days`}
+          {t`Found ${store.matches.length - store.nonpastIndex} matches in next ${W.future} earth days`}
         </span>
       </div>
       <div class="match">
