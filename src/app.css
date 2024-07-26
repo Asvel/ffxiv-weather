@@ -294,6 +294,11 @@ button:active {
   content: "-";
   margin: 0 3px;
 }
+html[lang="zh-CN"] .weather-sequence_ellipsis {
+  display: inline-block;
+  width: 2em;
+  text-align: center;
+}
 
 .more {
   margin-top: 6px;
