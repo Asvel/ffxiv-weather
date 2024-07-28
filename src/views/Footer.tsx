@@ -7,7 +7,7 @@ export function Footer() {
   const isCurrentLanguage = createSelector(() => i18n.getCurrentLanguage());
   return (
     <div class="footer">
-      {t`FFXIV Weather Lookup`} 2407a
+      {t`FFXIV Weather Lookup`} 2407b
       <span class="footer_separator">·</span>
       <a class="footer_clickable" href="https://github.com/Asvel/ffxiv-weather#license">{t`License`}</a>
       <span class="footer_separator">·</span>

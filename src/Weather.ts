@@ -63,8 +63,16 @@ const data = {
   'Garlemald': ['Snow', 45, 'Thunder', 50, 'Rain', 55, 'Fog', 60, 'Clouds', 85, 'Fair Skies', 95, 'Clear Skies'],
   'Mare Lamentorum': ['Umbral Wind', 15, 'Moon Dust', 30, 'Fair Skies'],
   'Elpis': ['Clouds', 25, 'Umbral Wind', 40, 'Fair Skies', 85, 'Clear Skies'],
-  'Ultima Thule': ['Astromagnetic Storm', 15, 'Fair Skies', 85, 'Umbral Wind'],
+  'Ultima Thule': ['Astromagnetic Storms', 15, 'Fair Skies', 85, 'Umbral Wind'],
   'Unnamed Island': ['Clear Skies', 25, 'Fair Skies', 70, 'Clouds', 80, 'Rain', 90, 'Fog', 95, 'Showers'],
+  'Tuliyollal': ['Clear Skies', 40, 'Fair Skies', 80, 'Clouds', 85, 'Fog', 95, 'Rain'],
+  'Urqopacha': ['Clear Skies', 20, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 80, 'Wind', 90, 'Snow'],
+  'Kozama\'uka': ['Clear Skies', 25, 'Fair Skies', 60, 'Clouds', 75, 'Fog', 85, 'Rain', 95, 'Showers'],
+  'Yak T\'el': ['Clear Skies', 15, 'Fair Skies', 55, 'Clouds', 70, 'Fog', 85, 'Rain'],
+  'Solution Nine': ['Fair Skies'],
+  'Shaaloani': ['Clear Skies', 5, 'Fair Skies', 50, 'Clouds', 70, 'Dust Storms', 85, 'Gales'],
+  'Heritage Found': ['Fair Skies', 5, 'Clouds', 25, 'Fog', 40, 'Rain', 45, 'Thunderstorms', 50, 'Umbral Static'],
+  'Living Memory': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies'],
 };
 
 export type Zone = keyof typeof data;
@@ -206,6 +214,9 @@ export const groupedZones: Zone[][] = [
   ['Kugane', 'Shirogane'],
   ['The Ruby Sea', 'Yanxia', 'The Azim Steppe'],
   ['Radz-at-Han', 'Thavnair', 'Garlemald'],
+  ['Tuliyollal', 'Urqopacha', 'Kozama\'uka', 'Yak T\'el'],
+  ['Solution Nine', 'Shaaloani', 'Heritage Found'],
+  ['Living Memory'],
   ['The Crystarium', 'Eulmore', 'Lakeland', 'Kholusia', 'Amh Araeng', 'Il Mheg',
     'The Rak\'tika Greatwood', 'The Tempest'],
   ['Mor Dhona'],
