@@ -254,7 +254,7 @@ const texts = {
     zh: '拉外',
     ko: '외지',
   },
-  'The Mist': {
+  'Mist': {
     en: 'Mist',
     de: 'Nebels',
     fr: 'Brumée',

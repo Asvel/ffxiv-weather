@@ -7,7 +7,7 @@ const data = {
   'Western La Noscea': ['Fog', 10, 'Clear Skies', 40, 'Fair Skies', 60, 'Clouds', 80, 'Wind', 90, 'Gales'],
   'Upper La Noscea': ['Clear Skies', 30, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 80, 'Thunder', 90, 'Thunderstorms'],
   'Outer La Noscea': ['Clear Skies', 30, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 85, 'Rain'],
-  'The Mist': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Fair Skies', 80, 'Fog', 90, 'Rain'],
+  'Mist': ['Clouds', 20, 'Clear Skies', 50, 'Fair Skies', 70, 'Fair Skies', 80, 'Fog', 90, 'Rain'],
   'Gridania': ['Rain', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
   'Central Shroud': ['Thunder', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
   'East Shroud': ['Thunder', 5, 'Rain', 20, 'Fog', 30, 'Clouds', 40, 'Fair Skies', 55, 'Clear Skies', 85, 'Fair Skies'],
@@ -43,7 +43,7 @@ const data = {
   'Yanxia': ['Showers', 5, 'Rain', 15, 'Fog', 25, 'Clouds', 40, 'Fair Skies', 80, 'Clear Skies'],
   'The Azim Steppe': ['Gales', 5, 'Wind', 10, 'Rain', 17, 'Fog', 25, 'Clouds', 35, 'Fair Skies', 75, 'Clear Skies'],
   'Eureka Anemos': ['Fair Skies', 30, 'Gales', 60, 'Showers', 90, 'Snow'],
-  'Eureka Pagos': ['Clear Skies', 10, 'Fog', 28, 'Heat Waves', 46, 'Snow', 64, 'Thunder', 82, 'Blizzards'],
+  'Eureka Pagos': ['Fair Skies', 10, 'Fog', 28, 'Heat Waves', 46, 'Snow', 64, 'Thunder', 82, 'Blizzards'],
   'Eureka Pyros': ['Fair Skies', 10, 'Heat Waves', 28, 'Thunder', 46, 'Blizzards', 64, 'Umbral Wind', 82, 'Snow'],
   'Eureka Hydatos': ['Fair Skies', 12, 'Showers', 34, 'Gloom', 56, 'Thunderstorms', 78, 'Snow'],
   'Bozjan Southern Front': ['Fair Skies', 52, 'Rain', 64, 'Wind', 76, 'Thunder', 88, 'Dust Storms'],
@@ -194,7 +194,7 @@ export function find(condition: {
 
 export const groupedZones: Zone[][] = [
   ['Limsa Lominsa', 'Middle La Noscea', 'Lower La Noscea', 'Eastern La Noscea',
-    'Western La Noscea', 'Upper La Noscea', 'Outer La Noscea', 'The Mist'],
+    'Western La Noscea', 'Upper La Noscea', 'Outer La Noscea', 'Mist'],
   ['Gridania', 'Central Shroud', 'East Shroud', 'South Shroud', 'North Shroud',
     'The Lavender Beds'],
   ['Ul\'dah', 'Western Thanalan', 'Central Thanalan', 'Eastern Thanalan',
