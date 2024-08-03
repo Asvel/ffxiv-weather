@@ -723,7 +723,7 @@ const texts = {
     de: 'Tuliyollal',
     fr: 'Tuliyollal',
     ja: 'トライヨラ',
-    zh: '',
+    zh: '图莱尤拉',
     ko: '',
   },
   'Urqopacha': {
@@ -731,7 +731,7 @@ const texts = {
     de: 'Urqopacha',
     fr: 'Urqopacha',
     ja: 'オルコ・パチャ',
-    zh: '',
+    zh: '奥阔帕恰山',
     ko: '',
   },
   'Kozama\'uka': {
@@ -739,7 +739,7 @@ const texts = {
     de: 'Kozama\'uka',
     fr: 'Kozama\'uka',
     ja: 'コザマル・カ',
-    zh: '',
+    zh: '湿地',
     ko: '',
   },
   'Yak T\'el': {
@@ -747,7 +747,7 @@ const texts = {
     de: 'Yak T\'el',
     fr: 'Yak T\'el',
     ja: 'ヤクテル樹海',
-    zh: '',
+    zh: '树海',
     ko: '',
   },
   'Solution Nine': {
@@ -755,7 +755,7 @@ const texts = {
     de: 'Lösung Neun',
     fr: 'Solution Neuf',
     ja: 'ソリューション・ナイン',
-    zh: '',
+    zh: '九号解决方案',
     ko: '',
   },
   'Shaaloani': {
@@ -763,7 +763,7 @@ const texts = {
     de: 'Shaaloani',
     fr: 'Shaaloani',
     ja: 'シャーローニ荒野',
-    zh: '',
+    zh: '荒野',
     ko: '',
   },
   'Heritage Found': {
@@ -771,7 +771,7 @@ const texts = {
     de: 'Ewiges Erbe',
     fr: 'L\'Hoirie recouvrée',
     ja: 'ヘリテージファウンド',
-    zh: '',
+    zh: '遗产之地',
     ko: '',
   },
   'Living Memory': {
