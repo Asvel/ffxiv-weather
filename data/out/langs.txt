@@ -723,7 +723,7 @@
     de: 'Tuliyollal',
     fr: 'Tuliyollal',
     ja: 'トライヨラ',
-    zh: '',
+    zh: '图莱尤拉',
     ko: '',
   },
   'Urqopacha': {
@@ -731,7 +731,7 @@
     de: 'Urqopacha',
     fr: 'Urqopacha',
     ja: 'オルコ・パチャ',
-    zh: '',
+    zh: '奥阔帕恰山',
     ko: '',
   },
   'Kozama\'uka': {
@@ -739,7 +739,7 @@
     de: 'Kozama\'uka',
     fr: 'Kozama\'uka',
     ja: 'コザマル・カ',
-    zh: '',
+    zh: '克扎玛乌卡湿地',
     ko: '',
   },
   'Yak T\'el': {
@@ -747,7 +747,7 @@
     de: 'Yak T\'el',
     fr: 'Yak T\'el',
     ja: 'ヤクテル樹海',
-    zh: '',
+    zh: '亚克特尔树海',
     ko: '',
   },
   'Shaaloani': {
@@ -755,7 +755,7 @@
     de: 'Shaaloani',
     fr: 'Shaaloani',
     ja: 'シャーローニ荒野',
-    zh: '',
+    zh: '夏劳尼荒野',
     ko: '',
   },
   'Heritage Found': {
@@ -763,7 +763,7 @@
     de: 'Ewiges Erbe',
     fr: 'L\'Hoirie recouvrée',
     ja: 'ヘリテージファウンド',
-    zh: '',
+    zh: '遗产之地',
     ko: '',
   },
   'Living Memory': {
@@ -771,7 +771,7 @@
     de: 'Lebende Erinnerung',
     fr: 'La Mémoire vivante',
     ja: 'リビング・メモリー',
-    zh: '',
+    zh: '活着的记忆',
     ko: '',
   },
   'Sunperch': {
@@ -779,7 +779,7 @@
     de: 'Sonnensitz',
     fr: 'Salle de l\'Aurore',
     ja: '金凰の間',
-    zh: '',
+    zh: '金凰大堂',
     ko: '',
   },
   'The For\'ard Cabins': {
@@ -787,7 +787,7 @@
     de: 'Kielkajüten',
     fr: 'Cabines de Proue',
     ja: 'フォルアード・キャビンズ',
-    zh: '',
+    zh: '船头小屋',
     ko: '',
   },
   'Earthen Sky Hideout': {
@@ -795,7 +795,7 @@
     de: 'Unterschlupf im Irdenen Himmel',
     fr: 'Refuge des Cavernes célestes',
     ja: '空の坑道のアジト',
-    zh: '',
+    zh: '地中天道秘密基地',
     ko: '',
   },
 //

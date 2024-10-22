@@ -779,7 +779,7 @@ const texts = {
     de: 'Lebende Erinnerung',
     fr: 'La Mémoire vivante',
     ja: 'リビング・メモリー',
-    zh: '',
+    zh: '活着的记忆',
     ko: '',
   },
 
