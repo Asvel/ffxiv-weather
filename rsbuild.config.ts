@@ -17,6 +17,11 @@ export default defineConfig({
     hmr: false,
     liveReload: false,
   },
+  source: {
+    define: {
+      __BUILD_DATE__: Date.now(),
+    },
+  },
   output: {
     charset: 'utf8',
     cleanDistPath: prod,

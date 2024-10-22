@@ -2,12 +2,14 @@ import { createSignal, createSelector } from 'solid-js';
 import * as i18n from '../i18n';
 import { t } from '../i18n';
 
+declare const __BUILD_DATE__: number;
+
 export function Footer() {
   const [ getLanguageExpanded, setLanguageExpanded ] = createSignal(false);
   const isCurrentLanguage = createSelector(() => i18n.getCurrentLanguage());
   return (
     <div class="footer">
-      {t`FFXIV Weather Lookup`} 2408a
+      {t`FFXIV Weather Lookup`} <span title={`发布于 ${new Date(__BUILD_DATE__).toLocaleString()}`}>2410a</span>
       <span class="footer_separator">·</span>
       <a class="footer_clickable" href="https://github.com/Asvel/ffxiv-weather#license">{t`License`}</a>
       <span class="footer_separator">·</span>
