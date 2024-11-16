@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lumina" Version="4.1.0" />
-    <PackageReference Include="Lumina.Excel" Version="7.0.1" />
+    <PackageReference Include="Lumina" Version="5.3.0" />
+    <PackageReference Include="Lumina.Excel" Version="7.1.0" />
   </ItemGroup>
 
 </Project>
