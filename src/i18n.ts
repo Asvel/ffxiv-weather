@@ -755,7 +755,7 @@ const texts = {
     de: 'Lösung Neun',
     fr: 'Solution Neuf',
     ja: 'ソリューション・ナイン',
-    zh: '九号解决方案',
+    zh: '九号方案',
     ko: '',
   },
   'Shaaloani': {
@@ -771,7 +771,7 @@ const texts = {
     de: 'Ewiges Erbe',
     fr: 'L\'Hoirie recouvrée',
     ja: 'ヘリテージファウンド',
-    zh: '遗产之地',
+    zh: '遗产',
     ko: '',
   },
   'Living Memory': {
@@ -779,7 +779,7 @@ const texts = {
     de: 'Lebende Erinnerung',
     fr: 'La Mémoire vivante',
     ja: 'リビング・メモリー',
-    zh: '活着的记忆',
+    zh: '记忆',
     ko: '',
   },
 
