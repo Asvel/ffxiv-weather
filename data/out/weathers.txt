@@ -102,3 +102,4 @@
   'Heritage Found': ['Fair Skies', 5, 'Clouds', 25, 'Fog', 40, 'Rain', 45, 'Thunderstorms', 50, 'Umbral Static'],
   'Living Memory': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies'],
   'The For\'ard Cabins': ['Clear Skies', 40, 'Fair Skies', 80, 'Clouds', 85, 'Fog', 95, 'Rain'],
+  'Sinus Ardorum': ['Moon Dust', 15, 'Fair Skies', 85, 'Umbral Wind'],

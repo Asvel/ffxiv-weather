@@ -15,13 +15,12 @@ var placeUsed = new HashSet<uint>();
 var weatherUsed = new HashSet<uint>();
 {
     var territoryTypeSheet = lumina.GetExcelSheet<TerritoryType>()!;
-    var weatherRateSheet = lumina.GetExcelSheet<WeatherRate>()!;
     var weatherSheet = lumina.GetExcelSheet<Weather>()!;
     var weatherReportReplaceSheet = lumina.GetExcelSheet<WeatherReportReplace>()!;
     var weatherReportReplaces = weatherReportReplaceSheet.ToDictionary(x => x.PlaceNameSub.RowId, x => x.PlaceNameParent);
     foreach (var territoryType in territoryTypeSheet)
     {
-        var weatherRate = weatherRateSheet.GetRow(territoryType.WeatherRate)!;
+        var weatherRate = territoryType.WeatherRate.Value;
         if (weatherRate.Rate[0] == 100) continue;
         if (!weatherReportReplaces.TryGetValue(territoryType.PlaceName.RowId, out var placeName))
         {

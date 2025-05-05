@@ -782,6 +782,14 @@ const texts = {
     zh: '记忆',
     ko: '',
   },
+  'Sinus Ardorum': {
+    en: 'Sinus Ardorum',
+    de: 'Sinus Ardorum',
+    fr: 'Sinus Ardorum',
+    ja: '焦がれの入江',
+    zh: '',
+    ko: '',
+  },
 
   'Clear Skies': {
     en: 'Clear',

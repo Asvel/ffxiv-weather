@@ -73,6 +73,7 @@ const data = {
   'Shaaloani': ['Clear Skies', 5, 'Fair Skies', 50, 'Clouds', 70, 'Dust Storms', 85, 'Gales'],
   'Heritage Found': ['Fair Skies', 5, 'Clouds', 25, 'Fog', 40, 'Rain', 45, 'Thunderstorms', 50, 'Umbral Static'],
   'Living Memory': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies'],
+  'Sinus Ardorum': ['Moon Dust', 15, 'Fair Skies', 85, 'Umbral Wind'],
 };
 
 export type Zone = keyof typeof data;
@@ -226,6 +227,7 @@ export const groupedZones: Zone[][] = [
   ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
   ['Bozjan Southern Front', 'Zadnor'],
   ['Unnamed Island'],
+  ['Sinus Ardorum'],
 ];
 
 export const zoneShorthands = {} as { [index in Zone]: string };
