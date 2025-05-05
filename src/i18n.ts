@@ -731,7 +731,7 @@ const texts = {
     de: 'Urqopacha',
     fr: 'Urqopacha',
     ja: 'オルコ・パチャ',
-    zh: '奥阔帕恰山',
+    zh: '羊驼山',
     ko: '',
   },
   'Kozama\'uka': {
