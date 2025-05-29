@@ -790,6 +790,14 @@ const texts = {
     zh: '',
     ko: '',
   },
+  'South Horn': {
+    en: 'South Horn',
+    de: 'Südliches Kreszentia',
+    fr: 'Île de Lunule méridionale',
+    ja: '三日月島南部',
+    zh: '新月岛南部',
+    ko: '',
+  },
 
   'Clear Skies': {
     en: 'Clear',
@@ -942,6 +950,22 @@ const texts = {
     ja: '磁気嵐',
     zh: '磁暴',
     ko: '자기장 폭풍',
+  },
+'Atmospheric Phantasms': {
+    en: 'Atmospheric Phantasms',
+    de: 'Phantasmagorien',
+    fr: 'Fantasmes',
+    ja: '幻怪',
+    zh: '幻怪',
+    ko: '',
+  },
+  'Illusory Disturbances': {
+    en: 'Illusory Disturbances',
+    de: 'Trugbilder',
+    fr: 'Illusions',
+    ja: '幻妖',
+    zh: '幻妖',
+    ko: '',
   },
 
   'Garlok': {

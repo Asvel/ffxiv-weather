@@ -74,6 +74,7 @@ const data = {
   'Heritage Found': ['Fair Skies', 5, 'Clouds', 25, 'Fog', 40, 'Rain', 45, 'Thunderstorms', 50, 'Umbral Static'],
   'Living Memory': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies'],
   'Sinus Ardorum': ['Moon Dust', 15, 'Fair Skies', 85, 'Umbral Wind'],
+  'South Horn': ['Clear Skies', 10, 'Fair Skies', 55, 'Clouds', 70, 'Rain', 80, 'Atmospheric Phantasms', 95, 'Illusory Disturbances'],
 };
 
 export type Zone = keyof typeof data;
@@ -228,6 +229,7 @@ export const groupedZones: Zone[][] = [
   ['Bozjan Southern Front', 'Zadnor'],
   ['Unnamed Island'],
   ['Sinus Ardorum'],
+  ['South Horn'],
 ];
 
 export const zoneShorthands = {} as { [index in Zone]: string };

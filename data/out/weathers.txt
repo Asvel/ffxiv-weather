@@ -103,3 +103,4 @@
   'Living Memory': ['Rain', 10, 'Fog', 20, 'Clouds', 40, 'Fair Skies'],
   'The For\'ard Cabins': ['Clear Skies', 40, 'Fair Skies', 80, 'Clouds', 85, 'Fog', 95, 'Rain'],
   'Sinus Ardorum': ['Moon Dust', 15, 'Fair Skies', 85, 'Umbral Wind'],
+  'South Horn': ['Clear Skies', 10, 'Fair Skies', 55, 'Clouds', 70, 'Rain', 80, 'Atmospheric Phantasms', 95, 'Illusory Disturbances'],
