@@ -787,7 +787,7 @@ const texts = {
     de: 'Sinus Ardorum',
     fr: 'Sinus Ardorum',
     ja: '焦がれの入江',
-    zh: '',
+    zh: '憧憬湾',
     ko: '',
   },
   'South Horn': {
