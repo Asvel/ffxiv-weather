@@ -798,6 +798,14 @@ const texts = {
     zh: '新月岛南部',
     ko: '',
   },
+  'Phaenna': {
+    en: 'Phaenna',
+    de: 'Phaenna',
+    fr: 'Phaenna',
+    ja: '惑星パエンナ',
+    zh: '',
+    ko: '',
+  },
 
   'Clear Skies': {
     en: 'Clear',
