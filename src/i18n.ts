@@ -803,7 +803,7 @@ const texts = {
     de: 'Phaenna',
     fr: 'Phaenna',
     ja: '惑星パエンナ',
-    zh: '',
+    zh: '法恩娜',
     ko: '',
   },
 
