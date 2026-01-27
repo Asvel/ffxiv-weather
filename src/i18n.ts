@@ -802,8 +802,16 @@ const texts = {
     en: 'Phaenna',
     de: 'Phaenna',
     fr: 'Phaenna',
-    ja: '惑星パエンナ',
+    ja: 'パエンナ',
     zh: '法恩娜',
+    ko: '',
+  },
+  'Oizys': {
+    en: 'Oizys',
+    de: 'Oizys',
+    fr: 'Oizys',
+    ja: 'オイジュス',
+    zh: '俄匊斯',
     ko: '',
   },
 

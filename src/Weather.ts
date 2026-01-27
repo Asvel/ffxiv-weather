@@ -76,6 +76,7 @@ const data = {
   'Sinus Ardorum': ['Moon Dust', 15, 'Fair Skies', 85, 'Umbral Wind'],
   'South Horn': ['Clear Skies', 10, 'Fair Skies', 55, 'Clouds', 70, 'Rain', 80, 'Atmospheric Phantasms', 95, 'Illusory Disturbances'],
   'Phaenna': ['Fair Skies', 60, 'Clouds', 80, 'Rain'],
+  'Oizys': ['Clouds', 20, 'Fair Skies', 80, 'Clear Skies'],
 };
 
 export type Zone = keyof typeof data;
@@ -229,7 +230,7 @@ export const groupedZones: Zone[][] = [
   ['Eureka Anemos', 'Eureka Pagos', 'Eureka Pyros', 'Eureka Hydatos'],
   ['Bozjan Southern Front', 'Zadnor'],
   ['Unnamed Island'],
-  ['Sinus Ardorum', 'Phaenna'],
+  ['Sinus Ardorum', 'Phaenna', 'Oizys'],
   ['South Horn'],
 ];
 
