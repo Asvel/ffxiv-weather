@@ -220,10 +220,10 @@ button:active {
 }
 
 .match .match_local-time {
-  width: 36%;
+  width: 32%;
 }
 .match .match_eorzea-time {
-  width: 28%;
+  width: 24%;
 }
 .match .match_event-start-time {
   width: 156px;

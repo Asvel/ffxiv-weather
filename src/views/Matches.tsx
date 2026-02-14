@@ -38,7 +38,7 @@ export function Matches() {
                 {/*@once*/formatEorzeaTime(begin)}, {duration}h
               </td>
               <td class="match_weathers">
-                <WeatherSequence weathers={weathers} max={4} />
+                <WeatherSequence weathers={weathers} max={7} />
               </td>
             </tr>
           ))}
