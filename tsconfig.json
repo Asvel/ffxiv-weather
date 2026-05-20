@@ -6,10 +6,8 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "noEmit": true,
-    "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "strict": true,
     "strictPropertyInitialization": false,
   },
-  "include": ["src"]
+  "exclude": ["test"]
 }

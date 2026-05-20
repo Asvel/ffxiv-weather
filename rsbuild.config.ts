@@ -1,8 +1,7 @@
-import { defineConfig } from '@rsbuild/core';
+import { defineConfig, type RspackChain } from '@rsbuild/core';
 import { pluginBabel } from '@rsbuild/plugin-babel';
 import { pluginSolid } from '@rsbuild/plugin-solid';
 import { pluginTypeCheck } from '@rsbuild/plugin-type-check';
-import type RspackChain from '@rsbuild/core/compiled/rspack-chain';
 
 const prod = process.env.NODE_ENV === 'production';
 export default defineConfig({
@@ -23,7 +22,6 @@ export default defineConfig({
     },
   },
   output: {
-    charset: 'utf8',
     cleanDistPath: prod,
     distPath: { js: '', css: '' },
     sourceMap: {
@@ -37,6 +35,7 @@ export default defineConfig({
   server: {
     htmlFallback: false,
   },
+  splitChunks: false,
   tools: {
     bundlerChain: chain => chain
       .output
@@ -49,20 +48,7 @@ export default defineConfig({
           source => source.replace(/(_\$insert\([^,]+, ?)(t`)/g, '$1()=>$2'),
         ))
         .end().end()
-      // .optimization.concatenateModules(false).end()  // for bundle analyze
-      .experiments({
-        rspackFuture: {
-          bundlerInfo: {
-            force: false,
-          },
-        },
-      }).end(),
-  },
-  performance: {
-    // bundleAnalyze: {},
-    chunkSplit: {
-      strategy: 'all-in-one',
-    },
+      .end(),
   },
 });
 

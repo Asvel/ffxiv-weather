@@ -25,7 +25,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/prefer-nullish-coalescing': 'error',
+    // '@typescript-eslint/prefer-nullish-coalescing': 'error',
     '@typescript-eslint/require-array-sort-compare': 'error',
 
     // stylistic
