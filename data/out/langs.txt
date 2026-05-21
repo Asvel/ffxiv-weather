@@ -4,7 +4,7 @@
     fr: 'Limsa Lominsa',
     ja: 'リムサ・ロミンサ',
     zh: '利姆萨·罗敏萨',
-    ko: '',
+    ko: '림사 로민사',
   },
   'Limsa Lominsa Lower Decks': {
     en: 'Limsa Lominsa Lower Decks',
@@ -12,7 +12,7 @@
     fr: 'Limsa Lominsa - L\'Entrepont',
     ja: 'リムサ・ロミンサ：下甲板層',
     zh: '利姆萨·罗敏萨下层甲板',
-    ko: '',
+    ko: '림사 로민사 하층 갑판',
   },
   'Middle La Noscea': {
     en: 'Middle La Noscea',
@@ -20,7 +20,7 @@
     fr: 'Noscea centrale',
     ja: '中央ラノシア',
     zh: '中拉诺西亚',
-    ko: '',
+    ko: '중부 라노시아',
   },
   'Lower La Noscea': {
     en: 'Lower La Noscea',
@@ -28,7 +28,7 @@
     fr: 'Basse-Noscea',
     ja: '低地ラノシア',
     zh: '拉诺西亚低地',
-    ko: '',
+    ko: '저지 라노시아',
   },
   'Eastern La Noscea': {
     en: 'Eastern La Noscea',
@@ -36,7 +36,7 @@
     fr: 'Noscea orientale',
     ja: '東ラノシア',
     zh: '东拉诺西亚',
-    ko: '',
+    ko: '동부 라노시아',
   },
   'Western La Noscea': {
     en: 'Western La Noscea',
@@ -44,7 +44,7 @@
     fr: 'Noscea occidentale',
     ja: '西ラノシア',
     zh: '西拉诺西亚',
-    ko: '',
+    ko: '서부 라노시아',
   },
   'Upper La Noscea': {
     en: 'Upper La Noscea',
@@ -52,7 +52,7 @@
     fr: 'Haute-Noscea',
     ja: '高地ラノシア',
     zh: '拉诺西亚高地',
-    ko: '',
+    ko: '고지 라노시아',
   },
   'Gridania': {
     en: 'Gridania',
@@ -60,7 +60,7 @@
     fr: 'Gridania',
     ja: 'グリダニア',
     zh: '格里达尼亚',
-    ko: '',
+    ko: '그리다니아',
   },
   'Ul\'dah - Steps of Thal': {
     en: 'Ul\'dah - Steps of Thal',
@@ -68,7 +68,7 @@
     fr: 'Ul\'dah - Faubourg de Thal',
     ja: 'ウルダハ：ザル回廊',
     zh: '乌尔达哈来生回廊',
-    ko: '',
+    ko: '울다하 달 회랑',
   },
   'Western Thanalan': {
     en: 'Western Thanalan',
@@ -76,7 +76,7 @@
     fr: 'Thanalan occidental',
     ja: '西ザナラーン',
     zh: '西萨纳兰',
-    ko: '',
+    ko: '서부 다날란',
   },
   'Central Thanalan': {
     en: 'Central Thanalan',
@@ -84,7 +84,7 @@
     fr: 'Thanalan central',
     ja: '中央ザナラーン',
     zh: '中萨纳兰',
-    ko: '',
+    ko: '중부 다날란',
   },
   'Eastern Thanalan': {
     en: 'Eastern Thanalan',
@@ -92,7 +92,7 @@
     fr: 'Thanalan oriental',
     ja: '東ザナラーン',
     zh: '东萨纳兰',
-    ko: '',
+    ko: '동부 다날란',
   },
   'Southern Thanalan': {
     en: 'Southern Thanalan',
@@ -100,7 +100,7 @@
     fr: 'Thanalan méridional',
     ja: '南ザナラーン',
     zh: '南萨纳兰',
-    ko: '',
+    ko: '남부 다날란',
   },
   'Northern Thanalan': {
     en: 'Northern Thanalan',
@@ -108,7 +108,7 @@
     fr: 'Thanalan septentrional',
     ja: '北ザナラーン',
     zh: '北萨纳兰',
-    ko: '',
+    ko: '북부 다날란',
   },
   'Ul\'dah': {
     en: 'Ul\'dah',
@@ -116,7 +116,7 @@
     fr: 'Ul\'dah',
     ja: 'ウルダハ',
     zh: '乌尔达哈',
-    ko: '',
+    ko: '울다하',
   },
   'Old Gridania': {
     en: 'Old Gridania',
@@ -124,7 +124,7 @@
     fr: 'Vieille Gridania',
     ja: 'グリダニア：旧市街',
     zh: '格里达尼亚旧街',
-    ko: '',
+    ko: '그리다니아 구시가지',
   },
   'Central Shroud': {
     en: 'Central Shroud',
@@ -132,7 +132,7 @@
     fr: 'Forêt centrale',
     ja: '黒衣森：中央森林',
     zh: '黑衣森林中央林区',
-    ko: '',
+    ko: '검은장막 숲 중부삼림',
   },
   'East Shroud': {
     en: 'East Shroud',
@@ -140,7 +140,7 @@
     fr: 'Forêt de l\'est',
     ja: '黒衣森：東部森林',
     zh: '黑衣森林东部林区',
-    ko: '',
+    ko: '검은장막 숲 동부삼림',
   },
   'South Shroud': {
     en: 'South Shroud',
@@ -148,7 +148,7 @@
     fr: 'Forêt du sud',
     ja: '黒衣森：南部森林',
     zh: '黑衣森林南部林区',
-    ko: '',
+    ko: '검은장막 숲 남부삼림',
   },
   'North Shroud': {
     en: 'North Shroud',
@@ -156,7 +156,7 @@
     fr: 'Forêt du nord',
     ja: '黒衣森：北部森林',
     zh: '黑衣森林北部林区',
-    ko: '',
+    ko: '검은장막 숲 북부삼림',
   },
   'Ishgard': {
     en: 'Ishgard',
@@ -164,7 +164,7 @@
     fr: 'Ishgard',
     ja: 'イシュガルド',
     zh: '伊修加德',
-    ko: '',
+    ko: '이슈가르드',
   },
   'Coerthas Central Highlands': {
     en: 'Coerthas Central Highlands',
@@ -172,7 +172,7 @@
     fr: 'Hautes terres du Coerthas central',
     ja: 'クルザス中央高地',
     zh: '库尔札斯中央高地',
-    ko: '',
+    ko: '커르다스 중앙고지',
   },
   'Mor Dhona': {
     en: 'Mor Dhona',
@@ -180,7 +180,7 @@
     fr: 'Mor Dhona',
     ja: 'モードゥナ',
     zh: '摩杜纳',
-    ko: '',
+    ko: '모르도나',
   },
   'Outer La Noscea': {
     en: 'Outer La Noscea',
@@ -188,7 +188,7 @@
     fr: 'Noscea extérieure',
     ja: '外地ラノシア',
     zh: '拉诺西亚外地',
-    ko: '',
+    ko: '외지 라노시아',
   },
   'Command Room': {
     en: 'Command Room',
@@ -196,7 +196,7 @@
     fr: 'Salon de l\'Amiral',
     ja: 'アドミラルブリッジ：提督室',
     zh: '提督室',
-    ko: '',
+    ko: '사령함교: 제독실',
   },
   'Wolves\' Den Pier': {
     en: 'Wolves\' Den Pier',
@@ -204,7 +204,7 @@
     fr: 'Jetée de l\'Antre des loups',
     ja: 'ウルヴズジェイル係船場',
     zh: '狼狱停船场',
-    ko: '',
+    ko: '늑대우리 부두',
   },
   'The Weeping Saint': {
     en: 'The Weeping Saint',
@@ -212,7 +212,7 @@
     fr: 'Le Saint affligé',
     ja: '聖ダナフェンの落涙',
     zh: '圣人泪',
-    ko: '',
+    ko: '성 다니펜의 눈물',
   },
   'Mist': {
     en: 'Mist',
@@ -220,7 +220,7 @@
     fr: 'Brumée',
     ja: 'ミスト・ヴィレッジ',
     zh: '海雾村',
-    ko: '',
+    ko: '안갯빛 마을',
   },
   'The Lavender Beds': {
     en: 'The Lavender Beds',
@@ -228,7 +228,7 @@
     fr: 'Lavandière',
     ja: 'ラベンダーベッド',
     zh: '薰衣草苗圃',
-    ko: '',
+    ko: '라벤더 안식처',
   },
   'The Goblet': {
     en: 'The Goblet',
@@ -236,7 +236,7 @@
     fr: 'La Coupe',
     ja: 'ゴブレットビュート',
     zh: '高脚孤丘',
-    ko: '',
+    ko: '하늘잔 마루',
   },
   'Seal Rock': {
     en: 'Seal Rock',
@@ -244,7 +244,7 @@
     fr: 'Rocher des tréfonds',
     ja: 'シールロック',
     zh: '尘封秘岩',
-    ko: '',
+    ko: '봉인된 바위섬',
   },
   'The Diadem': {
     en: 'The Diadem',
@@ -252,7 +252,7 @@
     fr: 'Le Diadème',
     ja: 'ディアデム諸島',
     zh: '云冠群岛',
-    ko: '',
+    ko: '디아뎀 제도',
   },
   'The Feasting Grounds': {
     en: 'The Feasting Grounds',
@@ -260,7 +260,7 @@
     fr: 'Festin des loups',
     ja: 'ウルヴズジェイル演習場',
     zh: '狼狱演习场',
-    ko: '',
+    ko: '늑대우리 훈련장',
   },
   'The Fields of Glory': {
     en: 'The Fields of Glory',
@@ -268,7 +268,7 @@
     fr: 'Champs de la Gloire',
     ja: 'フィールド・オブ・グローリー',
     zh: '荣誉野',
-    ko: '',
+    ko: '영광의 평원',
   },
   'The Dravanian Forelands': {
     en: 'The Dravanian Forelands',
@@ -276,7 +276,7 @@
     fr: 'Avant-pays dravanien',
     ja: '高地ドラヴァニア',
     zh: '龙堡参天高地',
-    ko: '',
+    ko: '고지 드라바니아',
   },
   'The Dravanian Hinterlands': {
     en: 'The Dravanian Hinterlands',
@@ -284,7 +284,7 @@
     fr: 'Arrière-pays dravanien',
     ja: '低地ドラヴァニア',
     zh: '龙堡内陆低地',
-    ko: '',
+    ko: '저지 드라바니아',
   },
   'The Churning Mists': {
     en: 'The Churning Mists',
@@ -292,7 +292,7 @@
     fr: 'L\'Écume des cieux de Dravania',
     ja: 'ドラヴァニア雲海',
     zh: '翻云雾海',
-    ko: '',
+    ko: '드라바니아 구름바다',
   },
   'Idyllshire': {
     en: 'Idyllshire',
@@ -300,7 +300,7 @@
     fr: 'Idyllée',
     ja: 'イディルシャイア',
     zh: '田园郡',
-    ko: '',
+    ko: '이딜샤이어',
   },
   'The Sea of Clouds': {
     en: 'The Sea of Clouds',
@@ -308,7 +308,7 @@
     fr: 'L\'Écume des cieux d\'Abalathia',
     ja: 'アバラシア雲海',
     zh: '阿巴拉提亚云海',
-    ko: '',
+    ko: '아발라시아 구름바다',
   },
   'Azys Lla': {
     en: 'Azys Lla',
@@ -316,7 +316,7 @@
     fr: 'Azys Lla',
     ja: 'アジス・ラー',
     zh: '魔大陆阿济兹拉',
-    ko: '',
+    ko: '아지스 라',
   },
   'Coerthas Western Highlands': {
     en: 'Coerthas Western Highlands',
@@ -324,7 +324,7 @@
     fr: 'Hautes terres du Coerthas occidental',
     ja: 'クルザス西部高地',
     zh: '库尔札斯西部高地',
-    ko: '',
+    ko: '커르다스 서부고지',
   },
   'The Pillars': {
     en: 'The Pillars',
@@ -332,7 +332,7 @@
     fr: 'Ishgard - Les Contreforts',
     ja: 'イシュガルド：上層',
     zh: '伊修加德砥柱层',
-    ko: '',
+    ko: '이슈가르드 상층',
   },
   'Rhalgr\'s Reach': {
     en: 'Rhalgr\'s Reach',
@@ -340,7 +340,7 @@
     fr: 'L\'Étendue de Rhalgr',
     ja: 'ラールガーズリーチ',
     zh: '神拳痕',
-    ko: '',
+    ko: '랄거의 손길',
   },
   'Kugane': {
     en: 'Kugane',
@@ -348,7 +348,7 @@
     fr: 'Kugane',
     ja: 'クガネ',
     zh: '黄金港',
-    ko: '',
+    ko: '쿠가네',
   },
   'The Fringes': {
     en: 'The Fringes',
@@ -356,7 +356,7 @@
     fr: 'Les Marges',
     ja: 'ギラバニア辺境地帯',
     zh: '基拉巴尼亚边区',
-    ko: '',
+    ko: '기라바니아 변방지대',
   },
   'The Peaks': {
     en: 'The Peaks',
@@ -364,7 +364,7 @@
     fr: 'Les Pics',
     ja: 'ギラバニア山岳地帯',
     zh: '基拉巴尼亚山区',
-    ko: '',
+    ko: '기라바니아 산악지대',
   },
   'The Lochs': {
     en: 'The Lochs',
@@ -372,7 +372,7 @@
     fr: 'Les Lacs',
     ja: 'ギラバニア湖畔地帯',
     zh: '基拉巴尼亚湖区',
-    ko: '',
+    ko: '기라바니아 호반지대',
   },
   'The Ruby Sea': {
     en: 'The Ruby Sea',
@@ -380,7 +380,7 @@
     fr: 'Mer de Rubis',
     ja: '紅玉海',
     zh: '红玉海',
-    ko: '',
+    ko: '홍옥해',
   },
   'Yanxia': {
     en: 'Yanxia',
@@ -388,7 +388,7 @@
     fr: 'Yanxia',
     ja: 'ヤンサ',
     zh: '延夏',
-    ko: '',
+    ko: '얀샤',
   },
   'The Azim Steppe': {
     en: 'The Azim Steppe',
@@ -396,7 +396,7 @@
     fr: 'Steppe d\'Azim',
     ja: 'アジムステップ',
     zh: '太阳神草原',
-    ko: '',
+    ko: '아짐 대초원',
   },
   'Shirogane': {
     en: 'Shirogane',
@@ -404,7 +404,7 @@
     fr: 'Shirogane',
     ja: 'シロガネ',
     zh: '白银乡',
-    ko: '',
+    ko: '시로가네',
   },
   'Bokairo Inn': {
     en: 'Bokairo Inn',
@@ -412,7 +412,7 @@
     fr: 'Auberge du Bokairo',
     ja: '望海楼',
     zh: '望海楼',
-    ko: '',
+    ko: '망해루',
   },
   'Eureka Anemos': {
     en: 'Eureka Anemos',
@@ -420,7 +420,7 @@
     fr: 'Eurêka Anemos',
     ja: 'エウレカ：アネモス帯',
     zh: '优雷卡常风之地',
-    ko: '',
+    ko: '에우레카: 아네모스 지대',
   },
   'Eureka Pagos': {
     en: 'Eureka Pagos',
@@ -428,7 +428,7 @@
     fr: 'Eurêka Pagos',
     ja: 'エウレカ：パゴス帯',
     zh: '优雷卡恒冰之地',
-    ko: '',
+    ko: '에우레카: 파고스 지대',
   },
   'Eureka Pyros': {
     en: 'Eureka Pyros',
@@ -436,7 +436,7 @@
     fr: 'Eurêka Pyros',
     ja: 'エウレカ：ピューロス帯',
     zh: '优雷卡涌火之地',
-    ko: '',
+    ko: '에우레카: 피로스 지대',
   },
   'Eureka Hydatos': {
     en: 'Eureka Hydatos',
@@ -444,7 +444,7 @@
     fr: 'Eurêka Hydatos',
     ja: 'エウレカ：ヒュダトス帯',
     zh: '优雷卡丰水之地',
-    ko: '',
+    ko: '에우레카: 히다토스 지대',
   },
   'The House of the Fierce': {
     en: 'The House of the Fierce',
@@ -452,7 +452,7 @@
     fr: 'Cercle des Intrépides',
     ja: '烈士庵',
     zh: '烈士庵',
-    ko: '',
+    ko: '열사암',
   },
   'The Doman Enclave': {
     en: 'The Doman Enclave',
@@ -460,7 +460,7 @@
     fr: 'Quartier enclavé de Doma',
     ja: 'ドマ町人地',
     zh: '多玛飞地',
-    ko: '',
+    ko: '도마 도읍지',
   },
   'The Crystarium': {
     en: 'The Crystarium',
@@ -468,7 +468,7 @@
     fr: 'Cristarium',
     ja: 'クリスタリウム',
     zh: '水晶都',
-    ko: '',
+    ko: '크리스타리움',
   },
   'Eulmore': {
     en: 'Eulmore',
@@ -476,7 +476,7 @@
     fr: 'Eulmore',
     ja: 'ユールモア',
     zh: '游末邦',
-    ko: '',
+    ko: '율모어',
   },
   'Lakeland': {
     en: 'Lakeland',
@@ -484,7 +484,7 @@
     fr: 'Grand-Lac',
     ja: 'レイクランド',
     zh: '雷克兰德',
-    ko: '',
+    ko: '레이크랜드',
   },
   'Kholusia': {
     en: 'Kholusia',
@@ -492,7 +492,7 @@
     fr: 'Kholusia',
     ja: 'コルシア島',
     zh: '珂露西亚岛',
-    ko: '',
+    ko: '콜루시아 섬',
   },
   'Amh Araeng': {
     en: 'Amh Araeng',
@@ -500,7 +500,7 @@
     fr: 'Amh Araeng',
     ja: 'アム・アレーン',
     zh: '安穆·艾兰',
-    ko: '',
+    ko: '아므 아랭',
   },
   'Il Mheg': {
     en: 'Il Mheg',
@@ -508,7 +508,7 @@
     fr: 'Il Mheg',
     ja: 'イル・メグ',
     zh: '伊尔美格',
-    ko: '',
+    ko: '일 메그',
   },
   'The Rak\'tika Greatwood': {
     en: 'The Rak\'tika Greatwood',
@@ -516,7 +516,7 @@
     fr: 'Rak\'tika',
     ja: 'ラケティカ大森林',
     zh: '拉凯提卡大森林',
-    ko: '',
+    ko: '라케티카 대삼림',
   },
   'The Tempest': {
     en: 'The Tempest',
@@ -524,7 +524,7 @@
     fr: 'La Tempête',
     ja: 'テンペスト',
     zh: '黑风海',
-    ko: '',
+    ko: '템페스트',
   },
   'The Pendants Personal Suite': {
     en: 'The Pendants Personal Suite',
@@ -532,7 +532,7 @@
     fr: 'Les Pendants',
     ja: 'ペンダント居住館：居室',
     zh: '悬挂公馆起居室',
-    ko: '',
+    ko: '펜던트 거주관: 거주실',
   },
   'Onsal Hakair': {
     en: 'Onsal Hakair',
@@ -540,7 +540,7 @@
     fr: 'Onsal Hakair',
     ja: 'オンサル・ハカイル',
     zh: '昂萨哈凯尔',
-    ko: '',
+    ko: '온살 하카이르',
   },
   'Lyhe Mheg': {
     en: 'Lyhe Mheg',
@@ -548,7 +548,7 @@
     fr: 'Lyhe Mheg',
     ja: 'リェー・メグ',
     zh: '丽耶美格梦园',
-    ko: '',
+    ko: '리예 메그',
   },
   'The Firmament': {
     en: 'The Firmament',
@@ -556,7 +556,7 @@
     fr: 'Azurée',
     ja: '蒼天街',
     zh: '天穹街',
-    ko: '',
+    ko: '창천 거리',
   },
   'The Endeavor': {
     en: 'The Endeavor',
@@ -564,7 +564,7 @@
     fr: 'L\'Ambition',
     ja: 'エンデバー号',
     zh: '努力号',
-    ko: '',
+    ko: '성취호',
   },
   'Bozjan Southern Front': {
     en: 'Bozjan Southern Front',
@@ -572,7 +572,7 @@
     fr: 'Front sud de Bozja',
     ja: '南方ボズヤ戦線',
     zh: '南方博兹雅战线',
-    ko: '',
+    ko: '남부 보즈야 전선',
   },
   'Zadnor': {
     en: 'Zadnor',
@@ -580,7 +580,7 @@
     fr: 'Hauts plateaux de Zadnor',
     ja: 'ザトゥノル高原',
     zh: '扎杜诺尔高原',
-    ko: '',
+    ko: '자트노르 고원',
   },
   'Old Sharlayan': {
     en: 'Old Sharlayan',
@@ -588,7 +588,7 @@
     fr: 'Vieille Sharlayan',
     ja: 'オールド・シャーレアン',
     zh: '旧萨雷安',
-    ko: '',
+    ko: '올드 샬레이안',
   },
   'Radz-at-Han': {
     en: 'Radz-at-Han',
@@ -596,7 +596,7 @@
     fr: 'Radz-at-Han',
     ja: 'ラザハン',
     zh: '拉札罕',
-    ko: '',
+    ko: '라자한',
   },
   'Labyrinthos': {
     en: 'Labyrinthos',
@@ -604,7 +604,7 @@
     fr: 'Le Labyrinthos',
     ja: 'ラヴィリンソス',
     zh: '迷津',
-    ko: '',
+    ko: '라비린토스',
   },
   'Thavnair': {
     en: 'Thavnair',
@@ -612,7 +612,7 @@
     fr: 'Thavnair',
     ja: 'サベネア島',
     zh: '萨维奈岛',
-    ko: '',
+    ko: '사베네어 섬',
   },
   'Garlemald': {
     en: 'Garlemald',
@@ -620,7 +620,7 @@
     fr: 'Garlemald',
     ja: 'ガレマルド',
     zh: '加雷马',
-    ko: '',
+    ko: '갈레말드',
   },
   'Mare Lamentorum': {
     en: 'Mare Lamentorum',
@@ -628,7 +628,7 @@
     fr: 'Mare Lamentorum',
     ja: '嘆きの海',
     zh: '叹息海',
-    ko: '',
+    ko: '비탄의 바다',
   },
   'Ultima Thule': {
     en: 'Ultima Thule',
@@ -636,7 +636,7 @@
     fr: 'Ultima Thulé',
     ja: 'ウルティマ・トゥーレ',
     zh: '天外天垓',
-    ko: '',
+    ko: '울티마 툴레',
   },
   'Elpis': {
     en: 'Elpis',
@@ -644,7 +644,7 @@
     fr: 'Elpis',
     ja: 'エルピス',
     zh: '厄尔庇斯',
-    ko: '',
+    ko: '엘피스',
   },
   'Main Hall': {
     en: 'Main Hall',
@@ -652,7 +652,7 @@
     fr: 'Salon principal',
     ja: 'メインホール',
     zh: '正厅',
-    ko: '',
+    ko: '대회의실',
   },
   'Andron': {
     en: 'Andron',
@@ -660,7 +660,7 @@
     fr: 'Chambre à coucher',
     ja: 'ナップルーム',
     zh: '休息室',
-    ko: '',
+    ko: '휴게실',
   },
   'Restricted Archives': {
     en: 'Restricted Archives',
@@ -668,7 +668,7 @@
     fr: 'Archives interdites du Noumène',
     ja: 'ヌーメノン大書院：禁書庫',
     zh: '所思大书院禁书库',
-    ko: '',
+    ko: '누메논 대서원 금서고',
   },
   'Meghaduta Guest Chambers': {
     en: 'Meghaduta Guest Chambers',
@@ -676,7 +676,7 @@
     fr: 'Appartements du palais du Meghaduta',
     ja: 'メーガドゥータ宮の客間',
     zh: '云使宫客房',
-    ko: '',
+    ko: '메가두타 궁전 객실',
   },
   'Elysion': {
     en: 'Elysion',
@@ -684,7 +684,7 @@
     fr: 'Élysée',
     ja: 'エリュシオン',
     zh: '至福乐土',
-    ko: '',
+    ko: '엘리시온',
   },
   'Unnamed Island': {
     en: 'Unnamed Island',
@@ -692,7 +692,7 @@
     fr: 'Île sans nom',
     ja: '名もなき島',
     zh: '无名岛',
-    ko: '',
+    ko: '이름 없는 섬',
   },
   'Empyreum': {
     en: 'Empyreum',
@@ -700,7 +700,7 @@
     fr: 'Empyrée',
     ja: 'エンピレアム',
     zh: '穹顶皓天',
-    ko: '',
+    ko: '지고천 거리',
   },
   'Estinien\'s Chambers': {
     en: 'Estinien\'s Chambers',
@@ -708,7 +708,7 @@
     fr: 'Chambre d\'Estinien',
     ja: 'エスティニアンの客室',
     zh: '埃斯蒂尼安的房间',
-    ko: '',
+    ko: '에스티니앙의 방',
   },
   'Senatus': {
     en: 'Senatus',
@@ -716,7 +716,7 @@
     fr: 'Gare de Senatus',
     ja: 'セナトゥス駅',
     zh: '元老院站',
-    ko: '',
+    ko: '세나투스 역',
   },
   'Tuliyollal': {
     en: 'Tuliyollal',
@@ -724,7 +724,7 @@
     fr: 'Tuliyollal',
     ja: 'トライヨラ',
     zh: '图莱尤拉',
-    ko: '',
+    ko: '툴라이욜라',
   },
   'Urqopacha': {
     en: 'Urqopacha',
@@ -732,7 +732,7 @@
     fr: 'Urqopacha',
     ja: 'オルコ・パチャ',
     zh: '奥阔帕恰山',
-    ko: '',
+    ko: '오르코 파차',
   },
   'Kozama\'uka': {
     en: 'Kozama\'uka',
@@ -740,7 +740,7 @@
     fr: 'Kozama\'uka',
     ja: 'コザマル・カ',
     zh: '克扎玛乌卡湿地',
-    ko: '',
+    ko: '코자말루 카',
   },
   'Yak T\'el': {
     en: 'Yak T\'el',
@@ -748,7 +748,7 @@
     fr: 'Yak T\'el',
     ja: 'ヤクテル樹海',
     zh: '亚克特尔树海',
-    ko: '',
+    ko: '야크텔 밀림',
   },
   'Shaaloani': {
     en: 'Shaaloani',
@@ -756,7 +756,7 @@
     fr: 'Shaaloani',
     ja: 'シャーローニ荒野',
     zh: '夏劳尼荒野',
-    ko: '',
+    ko: '샬로니 황야',
   },
   'Heritage Found': {
     en: 'Heritage Found',
@@ -764,7 +764,7 @@
     fr: 'L\'Hoirie recouvrée',
     ja: 'ヘリテージファウンド',
     zh: '遗产之地',
-    ko: '',
+    ko: '헤리티지 파운드',
   },
   'Living Memory': {
     en: 'Living Memory',
@@ -772,7 +772,7 @@
     fr: 'La Mémoire vivante',
     ja: 'リビング・メモリー',
     zh: '活着的记忆',
-    ko: '',
+    ko: '리빙 메모리',
   },
   'Sunperch': {
     en: 'Sunperch',
@@ -780,7 +780,7 @@
     fr: 'Salle de l\'Aurore',
     ja: '金凰の間',
     zh: '金凰大堂',
-    ko: '',
+    ko: '금봉황 옥좌',
   },
   'The For\'ard Cabins': {
     en: 'The For\'ard Cabins',
@@ -788,7 +788,7 @@
     fr: 'Cabines de Proue',
     ja: 'フォルアード・キャビンズ',
     zh: '船头小屋',
-    ko: '',
+    ko: '뱃머리 선실',
   },
   'Earthen Sky Hideout': {
     en: 'Earthen Sky Hideout',
@@ -796,7 +796,7 @@
     fr: 'Refuge des Cavernes célestes',
     ja: '空の坑道のアジト',
     zh: '地中天道秘密基地',
-    ko: '',
+    ko: '하늘갱도 아지트',
   },
   'South Horn': {
     en: 'South Horn',
@@ -804,7 +804,15 @@
     fr: 'Île de Lunule méridionale',
     ja: '三日月島南部',
     zh: '新月岛南部',
-    ko: '',
+    ko: '초승달 섬 남부',
+  },
+  'Zirgorteh the Open-armed': {
+    en: 'Zirgorteh the Open-armed',
+    de: 'Zirgorteh der Grüßende',
+    fr: 'Autel de Zirgorteh',
+    ja: 'ジィゴーテー拝壇',
+    zh: '雪棱拜坛',
+    ko: '지고테 제단',
   },
   'Sinus Ardorum': {
     en: 'Sinus Ardorum',
@@ -812,15 +820,23 @@
     fr: 'Sinus Ardorum',
     ja: '焦がれの入江',
     zh: '憧憬湾',
-    ko: '',
+    ko: '동경의 만',
   },
   'Phaenna': {
     en: 'Phaenna',
     de: 'Phaenna',
     fr: 'Phaenna',
     ja: '惑星パエンナ',
-    zh: '',
-    ko: '',
+    zh: '法恩娜行星',
+    ko: '행성 파엔나',
+  },
+  'Oizys': {
+    en: 'Oizys',
+    de: 'Oizys',
+    fr: 'Oizys',
+    ja: '惑星オイジュス',
+    zh: '俄匊斯行星',
+    ko: '행성 오이지스',
   },
 //
   'Clear Skies': {
@@ -829,7 +845,7 @@
     fr: 'Dégagé',
     ja: '快晴',
     zh: '碧空',
-    ko: '',
+    ko: '쾌청',
   },
   'Fair Skies': {
     en: 'Fair Skies',
@@ -837,7 +853,7 @@
     fr: 'Clair',
     ja: '晴れ',
     zh: '晴朗',
-    ko: '',
+    ko: '맑음',
   },
   'Clouds': {
     en: 'Clouds',
@@ -845,7 +861,7 @@
     fr: 'Couvert',
     ja: '曇り',
     zh: '阴云',
-    ko: '',
+    ko: '흐림',
   },
   'Fog': {
     en: 'Fog',
@@ -853,7 +869,7 @@
     fr: 'Brouillard',
     ja: '霧',
     zh: '薄雾',
-    ko: '',
+    ko: '안개',
   },
   'Wind': {
     en: 'Wind',
@@ -861,7 +877,7 @@
     fr: 'Vent',
     ja: '風',
     zh: '微风',
-    ko: '',
+    ko: '바람',
   },
   'Gales': {
     en: 'Gales',
@@ -869,7 +885,7 @@
     fr: 'Vents violents',
     ja: '暴風',
     zh: '强风',
-    ko: '',
+    ko: '폭풍',
   },
   'Rain': {
     en: 'Rain',
@@ -877,7 +893,7 @@
     fr: 'Pluie',
     ja: '雨',
     zh: '小雨',
-    ko: '',
+    ko: '비',
   },
   'Showers': {
     en: 'Showers',
@@ -885,7 +901,7 @@
     fr: 'Pluie torrentielle',
     ja: '暴雨',
     zh: '暴雨',
-    ko: '',
+    ko: '폭우',
   },
   'Thunder': {
     en: 'Thunder',
@@ -893,7 +909,7 @@
     fr: 'Orages',
     ja: '雷',
     zh: '打雷',
-    ko: '',
+    ko: '번개',
   },
   'Thunderstorms': {
     en: 'Thunderstorms',
@@ -901,7 +917,7 @@
     fr: 'Orages violents',
     ja: '雷雨',
     zh: '雷雨',
-    ko: '',
+    ko: '뇌우',
   },
   'Dust Storms': {
     en: 'Dust Storms',
@@ -909,7 +925,7 @@
     fr: 'Tempêtes de poussière',
     ja: '砂塵',
     zh: '扬沙',
-    ko: '',
+    ko: '모래먼지',
   },
   'Heat Waves': {
     en: 'Heat Waves',
@@ -917,7 +933,7 @@
     fr: 'Torride',
     ja: '灼熱波',
     zh: '热浪',
-    ko: '',
+    ko: '작열파',
   },
   'Snow': {
     en: 'Snow',
@@ -925,7 +941,7 @@
     fr: 'Neige',
     ja: '雪',
     zh: '小雪',
-    ko: '',
+    ko: '눈',
   },
   'Blizzards': {
     en: 'Blizzards',
@@ -933,7 +949,7 @@
     fr: 'Blizzard',
     ja: '吹雪',
     zh: '暴雪',
-    ko: '',
+    ko: '눈보라',
   },
   'Gloom': {
     en: 'Gloom',
@@ -941,7 +957,7 @@
     fr: 'Nébuleux',
     ja: '妖霧',
     zh: '妖雾',
-    ko: '',
+    ko: '요마의 안개',
   },
   'Umbral Wind': {
     en: 'Umbral Wind',
@@ -949,7 +965,7 @@
     fr: 'Vent ombral',
     ja: '霊風',
     zh: '灵风',
-    ko: '',
+    ko: '그림자바람',
   },
   'Umbral Static': {
     en: 'Umbral Static',
@@ -957,7 +973,7 @@
     fr: 'Charges ombrales',
     ja: '放電',
     zh: '灵电',
-    ko: '',
+    ko: '방전',
   },
   'Hyperelectricity': {
     en: 'Hyperelectricity',
@@ -965,7 +981,7 @@
     fr: 'Hyperélectricité',
     ja: '雷波',
     zh: '雷波',
-    ko: '',
+    ko: '번개파동',
   },
   'Moon Dust': {
     en: 'Moon Dust',
@@ -973,7 +989,7 @@
     fr: 'Tempêtes de régolithe',
     ja: '月砂塵',
     zh: '月尘',
-    ko: '',
+    ko: '달모래먼지',
   },
   'Astromagnetic Storms': {
     en: 'Astromagnetic Storms',
@@ -981,7 +997,7 @@
     fr: 'Astromagnétique',
     ja: '磁気嵐',
     zh: '磁暴',
-    ko: '',
+    ko: '자기 폭풍',
   },
   'Atmospheric Phantasms': {
     en: 'Atmospheric Phantasms',
@@ -989,7 +1005,7 @@
     fr: 'Fantasmes',
     ja: '幻怪',
     zh: '幻怪',
-    ko: '',
+    ko: '환영',
   },
   'Illusory Disturbances': {
     en: 'Illusory Disturbances',
@@ -997,5 +1013,5 @@
     fr: 'Illusions',
     ja: '幻妖',
     zh: '幻妖',
-    ko: '',
+    ko: '환시',
   },

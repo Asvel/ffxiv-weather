@@ -724,7 +724,7 @@ const texts = {
     fr: 'Tuliyollal',
     ja: 'トライヨラ',
     zh: '图莱尤拉',
-    ko: '',
+    ko: '툴라이욜라',
   },
   'Urqopacha': {
     en: 'Urqopacha',
@@ -732,7 +732,7 @@ const texts = {
     fr: 'Urqopacha',
     ja: 'オルコ・パチャ',
     zh: '羊驼山',
-    ko: '',
+    ko: '오르코 파차',
   },
   'Kozama\'uka': {
     en: 'Kozama\'uka',
@@ -740,7 +740,7 @@ const texts = {
     fr: 'Kozama\'uka',
     ja: 'コザマル・カ',
     zh: '湿地',
-    ko: '',
+    ko: '코자말루 카',
   },
   'Yak T\'el': {
     en: 'Yak T\'el',
@@ -748,7 +748,7 @@ const texts = {
     fr: 'Yak T\'el',
     ja: 'ヤクテル樹海',
     zh: '树海',
-    ko: '',
+    ko: '야크텔 밀림',
   },
   'Solution Nine': {
     en: 'Solution Nine',
@@ -756,7 +756,7 @@ const texts = {
     fr: 'Solution Neuf',
     ja: 'ソリューション・ナイン',
     zh: '九号方案',
-    ko: '',
+    ko: '솔루션 나인',
   },
   'Shaaloani': {
     en: 'Shaaloani',
@@ -764,7 +764,7 @@ const texts = {
     fr: 'Shaaloani',
     ja: 'シャーローニ荒野',
     zh: '荒野',
-    ko: '',
+    ko: '샬로니 황야',
   },
   'Heritage Found': {
     en: 'Heritage Found',
@@ -772,7 +772,7 @@ const texts = {
     fr: 'L\'Hoirie recouvrée',
     ja: 'ヘリテージファウンド',
     zh: '遗产',
-    ko: '',
+    ko: '헤리티지 파운드',
   },
   'Living Memory': {
     en: 'Living Memory',
@@ -780,7 +780,7 @@ const texts = {
     fr: 'La Mémoire vivante',
     ja: 'リビング・メモリー',
     zh: '记忆',
-    ko: '',
+    ko: '리빙 메모리',
   },
   'Sinus Ardorum': {
     en: 'Sinus Ardorum',
@@ -788,7 +788,7 @@ const texts = {
     fr: 'Sinus Ardorum',
     ja: '焦がれの入江',
     zh: '憧憬湾',
-    ko: '',
+    ko: '동경의 만',
   },
   'South Horn': {
     en: 'South Horn',
@@ -796,7 +796,7 @@ const texts = {
     fr: 'Île de Lunule méridionale',
     ja: '三日月島南部',
     zh: '新月岛南部',
-    ko: '',
+    ko: '초승달 섬 남부',
   },
   'Phaenna': {
     en: 'Phaenna',
@@ -804,7 +804,7 @@ const texts = {
     fr: 'Phaenna',
     ja: 'パエンナ',
     zh: '法恩娜',
-    ko: '',
+    ko: '행성 파엔나',
   },
   'Oizys': {
     en: 'Oizys',
@@ -812,7 +812,7 @@ const texts = {
     fr: 'Oizys',
     ja: 'オイジュス',
     zh: '俄匊斯',
-    ko: '',
+    ko: '행성 오이지스',
   },
 
   'Clear Skies': {
@@ -973,7 +973,7 @@ const texts = {
     fr: 'Fantasmes',
     ja: '幻怪',
     zh: '幻怪',
-    ko: '',
+    ko: '환영',
   },
   'Illusory Disturbances': {
     en: 'Illusory Disturbances',
@@ -981,7 +981,7 @@ const texts = {
     fr: 'Illusions',
     ja: '幻妖',
     zh: '幻妖',
-    ko: '',
+    ko: '환시',
   },
 
   'Garlok': {

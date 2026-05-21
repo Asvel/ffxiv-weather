@@ -5,8 +5,9 @@ using Lumina.Excel;
 using Lumina.Excel.Sheets;
 using Lumina.Text.ReadOnly;
 
-var lumina = new GameData(args[0], new() { DefaultExcelLanguage = Lumina.Data.Language.English });
-var luminaCn = new GameData(args[1], new() { DefaultExcelLanguage = Lumina.Data.Language.ChineseSimplified });
+var lumina = new GameData(args[0], new() { DefaultExcelLanguage = Lumina.Data.Language.English, PanicOnSheetChecksumMismatch = false });
+var luminaCn = new GameData(args[1], new() { DefaultExcelLanguage = Lumina.Data.Language.ChineseSimplified, PanicOnSheetChecksumMismatch = false });
+var luminaKr = new GameData(args[2], new() { DefaultExcelLanguage = Lumina.Data.Language.Korean, PanicOnSheetChecksumMismatch = false });
 
 var escape = (ReadOnlySeString? s) => s?.ExtractText()?.Replace("'", "\\'");
 
@@ -43,7 +44,7 @@ var weatherUsed = new HashSet<uint>();
         weathers[line.ToString()] = null;
     }
 }
-File.WriteAllLines("weathers.txt", weathers.Keys.Cast<string>());
+File.WriteAllText("weathers.txt", string.Join('\n', weathers.Keys.Cast<string>()));
 
 var langs = new StringBuilder();
 void extractLangs<T>(Func<T?, ReadOnlySeString?> getText, HashSet<uint> used) where T : struct, IExcelRow<T>
@@ -55,7 +56,7 @@ void extractLangs<T>(Func<T?, ReadOnlySeString?> getText, HashSet<uint> used) wh
         ("fr", lumina.GetExcelSheet<T>(Lumina.Data.Language.French)!),
         ("ja", lumina.GetExcelSheet<T>(Lumina.Data.Language.Japanese)!),
         ("zh", luminaCn.GetExcelSheet<T>()!),
-        ("ko", lumina.GetExcelSheet<T>(Lumina.Data.Language.Korean)!),
+        ("ko", luminaKr.GetExcelSheet<T>()!),
     };
     var count = weatherNameSheets[0].sheet.Count;
     for (var i = 0u; i < count; i++)
@@ -76,4 +77,4 @@ void extractLangs<T>(Func<T?, ReadOnlySeString?> getText, HashSet<uint> used) wh
 extractLangs<PlaceName>(row => row?.Name, placeUsed);
 langs.AppendLine("//");
 extractLangs<Weather>(row => row?.Name, weatherUsed);
-File.WriteAllText("langs.txt", langs.ToString());
+File.WriteAllText("langs.txt", langs.ToString().ReplaceLineEndings("\n"));
