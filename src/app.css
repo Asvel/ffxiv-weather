@@ -5,12 +5,21 @@ html {
   box-sizing: inherit;
 }
 
+html {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+html[lang="zh-CN"] {
+  font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+}
+html[lang="zh-TW"] {
+  font-family: Helvetica Neue, Helvetica, Arial, PingFang TC, Hiragino Sans CNS, Microsoft JhengHei, sans-serif;
+}
+
 .app {
   max-width: 960px;
   padding: 18px;
   margin: 0 auto;
   font-size: 14px;
-  font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \5FAE\8F6F\96C5\9ED1, sans-serif;
   line-height: 1.4286;
   color: #393333;
 }
@@ -182,18 +191,28 @@ button:active {
   float: right;
 }
 
+.match.list th,
+td.match_list-date,
+td.match_list-time,
+td.match_local-time,
+td.match_eorzea-time,
+.match_list-time,
+.weathers > span:before,
+.weathers > span:after {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
 .match {
   margin-top: 6px;
 }
 .match table {
   width: 100%;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   line-height: 18px;
   border-collapse: collapse;
 }
 .match th,
 .match td {
-  padding: 7px 4px 5px;
+  padding: 6px 4px 5px;
   text-align: left;
 }
 @media (min-width: 481px) {
@@ -203,6 +222,7 @@ button:active {
   }
 }
 .match th {
+  padding-bottom: 6px;
   border-top: 1px solid #393333;
   border-bottom: 1px solid #393333;
 }

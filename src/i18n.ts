@@ -6,13 +6,35 @@ export const languages = {
   de: 'Deutsch',
   fr: 'français',
   ja: '日本語',
-  zh: '中文',
+  zh: '简体中文',
+  zT: '繁體中文',
   ko: '한국어',
+};
+export const languageCodes = {
+  en: 'en',
+  de: 'de',
+  fr: 'fr',
+  ja: 'ja',
+  zh: 'zh-CN',
+  zT: 'zh-TW',
+  ko: 'ko',
 };
 
 export const [ getCurrentLanguage, setCurrentLanguage ] = createSignal(
   localStorage.getItem('ffxiv-weather.language') ??
-  navigator.languages.find(lang => lang.slice(0, 2) in languages)?.slice(0, 2) ??
+  (() => {
+    const langOfCodes: Record<string, string> = {};
+    for (const [ lang, code ] of Object.entries(languageCodes)) {
+      langOfCodes[code] = lang;
+    }
+    langOfCodes['zh-HK'] = 'zT';
+    for (const code of navigator.languages) {
+      const lang = langOfCodes[code] ?? langOfCodes[code.slice(0, 2)];
+      if (lang !== undefined) {
+        return lang;
+      }
+    }
+  })() ??
   'zh');
 createEffectGlobal(() => localStorage.setItem('ffxiv-weather.language', getCurrentLanguage()));
 
@@ -35,23 +57,17 @@ export function t(s: TemplateStringsArray | string, ...args: any[]): string {
   }
 }
 
-const texts = {
+const texts: Record<string, Record<string, string>> = {
   'FFXIV Weather Lookup': {
     en: '',
     de: '',
     fr: '',
     ja: '',
     zh: '最终幻想14天气查询',
+    zT: 'FFXIV 天氣查詢',
     ko: '',
   },
-  'en': {
-    en: 'en',
-    de: 'de',
-    fr: 'fr',
-    ja: 'ja',
-    zh: 'zh-CN',
-    ko: 'ko',
-  },
+  'en': languageCodes,
 
   'Zone': {
     en: '',
@@ -59,6 +75,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '地区',
+    zT: '地區',
     ko: '지역',
   },
   'Select Zone': {
@@ -67,6 +84,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '请选择一个地区',
+    zT: '請選擇一個地區',
     ko: '지역을 선택하세요',
   },
   'Weather': {
@@ -75,6 +93,7 @@ const texts = {
     fr: '',
     ja: '天気',
     zh: '天气',
+    zT: '天氣',
     ko: '날씨',
   },
   'Previous Weather': {
@@ -83,6 +102,7 @@ const texts = {
     fr: '',
     ja: '前の天気',
     zh: '前置天气',
+    zT: '前置天氣',
     ko: '이전 날씨',
   },
   'Right click to multiple select': {
@@ -91,6 +111,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '右击多选',
+    zT: '右擊多選',
     ko: '우클릭으로 여러 개 선택',
   },
   'Time': {
@@ -99,6 +120,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '时间',
+    zT: '時間',
     ko: '',
   },
   'Click start time then select a range': {
@@ -107,6 +129,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '点击开始时间然后选择一个时间段',
+    zT: '點擊開始時間然後選擇一個時間段',
     ko: '',
   },
   'Any': {
@@ -115,6 +138,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '任意',
+    zT: '任意',
     ko: '아무거나',
   },
   'Found {0} matches in next {1} earth days': {
@@ -123,6 +147,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '未来 {1} 地球天内共有 {0} 个时段符合条件',
+    zT: '未來 {1} 地球天內共有 {0} 個時段符合條件',
     ko: '',
   },
   'Showing future weather list, select some conditions to query matched periods': {
@@ -131,6 +156,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '正在展示未来的天气序列，选择一些条件可以查询符合的时段',
+    zT: '正在展示未來的天氣序列，選擇一些條件可以查詢符合的時段',
     ko: '',
   },
   'Local Time': {
@@ -139,6 +165,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '本地时间',
+    zT: '本地時間',
     ko: '현실 시간',
   },
   'Eorzea Time': {
@@ -147,6 +174,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '艾欧泽亚时间',
+    zT: '艾奧傑亞時間',
     ko: '에오르제아 시간',
   },
   'Start Time': {
@@ -155,6 +183,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '开始时间',
+    zT: '開始時間',
     ko: '',
   },
   'End Time': {
@@ -163,6 +192,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '结束时间',
+    zT: '結束時間',
     ko: '',
   },
   'Weathers': {
@@ -171,6 +201,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '天气',
+    zT: '天氣',
     ko: '날씨',
   },
   'Show more': {
@@ -179,6 +210,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '显示更多',
+    zT: '顯示更多',
     ko: '더 보기',
   },
   'License': {
@@ -187,6 +219,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '许可协议',
+    zT: '許可協議',
     ko: '',
   },
   'Code': {
@@ -195,6 +228,7 @@ const texts = {
     fr: '',
     ja: '',
     zh: '源代码',
+    zT: '原始碼',
     ko: '',
   },
 
@@ -204,6 +238,7 @@ const texts = {
     fr: 'Limsa',
     ja: 'リムサ',
     zh: '海都',
+    zT: '海都',
     ko: '림사',
   },
   'Middle La Noscea': {
@@ -212,6 +247,7 @@ const texts = {
     fr: 'Centrale',
     ja: '中ラ',
     zh: '中拉',
+    zT: '中拉',
     ko: '중부',
   },
   'Lower La Noscea': {
@@ -220,6 +256,7 @@ const texts = {
     fr: 'Basse',
     ja: '低ラ',
     zh: '拉低',
+    zT: '拉低',
     ko: '저지',
   },
   'Eastern La Noscea': {
@@ -228,6 +265,7 @@ const texts = {
     fr: 'Orientale',
     ja: '東ラ',
     zh: '东拉',
+    zT: '東拉',
     ko: '동부',
   },
   'Western La Noscea': {
@@ -236,6 +274,7 @@ const texts = {
     fr: 'Noscea',
     ja: '西ラ',
     zh: '西拉',
+    zT: '西拉',
     ko: '서부',
   },
   'Upper La Noscea': {
@@ -244,6 +283,7 @@ const texts = {
     fr: 'Haute',
     ja: '高ラ',
     zh: '拉高',
+    zT: '拉高',
     ko: '고지',
   },
   'Outer La Noscea': {
@@ -252,6 +292,7 @@ const texts = {
     fr: 'Noscea',
     ja: '外ラ',
     zh: '拉外',
+    zT: '拉外',
     ko: '외지',
   },
   'Mist': {
@@ -260,6 +301,7 @@ const texts = {
     fr: 'Brumée',
     ja: 'ミスト',
     zh: '海雾村',
+    zT: '海霧村',
     ko: '안갯빛',
   },
   'Gridania': {
@@ -268,6 +310,7 @@ const texts = {
     fr: 'Gridania',
     ja: 'グリダニア',
     zh: '森都',
+    zT: '森都',
     ko: '그리다니아',
   },
   'Central Shroud': {
@@ -276,6 +319,7 @@ const texts = {
     fr: 'Centrale',
     ja: '中森',
     zh: '中森',
+    zT: '中森',
     ko: '중부',
   },
   'East Shroud': {
@@ -284,6 +328,7 @@ const texts = {
     fr: 'L\'est',
     ja: '東森',
     zh: '东森',
+    zT: '東森',
     ko: '동부',
   },
   'South Shroud': {
@@ -292,6 +337,7 @@ const texts = {
     fr: 'Sud',
     ja: '南森',
     zh: '南森',
+    zT: '南森',
     ko: '남부',
   },
   'North Shroud': {
@@ -300,6 +346,7 @@ const texts = {
     fr: 'Nord',
     ja: '北森',
     zh: '北森',
+    zT: '北森',
     ko: '북부',
   },
   'The Lavender Beds': {
@@ -308,6 +355,7 @@ const texts = {
     fr: 'Lavandière',
     ja: 'ラベンダー',
     zh: '薰衣草苗圃',
+    zT: '薰衣草苗圃',
     ko: '라벤더',
   },
   'Ul\'dah': {
@@ -316,6 +364,7 @@ const texts = {
     fr: 'Ul\'dah',
     ja: 'ウルダハ',
     zh: '沙都',
+    zT: '沙都',
     ko: '울다하',
   },
   'Western Thanalan': {
@@ -324,6 +373,7 @@ const texts = {
     fr: 'Occidental',
     ja: '西ザ',
     zh: '西萨',
+    zT: '西薩',
     ko: '서부',
   },
   'Central Thanalan': {
@@ -332,6 +382,7 @@ const texts = {
     fr: 'Central',
     ja: '中ザ',
     zh: '中萨',
+    zT: '中薩',
     ko: '중부',
   },
   'Eastern Thanalan': {
@@ -340,6 +391,7 @@ const texts = {
     fr: 'Oriental',
     ja: '東ザ',
     zh: '东萨',
+    zT: '東薩',
     ko: '동부',
   },
   'Southern Thanalan': {
@@ -348,6 +400,7 @@ const texts = {
     fr: 'Méridional',
     ja: '南ザ',
     zh: '南萨',
+    zT: '南薩',
     ko: '남부',
   },
   'Northern Thanalan': {
@@ -356,6 +409,7 @@ const texts = {
     fr: 'Septentrional',
     ja: '北ザ',
     zh: '北萨',
+    zT: '北薩',
     ko: '북부',
   },
   'The Goblet': {
@@ -364,6 +418,7 @@ const texts = {
     fr: 'La Coup',
     ja: 'ゴブレット',
     zh: '高脚孤丘',
+    zT: '高腳孤丘',
     ko: '하늘잔',
   },
   'Ishgard': {
@@ -372,6 +427,7 @@ const texts = {
     fr: 'Ishgard',
     ja: 'イシュガルド',
     zh: '伊修加德',
+    zT: '伊修加爾德',
     ko: '이슈가르드',
   },
   'Coerthas Central Highlands': {
@@ -380,6 +436,7 @@ const texts = {
     fr: 'Central',
     ja: 'ク中',
     zh: '中高',
+    zT: '中高',
     ko: '중앙고지',
   },
   'Coerthas Western Highlands': {
@@ -388,6 +445,7 @@ const texts = {
     fr: 'Occidental',
     ja: 'ク西',
     zh: '西高',
+    zT: '西高',
     ko: '서부고지',
   },
   'Empyreum': {
@@ -396,6 +454,7 @@ const texts = {
     fr: 'Empyrée',
     ja: 'エンピレアム',
     zh: '穹顶皓天',
+    zT: '穹頂皓天',
     ko: '지고천 거리',
   },
   'The Sea of Clouds': {
@@ -404,6 +463,7 @@ const texts = {
     fr: 'L\'Écume des cieux',
     ja: 'ア雲',
     zh: '云海',
+    zT: '雲海',
     ko: '구름바다',
   },
   'Azys Lla': {
@@ -412,6 +472,7 @@ const texts = {
     fr: 'Azys Lla',
     ja: '魔大陸',
     zh: '魔大陆',
+    zT: '魔大陸',
     ko: '아지스 라',
   },
   'The Diadem': {
@@ -420,6 +481,7 @@ const texts = {
     fr: 'Diadème',
     ja: 'ディアデム',
     zh: '空岛',
+    zT: '空島',
     ko: '디아뎀',
   },
   'Idyllshire': {
@@ -428,6 +490,7 @@ const texts = {
     fr: 'Idyllée',
     ja: 'イディルシャイア',
     zh: '田园郡',
+    zT: '田園郡',
     ko: '이딜샤이어',
   },
   'The Dravanian Forelands': {
@@ -436,6 +499,7 @@ const texts = {
     fr: 'Avant-pays',
     ja: '高ド',
     zh: '龙高',
+    zT: '山麓',
     ko: '고지',
   },
   'The Dravanian Hinterlands': {
@@ -444,6 +508,7 @@ const texts = {
     fr: 'Arrière-pays',
     ja: '低ド',
     zh: '龙低',
+    zT: '河谷',
     ko: '저지',
   },
   'The Churning Mists': {
@@ -452,6 +517,7 @@ const texts = {
     fr: 'L\'Écume des cieux',
     ja: 'ド雲',
     zh: '雾海',
+    zT: '雲海',
     ko: '구름바다',
   },
   'Mor Dhona': {
@@ -460,6 +526,7 @@ const texts = {
     fr: 'Mor Dhona',
     ja: 'モードゥナ',
     zh: '摩杜纳',
+    zT: '摩杜納',
     ko: '모르도나',
   },
   'Rhalgr\'s Reach': {
@@ -468,6 +535,7 @@ const texts = {
     fr: 'Rhalgr',
     ja: 'ラールガー',
     zh: '神拳痕',
+    zT: '神拳痕',
     ko: '랄거',
   },
   'The Fringes': {
@@ -476,6 +544,7 @@ const texts = {
     fr: 'Marges',
     ja: 'ギ辺',
     zh: '边区',
+    zT: '邊區',
     ko: '기라변방',
   },
   'The Peaks': {
@@ -484,6 +553,7 @@ const texts = {
     fr: 'Pics',
     ja: 'ギ山',
     zh: '山区',
+    zT: '山區',
     ko: '기라산악',
   },
   'The Lochs': {
@@ -492,6 +562,7 @@ const texts = {
     fr: 'Lacs',
     ja: 'ギ湖',
     zh: '湖区',
+    zT: '湖區',
     ko: '기라호반',
   },
   'Kugane': {
@@ -500,6 +571,7 @@ const texts = {
     fr: 'Kugane',
     ja: 'クガネ',
     zh: '黄金港',
+    zT: '黃金港',
     ko: '쿠가네',
   },
   'Shirogane': {
@@ -508,6 +580,7 @@ const texts = {
     fr: 'Shirogane',
     ja: 'シロガネ',
     zh: '白银乡',
+    zT: '白銀鄉',
     ko: '시로가네',
   },
   'The Ruby Sea': {
@@ -516,6 +589,7 @@ const texts = {
     fr: 'Mer de Rubis',
     ja: '紅玉海',
     zh: '红玉海',
+    zT: '紅玉海',
     ko: '홍옥해',
   },
   'Yanxia': {
@@ -524,6 +598,7 @@ const texts = {
     fr: 'Yanxia',
     ja: 'ヤンサ',
     zh: '延夏',
+    zT: '延夏',
     ko: '얀샤',
   },
   'The Azim Steppe': {
@@ -532,6 +607,7 @@ const texts = {
     fr: 'Steppe d\'Azim',
     ja: 'アジムステップ',
     zh: '草原',
+    zT: '草原',
     ko: '아짐 대초원',
   },
   'Eureka Anemos': {
@@ -540,6 +616,7 @@ const texts = {
     fr: 'Anemos',
     ja: 'アネモス',
     zh: '常风',
+    zT: '常風',
     ko: '아네모스',
   },
   'Eureka Pagos': {
@@ -548,6 +625,7 @@ const texts = {
     fr: 'Pagos',
     ja: 'パゴス',
     zh: '恒冰',
+    zT: '恆冰',
     ko: '파고스',
   },
   'Eureka Pyros': {
@@ -556,6 +634,7 @@ const texts = {
     fr: 'Pyros',
     ja: 'ピューロス',
     zh: '涌火',
+    zT: '湧火',
     ko: '피로스',
   },
   'Eureka Hydatos': {
@@ -564,6 +643,7 @@ const texts = {
     fr: 'Hydatos',
     ja: 'ヒュダトス',
     zh: '丰水',
+    zT: '豐水',
     ko: '히다토스',
   },
   'Bozjan Southern Front': {
@@ -572,6 +652,7 @@ const texts = {
     fr: 'Front de Bozja',
     ja: 'ボズヤ戦線',
     zh: '博兹雅战线',
+    zT: '博茲雅戰線',
     ko: '보즈야 전선',
   },
   'Zadnor': {
@@ -580,6 +661,7 @@ const texts = {
     fr: 'Zadnor',
     ja: 'ザトゥノル',
     zh: '高原',
+    zT: '高原',
     ko: '자트노르',
   },
   'The Crystarium': {
@@ -588,6 +670,7 @@ const texts = {
     fr: 'Cristarium',
     ja: 'クリスタリウム',
     zh: '水晶都',
+    zT: '水晶都',
     ko: '크리스타리움',
   },
   'Eulmore': {
@@ -596,6 +679,7 @@ const texts = {
     fr: 'Eulmore',
     ja: 'ユールモア',
     zh: '游末邦',
+    zT: '遊末邦',
     ko: '율모어',
   },
   'Lakeland': {
@@ -604,6 +688,7 @@ const texts = {
     fr: 'Grand-Lac',
     ja: 'レイクランド',
     zh: '雷克兰德',
+    zT: '雷克蘭德',
     ko: '레이크랜드',
   },
   'Kholusia': {
@@ -612,6 +697,7 @@ const texts = {
     fr: 'Kholusia',
     ja: 'コルシア',
     zh: '珂露西亚',
+    zT: '珂露西亞',
     ko: '콜루시아',
   },
   'Amh Araeng': {
@@ -620,6 +706,7 @@ const texts = {
     fr: 'Amh Araeng',
     ja: 'アム・アレーン',
     zh: '安穆艾兰',
+    zT: '安穆艾蘭',
     ko: '아므 아랭',
   },
   'Il Mheg': {
@@ -628,6 +715,7 @@ const texts = {
     fr: 'Il Mheg',
     ja: 'イル・メグ',
     zh: '伊尔美格',
+    zT: '伊爾美格',
     ko: '일 메그',
   },
   'The Rak\'tika Greatwood': {
@@ -636,6 +724,7 @@ const texts = {
     fr: 'LaHee',
     ja: 'LaHee',
     zh: 'LaHee',
+    zT: 'LaHee',
     ko: 'LaHee',
   },
   'The Tempest': {
@@ -644,6 +733,7 @@ const texts = {
     fr: 'Tempête',
     ja: 'テンペスト',
     zh: '黑风海',
+    zT: '黑風海',
     ko: '템페스트',
   },
   'Old Sharlayan': {
@@ -652,6 +742,7 @@ const texts = {
     fr: 'Sharlayan',
     ja: 'シャーレアン',
     zh: '萨雷安',
+    zT: '薩雷安',
     ko: '샬레이안',
   },
   'Radz-at-Han': {
@@ -660,6 +751,7 @@ const texts = {
     fr: 'Radz-at-Han',
     ja: 'ラザハン',
     zh: '拉札罕',
+    zT: '拉札漢',
     ko: '라자한',
   },
   'Labyrinthos': {
@@ -668,6 +760,7 @@ const texts = {
     fr: 'Labyrinthos',
     ja: 'ラヴィリンソス',
     zh: '迷津',
+    zT: '迷津',
     ko: '라비린토스',
   },
   'Thavnair': {
@@ -676,6 +769,7 @@ const texts = {
     fr: 'Thavnair',
     ja: 'サベネア',
     zh: '萨维奈',
+    zT: '薩維奈',
     ko: '사베네어',
   },
   'Garlemald': {
@@ -684,6 +778,7 @@ const texts = {
     fr: 'Garlemald',
     ja: 'ガレマルド',
     zh: '加雷马',
+    zT: '加雷馬',
     ko: '갈레말드',
   },
   'Mare Lamentorum': {
@@ -692,6 +787,7 @@ const texts = {
     fr: 'Mare Lamentorum',
     ja: '嘆きの海',
     zh: '叹息海',
+    zT: '嘆息海',
     ko: '비탄의 바다',
   },
   'Elpis': {
@@ -700,6 +796,7 @@ const texts = {
     fr: 'Elpis',
     ja: 'エルピス',
     zh: '厄尔庇斯',
+    zT: '厄爾庇斯',
     ko: '엘피스',
   },
   'Ultima Thule': {
@@ -708,6 +805,7 @@ const texts = {
     fr: 'Thulé',
     ja: 'トゥーレ',
     zh: '天垓',
+    zT: '天垓',
     ko: '울툴레',
   },
   'Unnamed Island': {
@@ -716,6 +814,7 @@ const texts = {
     fr: 'Île sans nom',
     ja: '名もなき島',
     zh: '无名岛',
+    zT: '無名島',
     ko: '이름 없는 섬',
   },
   'Tuliyollal': {
@@ -724,6 +823,7 @@ const texts = {
     fr: 'Tuliyollal',
     ja: 'トライヨラ',
     zh: '图莱尤拉',
+    zT: '圖萊尤拉',
     ko: '툴라이욜라',
   },
   'Urqopacha': {
@@ -732,6 +832,7 @@ const texts = {
     fr: 'Urqopacha',
     ja: 'オルコ・パチャ',
     zh: '羊驼山',
+    zT: '奧闊帕恰山',
     ko: '오르코 파차',
   },
   'Kozama\'uka': {
@@ -740,6 +841,7 @@ const texts = {
     fr: 'Kozama\'uka',
     ja: 'コザマル・カ',
     zh: '湿地',
+    zT: '濕地',
     ko: '코자말루 카',
   },
   'Yak T\'el': {
@@ -748,6 +850,7 @@ const texts = {
     fr: 'Yak T\'el',
     ja: 'ヤクテル樹海',
     zh: '树海',
+    zT: '樹海',
     ko: '야크텔 밀림',
   },
   'Solution Nine': {
@@ -756,6 +859,7 @@ const texts = {
     fr: 'Solution Neuf',
     ja: 'ソリューション・ナイン',
     zh: '九号方案',
+    zT: '九號方案',
     ko: '솔루션 나인',
   },
   'Shaaloani': {
@@ -764,6 +868,7 @@ const texts = {
     fr: 'Shaaloani',
     ja: 'シャーローニ荒野',
     zh: '荒野',
+    zT: '荒野',
     ko: '샬로니 황야',
   },
   'Heritage Found': {
@@ -772,6 +877,7 @@ const texts = {
     fr: 'L\'Hoirie recouvrée',
     ja: 'ヘリテージファウンド',
     zh: '遗产',
+    zT: '遺產',
     ko: '헤리티지 파운드',
   },
   'Living Memory': {
@@ -780,6 +886,7 @@ const texts = {
     fr: 'La Mémoire vivante',
     ja: 'リビング・メモリー',
     zh: '记忆',
+    zT: '憶想',
     ko: '리빙 메모리',
   },
   'Sinus Ardorum': {
@@ -788,6 +895,7 @@ const texts = {
     fr: 'Sinus Ardorum',
     ja: '焦がれの入江',
     zh: '憧憬湾',
+    zT: '憧憬灣',
     ko: '동경의 만',
   },
   'South Horn': {
@@ -796,6 +904,7 @@ const texts = {
     fr: 'Île de Lunule méridionale',
     ja: '三日月島南部',
     zh: '新月岛南部',
+    zT: '新月島南部',
     ko: '초승달 섬 남부',
   },
   'Phaenna': {
@@ -804,6 +913,7 @@ const texts = {
     fr: 'Phaenna',
     ja: 'パエンナ',
     zh: '法恩娜',
+    zT: '法恩娜',
     ko: '행성 파엔나',
   },
   'Oizys': {
@@ -812,6 +922,7 @@ const texts = {
     fr: 'Oizys',
     ja: 'オイジュス',
     zh: '俄匊斯',
+    zT: '俄匊斯',
     ko: '행성 오이지스',
   },
 
@@ -821,6 +932,7 @@ const texts = {
     fr: 'Dégagé',
     ja: '快晴',
     zh: '碧空',
+    zT: '碧空',
     ko: '쾌청',
   },
   'Fair Skies': {
@@ -829,6 +941,7 @@ const texts = {
     fr: 'Clair',
     ja: '晴れ',
     zh: '晴朗',
+    zT: '晴朗',
     ko: '맑음',
   },
   'Clouds': {
@@ -837,6 +950,7 @@ const texts = {
     fr: 'Couvert',
     ja: '曇り',
     zh: '阴云',
+    zT: '陰雲',
     ko: '흐림',
   },
   'Fog': {
@@ -845,6 +959,7 @@ const texts = {
     fr: 'Brouillard',
     ja: '霧',
     zh: '薄雾',
+    zT: '薄霧',
     ko: '안개',
   },
   'Wind': {
@@ -853,14 +968,16 @@ const texts = {
     fr: 'Vent',
     ja: '風',
     zh: '微风',
+    zT: '微風',
     ko: '바람',
   },
   'Gales': {
     en: 'Gales',
     de: 'Stürmisch',
-    fr: 'Vents Violents',
+    fr: 'Vents violents',
     ja: '暴風',
     zh: '强风',
+    zT: '強風',
     ko: '폭풍',
   },
   'Rain': {
@@ -869,6 +986,7 @@ const texts = {
     fr: 'Pluie',
     ja: '雨',
     zh: '小雨',
+    zT: '小雨',
     ko: '비',
   },
   'Showers': {
@@ -877,6 +995,7 @@ const texts = {
     fr: 'Torrentielle',
     ja: '暴雨',
     zh: '暴雨',
+    zT: '暴雨',
     ko: '폭우',
   },
   'Thunder': {
@@ -885,6 +1004,7 @@ const texts = {
     fr: 'Orages',
     ja: '雷',
     zh: '打雷',
+    zT: '打雷',
     ko: '번개',
   },
   'Thunderstorms': {
@@ -893,6 +1013,7 @@ const texts = {
     fr: 'Orages violents',
     ja: '雷雨',
     zh: '雷雨',
+    zT: '雷雨',
     ko: '뇌우',
   },
   'Dust Storms': {
@@ -901,6 +1022,7 @@ const texts = {
     fr: 'Poussière',
     ja: '砂塵',
     zh: '扬沙',
+    zT: '揚沙',
     ko: '모래먼지',
   },
   'Heat Waves': {
@@ -909,6 +1031,7 @@ const texts = {
     fr: 'Torride',
     ja: '灼熱波',
     zh: '热浪',
+    zT: '熱浪',
     ko: '작열파',
   },
   'Snow': {
@@ -917,6 +1040,7 @@ const texts = {
     fr: 'Neige',
     ja: '雪',
     zh: '小雪',
+    zT: '小雪',
     ko: '눈',
   },
   'Blizzards': {
@@ -925,6 +1049,7 @@ const texts = {
     fr: 'Blizzard',
     ja: '吹雪',
     zh: '暴雪',
+    zT: '暴雪',
     ko: '눈보라',
   },
   'Gloom': {
@@ -933,6 +1058,7 @@ const texts = {
     fr: 'Nébuleux',
     ja: '妖霧',
     zh: '妖雾',
+    zT: '妖霧',
     ko: '요마의 안개',
   },
   'Umbral Wind': {
@@ -941,6 +1067,7 @@ const texts = {
     fr: 'Vent ombral',
     ja: '霊風',
     zh: '灵风',
+    zT: '靈風',
     ko: '그림자 바람',
   },
   'Umbral Static': {
@@ -949,6 +1076,7 @@ const texts = {
     fr: 'Charges ombrales',
     ja: '放電',
     zh: '灵电',
+    zT: '靈電',
     ko: '방전',
   },
   'Moon Dust': {
@@ -957,6 +1085,7 @@ const texts = {
     fr: 'Tempêtes de régolithe',
     ja: '月砂塵',
     zh: '月尘',
+    zT: '月塵',
     ko: '달모래먼지',
   },
   'Astromagnetic Storms': {
@@ -965,14 +1094,16 @@ const texts = {
     fr: 'Astromagnétique',
     ja: '磁気嵐',
     zh: '磁暴',
-    ko: '자기장 폭풍',
+    zT: '磁暴',
+    ko: '자기 폭풍',
   },
-'Atmospheric Phantasms': {
+  'Atmospheric Phantasms': {
     en: 'Atmospheric Phantasms',
     de: 'Phantasmagorien',
     fr: 'Fantasmes',
     ja: '幻怪',
     zh: '幻怪',
+    zT: '幻怪',
     ko: '환영',
   },
   'Illusory Disturbances': {
@@ -981,6 +1112,7 @@ const texts = {
     fr: 'Illusions',
     ja: '幻妖',
     zh: '幻妖',
+    zT: '幻妖',
     ko: '환시',
   },
 
@@ -990,6 +1122,7 @@ const texts = {
     fr: 'Garlok',
     ja: 'ガーロック',
     zh: '伽洛克 - 天气保持薄雾、碧空、晴朗、阴云200分钟时开始，不再是这些天气时结束。',
+    zT: '伽洛克 - 天氣保持薄霧、碧空、晴朗、陰雲200分鐘時開始，不再是這些天氣時結束。',
     ko: '갈록',
   },
   'Laideronnette': {
@@ -998,6 +1131,7 @@ const texts = {
     fr: 'Laideronnette',
     ja: 'レドロネット',
     zh: '雷德罗巨蛇 - 天气保持小雨30分钟时开始，天气不再是小雨时结束。',
+    zT: '雷德羅巨蛇 - 天氣保持小雨30分鐘時開始，天氣不再是小雨時結束。',
     ko: '레드로네트',
   },
-} as { [index: string]: { [index: string]: string } };
+} satisfies Record<string, typeof languages>;

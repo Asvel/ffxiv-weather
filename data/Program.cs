@@ -8,6 +8,7 @@ using Lumina.Text.ReadOnly;
 var lumina = new GameData(args[0], new() { DefaultExcelLanguage = Lumina.Data.Language.English, PanicOnSheetChecksumMismatch = false });
 var luminaCn = new GameData(args[1], new() { DefaultExcelLanguage = Lumina.Data.Language.ChineseSimplified, PanicOnSheetChecksumMismatch = false });
 var luminaKr = new GameData(args[2], new() { DefaultExcelLanguage = Lumina.Data.Language.Korean, PanicOnSheetChecksumMismatch = false });
+var luminaTc = new GameData(args[3], new() { DefaultExcelLanguage = Lumina.Data.Language.TraditionalChinese, PanicOnSheetChecksumMismatch = false });
 
 var escape = (ReadOnlySeString? s) => s?.ExtractText()?.Replace("'", "\\'");
 
@@ -56,6 +57,7 @@ void extractLangs<T>(Func<T?, ReadOnlySeString?> getText, HashSet<uint> used) wh
         ("fr", lumina.GetExcelSheet<T>(Lumina.Data.Language.French)!),
         ("ja", lumina.GetExcelSheet<T>(Lumina.Data.Language.Japanese)!),
         ("zh", luminaCn.GetExcelSheet<T>()!),
+        ("zT", luminaTc.GetExcelSheet<T>()!),
         ("ko", luminaKr.GetExcelSheet<T>()!),
     };
     var count = weatherNameSheets[0].sheet.Count;
