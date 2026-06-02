@@ -925,6 +925,15 @@ const texts: Record<string, Record<string, string>> = {
     zT: '俄匊斯',
     ko: '행성 오이지스',
   },
+  'Auxesia': {
+    en: 'Auxesia',
+    de: 'Auxesia',
+    fr: 'Auxesia',
+    ja: 'アウクセシア',
+    zh: '奥克塞西亚',
+    zT: '奧克塞西亞',
+    ko: '',
+  },
 
   'Clear Skies': {
     en: 'Clear',
