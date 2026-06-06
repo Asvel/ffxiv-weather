@@ -16,10 +16,14 @@ export function Condition() {
         {/*@once*/W.groupedZones.map(g => (
           <span class="condition_zone-group">
             {/*@once*/g.map(z => (
-              <span
+              <a
                 class="condition_zone-item"
                 classList={{ '-active': isZoneSelected(z) }}
-                onClick={() => store.switchZone(z)}
+                href={`#${W.zoneShorthands[z]}`}
+                onClick={e => {
+                  store.switchZone(z);
+                  e.preventDefault();
+                }}
                 children={t(z)}
               />
             ))}
