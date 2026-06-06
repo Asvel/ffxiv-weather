@@ -943,6 +943,15 @@
     zT: '',
     ko: '행성 오이지스',
   },
+  'Auxesia': {
+    en: 'Auxesia',
+    de: 'Auxesia',
+    fr: 'Auxesia',
+    ja: '惑星アウクセシア',
+    zh: '奥克塞西亚行星',
+    zT: '',
+    ko: '행성 아욱세시아',
+  },
 //
   'Clear Skies': {
     en: 'Clear Skies',

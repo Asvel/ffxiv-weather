@@ -914,7 +914,7 @@ const texts: Record<string, Record<string, string>> = {
     ja: 'パエンナ',
     zh: '法恩娜',
     zT: '法恩娜',
-    ko: '행성 파엔나',
+    ko: '파엔나',
   },
   'Oizys': {
     en: 'Oizys',
@@ -923,7 +923,7 @@ const texts: Record<string, Record<string, string>> = {
     ja: 'オイジュス',
     zh: '俄匊斯',
     zT: '俄匊斯',
-    ko: '행성 오이지스',
+    ko: '오이지스',
   },
   'Auxesia': {
     en: 'Auxesia',
@@ -932,7 +932,7 @@ const texts: Record<string, Record<string, string>> = {
     ja: 'アウクセシア',
     zh: '奥克塞西亚',
     zT: '奧克塞西亞',
-    ko: '',
+    ko: '아욱세시아',
   },
 
   'Clear Skies': {
