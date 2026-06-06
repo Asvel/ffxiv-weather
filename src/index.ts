@@ -1,15 +1,8 @@
 import { render } from 'solid-js/web';
 import * as W from './Weather';
-import { createEffectGlobal } from './utils';
-import { t } from './i18n';
 import { App } from './views/App';
 import 'normalize.css';
 import './app.css';
-
-createEffectGlobal(() => {
-  document.title = t`FFXIV Weather Lookup`;
-  document.documentElement.lang = t`en`;
-});
 
 const container = document.createElement('div');
 document.body.appendChild(container);
