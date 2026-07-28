@@ -108,3 +108,4 @@
   'Zirgorteh the Open-armed': ['Clear Skies', 20, 'Fair Skies', 50, 'Clouds', 70, 'Fog', 80, 'Wind', 90, 'Snow'],
   'Oizys': ['Clouds', 20, 'Fair Skies', 80, 'Clear Skies'],
   'Auxesia': ['Clouds', 20, 'Fair Skies', 80, 'Clear Skies'],
+  'North Horn': ['Clear Skies', 10, 'Fair Skies', 55, 'Clouds', 70, 'Rain', 80, 'Atmospheric Phantasms', 95, 'Illusory Disturbances'],

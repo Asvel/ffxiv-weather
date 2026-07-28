@@ -922,7 +922,7 @@
     fr: 'Sinus Ardorum',
     ja: '焦がれの入江',
     zh: '憧憬湾',
-    zT: '',
+    zT: '渴望灣',
     ko: '동경의 만',
   },
   'Phaenna': {
@@ -951,6 +951,15 @@
     zh: '奥克塞西亚行星',
     zT: '',
     ko: '행성 아욱세시아',
+  },
+  'North Horn': {
+    en: 'North Horn',
+    de: 'Nördliches Kreszentia',
+    fr: 'Île de Lunule septentrionale',
+    ja: '三日月島北部',
+    zh: '新月岛北部',
+    zT: '',
+    ko: '초승달 섬 북부',
   },
 //
   'Clear Skies': {
